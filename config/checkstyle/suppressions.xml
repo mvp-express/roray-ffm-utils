@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE suppressions PUBLIC
+        "-//Checkstyle//DTD SuppressionFilter Configuration 1.2//EN"
+        "https://checkstyle.org/dtds/suppressions_1_2.dtd">
+<suppressions>
+    <!-- Allow star imports in test files (JUnit assertions pattern) -->
+    <suppress checks="AvoidStarImport" files=".*Test\.java$"/>
+    
+    <!-- Allow variable declaration usage distance in test files (test setup pattern) -->
+    <suppress checks="VariableDeclarationUsageDistance" files=".*Test\.java$"/>
+    
+    <!-- Allow escaped unicode characters in test files (testing unicode handling) -->
+    <suppress checks="AvoidEscapedUnicodeCharacters" files=".*Test\.java$"/>
+    
+    <!-- Allow custom import order in test files (Spotless formats differently) -->
+    <suppress checks="CustomImportOrder" files=".*Test\.java$"/>
+    
+    <!-- Allow LE/BE abbreviations in binary reader/writer interfaces and implementations -->
+    <suppress checks="AbbreviationAsWordInName" files="BinaryReader\.java$"/>
+    <suppress checks="AbbreviationAsWordInName" files="BinaryWriter\.java$"/>
+    <suppress checks="AbbreviationAsWordInName" files="SegmentBinaryReader\.java$"/>
+    <suppress checks="AbbreviationAsWordInName" files="SegmentBinaryWriter\.java$"/>
+    <suppress checks="AbbreviationAsWordInName" files="VarFieldWriter\.java$"/>
+    <suppress checks="AbbreviationAsWordInName" files=".*Test\.java$"/>
+    
+    <!-- Allow pIndex/cIndex variable names in concurrent code (standard in lock-free algorithms) -->
+    <suppress checks="LocalVariableName" files="MpscRingBuffer\.java$"/>
+    
+    <!-- Allow NeedBraces in Utf8View for performance-critical single-line returns -->
+    <suppress checks="NeedBraces" files="Utf8View\.java$"/>
+    
+    <!-- Allow multiple variable declarations for cache-line padding fields -->
+    <suppress checks="MultipleVariableDeclarations" files="RingBufferImpl\.java$"/>
+    
+    <!-- Allow variable declaration distance in map implementations -->
+    <suppress checks="VariableDeclarationUsageDistance" files="OffHeapLongObjectMapImpl\.java$"/>
+    
+    <!-- JMH benchmarks - suppress Javadoc and star import requirements -->
+    <suppress checks="MissingJavadocType" files=".*/benchmarks/.*\.java$"/>
+    <suppress checks="MissingJavadocMethod" files=".*/benchmarks/.*\.java$"/>
+    <suppress checks="AvoidStarImport" files=".*/benchmarks/.*\.java$"/>
+</suppressions>

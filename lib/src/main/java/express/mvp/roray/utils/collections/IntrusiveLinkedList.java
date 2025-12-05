@@ -1,0 +1,33 @@
+package express.mvp.roray.utils.collections;
+
+import java.lang.foreign.MemorySegment;
+
+/**
+ * An intrusive linked list where the "next" pointer is stored within the element's memory.
+ *
+ * <p>This avoids allocating a Node wrapper for every element. The element is represented by a
+ * MemorySegment (or an offset within a segment).
+ */
+public interface IntrusiveLinkedList extends AutoCloseable {
+
+    /**
+     * Adds an element to the tail of the list.
+     *
+     * @param segment The memory segment representing the element.
+     */
+    void add(MemorySegment segment);
+
+    /**
+     * Removes and returns the head of the list.
+     *
+     * @return The memory segment of the head, or null if empty.
+     */
+    MemorySegment poll();
+
+    int size();
+
+    boolean isEmpty();
+
+    @Override
+    void close();
+}

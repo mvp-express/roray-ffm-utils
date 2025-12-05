@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE suppressions PUBLIC
+    "-//Checkstyle//DTD SuppressionFilter Configuration 1.2//EN"
+    "https://checkstyle.org/dtds/suppressions_1_2.dtd">
+
+<suppressions>
+    <!-- Suppress checks for generated code -->
+    <suppress files="[\\/]generated[\\/]" checks=".*"/>
+    <suppress files="[\\/]build[\\/]" checks=".*"/>
+    
+    <!-- Suppress checks for benchmark code (JMH has specific patterns) -->
+    <suppress files="[\\/]benchmarks[\\/]" checks="MissingJavadocMethod"/>
+    <suppress files="[\\/]benchmarks[\\/]" checks="MissingJavadocType"/>
+    
+    <!-- Suppress checks for test code -->
+    <suppress files="[\\/]test[\\/]" checks="MissingJavadocMethod"/>
+    <suppress files="[\\/]test[\\/]" checks="MissingJavadocType"/>
+</suppressions>

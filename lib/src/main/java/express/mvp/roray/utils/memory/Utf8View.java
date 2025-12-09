@@ -302,21 +302,22 @@ public final class Utf8View {
     /**
      * Validates that this view contains well-formed UTF-8 data.
      *
-     * <p>This method performs a complete validation of the UTF-8 byte sequence according to
-     * RFC 3629, checking for:
+     * <p>This method performs a complete validation of the UTF-8 byte sequence according to RFC
+     * 3629, checking for:
+     *
      * <ul>
-     *   <li>Valid UTF-8 byte sequence structure (correct leading and continuation bytes)</li>
-     *   <li>Overlong encodings (e.g., using 2 bytes for ASCII)</li>
-     *   <li>Surrogate code points (U+D800-U+DFFF) which are invalid in UTF-8</li>
-     *   <li>Code points beyond U+10FFFF</li>
-     *   <li>Incomplete multi-byte sequences</li>
+     *   <li>Valid UTF-8 byte sequence structure (correct leading and continuation bytes)
+     *   <li>Overlong encodings (e.g., using 2 bytes for ASCII)
+     *   <li>Surrogate code points (U+D800-U+DFFF) which are invalid in UTF-8
+     *   <li>Code points beyond U+10FFFF
+     *   <li>Incomplete multi-byte sequences
      * </ul>
      *
-     * <p><b>Performance:</b> This method is zero-allocation and O(n) in the byte length.
-     * For high-throughput scenarios where data is trusted, validation may be skipped.
+     * <p><b>Performance:</b> This method is zero-allocation and O(n) in the byte length. For
+     * high-throughput scenarios where data is trusted, validation may be skipped.
      *
-     * @return {@link ValidationResult#VALID} if the data is well-formed UTF-8,
-     *         or an error result indicating the type and position of the first error
+     * @return {@link ValidationResult#VALID} if the data is well-formed UTF-8, or an error result
+     *     indicating the type and position of the first error
      */
     public ValidationResult validateUtf8() {
         if (segment == null || length == 0) {
@@ -335,17 +336,20 @@ public final class Utf8View {
                 pos++;
             } else if (firstByte < 0xC0) {
                 // Continuation byte in wrong place (0x80-0xBF)
-                return ValidationResult.error(ValidationError.UNEXPECTED_CONTINUATION, pos - offset);
+                return ValidationResult.error(
+                        ValidationError.UNEXPECTED_CONTINUATION, pos - offset);
             } else if (firstByte < 0xE0) {
                 // 2-byte sequence (0xC0-0xDF)
                 if (pos + 1 >= endPos) {
-                    return ValidationResult.error(ValidationError.INCOMPLETE_SEQUENCE, pos - offset);
+                    return ValidationResult.error(
+                            ValidationError.INCOMPLETE_SEQUENCE, pos - offset);
                 }
                 byte b2 = segment.get(Layouts.BYTE, pos + 1);
 
                 // Check continuation byte
                 if ((b2 & 0xC0) != 0x80) {
-                    return ValidationResult.error(ValidationError.INVALID_CONTINUATION, pos - offset + 1);
+                    return ValidationResult.error(
+                            ValidationError.INVALID_CONTINUATION, pos - offset + 1);
                 }
 
                 // Check for overlong encoding (code points < 0x80 should use 1 byte)
@@ -358,17 +362,20 @@ public final class Utf8View {
             } else if (firstByte < 0xF0) {
                 // 3-byte sequence (0xE0-0xEF)
                 if (pos + 2 >= endPos) {
-                    return ValidationResult.error(ValidationError.INCOMPLETE_SEQUENCE, pos - offset);
+                    return ValidationResult.error(
+                            ValidationError.INCOMPLETE_SEQUENCE, pos - offset);
                 }
                 byte b2 = segment.get(Layouts.BYTE, pos + 1);
                 byte b3 = segment.get(Layouts.BYTE, pos + 2);
 
                 // Check continuation bytes
                 if ((b2 & 0xC0) != 0x80) {
-                    return ValidationResult.error(ValidationError.INVALID_CONTINUATION, pos - offset + 1);
+                    return ValidationResult.error(
+                            ValidationError.INVALID_CONTINUATION, pos - offset + 1);
                 }
                 if ((b3 & 0xC0) != 0x80) {
-                    return ValidationResult.error(ValidationError.INVALID_CONTINUATION, pos - offset + 2);
+                    return ValidationResult.error(
+                            ValidationError.INVALID_CONTINUATION, pos - offset + 2);
                 }
 
                 int codePoint = ((firstByte & 0x0F) << 12) | ((b2 & 0x3F) << 6) | (b3 & 0x3F);
@@ -380,14 +387,16 @@ public final class Utf8View {
 
                 // Check for surrogate code points (U+D800-U+DFFF are invalid in UTF-8)
                 if (codePoint >= 0xD800 && codePoint <= 0xDFFF) {
-                    return ValidationResult.error(ValidationError.SURROGATE_CODE_POINT, pos - offset);
+                    return ValidationResult.error(
+                            ValidationError.SURROGATE_CODE_POINT, pos - offset);
                 }
 
                 pos += 3;
             } else if (firstByte < 0xF8) {
                 // 4-byte sequence (0xF0-0xF7)
                 if (pos + 3 >= endPos) {
-                    return ValidationResult.error(ValidationError.INCOMPLETE_SEQUENCE, pos - offset);
+                    return ValidationResult.error(
+                            ValidationError.INCOMPLETE_SEQUENCE, pos - offset);
                 }
                 byte b2 = segment.get(Layouts.BYTE, pos + 1);
                 byte b3 = segment.get(Layouts.BYTE, pos + 2);
@@ -395,13 +404,16 @@ public final class Utf8View {
 
                 // Check continuation bytes
                 if ((b2 & 0xC0) != 0x80) {
-                    return ValidationResult.error(ValidationError.INVALID_CONTINUATION, pos - offset + 1);
+                    return ValidationResult.error(
+                            ValidationError.INVALID_CONTINUATION, pos - offset + 1);
                 }
                 if ((b3 & 0xC0) != 0x80) {
-                    return ValidationResult.error(ValidationError.INVALID_CONTINUATION, pos - offset + 2);
+                    return ValidationResult.error(
+                            ValidationError.INVALID_CONTINUATION, pos - offset + 2);
                 }
                 if ((b4 & 0xC0) != 0x80) {
-                    return ValidationResult.error(ValidationError.INVALID_CONTINUATION, pos - offset + 3);
+                    return ValidationResult.error(
+                            ValidationError.INVALID_CONTINUATION, pos - offset + 3);
                 }
 
                 int codePoint =
@@ -441,9 +453,7 @@ public final class Utf8View {
         return validateUtf8().isValid();
     }
 
-    /**
-     * Result of UTF-8 validation, containing error type and position if invalid.
-     */
+    /** Result of UTF-8 validation, containing error type and position if invalid. */
     public static final class ValidationResult {
         /** Singleton for valid UTF-8 data (zero allocation for the common case). */
         public static final ValidationResult VALID = new ValidationResult(null, -1);
@@ -456,23 +466,23 @@ public final class Utf8View {
             this.errorOffset = errorOffset;
         }
 
-        static ValidationResult error(ValidationError error, long offset) {
-            return new ValidationResult(error, offset);
-        }
-
-        /** Returns true if the UTF-8 data is valid. */
-        public boolean isValid() {
-            return error == null;
-        }
-
         /** Returns the error type, or null if valid. */
         public ValidationError error() {
             return error;
         }
 
+        static ValidationResult error(ValidationError error, long offset) {
+            return new ValidationResult(error, offset);
+        }
+
         /** Returns the byte offset of the error within the view, or -1 if valid. */
         public long errorOffset() {
             return errorOffset;
+        }
+
+        /** Returns true if the UTF-8 data is valid. */
+        public boolean isValid() {
+            return error == null;
         }
 
         @Override
@@ -484,9 +494,7 @@ public final class Utf8View {
         }
     }
 
-    /**
-     * Types of UTF-8 validation errors.
-     */
+    /** Types of UTF-8 validation errors. */
     public enum ValidationError {
         /** Continuation byte (0x80-0xBF) found where a leading byte was expected. */
         UNEXPECTED_CONTINUATION,

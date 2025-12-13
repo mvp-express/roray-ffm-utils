@@ -7,7 +7,7 @@
 
 ## Executive Summary
 
-The roray-ffm-utils library achieves **true zero-GC operation** during critical path operations. All 139 tests executed with only a single GC event at JVM initialization, with zero GC events during actual test execution.
+The roray-ffm library achieves **true zero-GC operation** during critical path operations. All 139 tests executed with only a single GC event at JVM initialization, with zero GC events during actual test execution.
 
 ## GC Activity Analysis
 
@@ -170,7 +170,7 @@ MemorySegmentPool production = new MemorySegmentPool(
 
 ## Conclusion
 
-**The roray-ffm-utils library achieves its zero-GC design goal.** All critical path operations—memory pooling, binary I/O, UTF-8 handling, message building, and bit manipulation—operate entirely in off-heap memory with zero garbage generation.
+**The roray-ffm library achieves its zero-GC design goal.** All critical path operations—memory pooling, binary I/O, UTF-8 handling, message building, and bit manipulation—operate entirely in off-heap memory with zero garbage generation.
 
 The single GC event observed during testing was attributable to JVM initialization and test framework overhead, not library operations. Production usage following the recommended patterns will maintain this zero-GC characteristic, enabling predictable sub-microsecond latencies even under sustained high-throughput workloads.
 

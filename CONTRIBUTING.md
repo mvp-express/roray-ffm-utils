@@ -56,10 +56,10 @@ For VS Code:
 ./gradlew test --info
 
 # Run a specific test class
-./gradlew test --tests "express.mvp.roray.utils.memory.MemorySegmentPoolTest"
+./gradlew test --tests "express.mvp.roray.ffm.utils.memory.MemorySegmentPoolTest"
 
 # Run a specific test method
-./gradlew test --tests "express.mvp.roray.utils.memory.MemorySegmentPoolTest.testAcquireAndRelease"
+./gradlew test --tests "express.mvp.roray.ffm.utils.memory.MemorySegmentPoolTest.testAcquireAndRelease"
 
 # Run tests matching a pattern
 ./gradlew test --tests "*BinaryWriter*"
@@ -208,9 +208,3 @@ Fixes #123
 - Use meaningful variable names
 - Add Javadoc for public APIs
 - Keep methods focused and small
-
----
-
-## Questions?
-
-Open a [GitHub Discussion](https://github.com/mvp-express/roray-ffm-utils/discussions) for questions or ideas.

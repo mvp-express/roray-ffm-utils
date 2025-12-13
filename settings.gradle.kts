@@ -11,6 +11,6 @@ plugins {
     id("org.gradle.toolchains.foojay-resolver-convention") version "1.0.0"
 }
 
-rootProject.name = "roray-ffm-utils"
+rootProject.name = "roray-ffm"
 include("lib")
 include("benchmarks")

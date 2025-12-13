@@ -13,7 +13,7 @@ plugins {
     checkstyle
 }
 
-group = "express.mvp.roray.utils.memory"
+group = "express.mvp"
 version = "0.1.0-SNAPSHOT"
 
 repositories {
@@ -111,6 +111,6 @@ tasks.withType<Test> {
 }
 
 tasks.jar {
-    archiveBaseName.set("roray-ffm-utils")
+    archiveBaseName.set("roray-ffm")
 }
 

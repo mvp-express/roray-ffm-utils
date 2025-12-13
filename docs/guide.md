@@ -1,6 +1,6 @@
 # Roray FFM Utils — Usage Guide
 
-This document explains how to use the public APIs in `roray-ffm-utils`. It assumes familiarity with the Java Foreign Function & Memory API introduced in Java 14 and refined in Java 22+. All examples compile against JDK 24+ with the preview FFM API enabled.
+This document explains how to use the public APIs in `roray-ffm`. It assumes familiarity with the Java Foreign Function & Memory API introduced in Java 14 and refined in Java 22+. All examples compile against JDK 24+ with the preview FFM API enabled.
 
 ## Prerequisites
 
@@ -15,7 +15,7 @@ This document explains how to use the public APIs in `roray-ffm-utils`. It assum
 
 ```kotlin
 dependencies {
-    implementation("express.mvp.roray.utils.memory:roray-ffm-utils:0.1.0-SNAPSHOT")
+    implementation("express.mvp:roray-ffm:0.1.0-SNAPSHOT")
 }
 ```
 
@@ -23,7 +23,7 @@ dependencies {
 
 ```groovy
 dependencies {
-    implementation 'express.mvp.roray.utils.memory:roray-ffm-utils:0.1.0-SNAPSHOT'
+    implementation 'express.mvp:roray-ffm:0.1.0-SNAPSHOT'
 }
 ```
 
@@ -31,8 +31,8 @@ dependencies {
 
 ```xml
 <dependency>
-    <groupId>express.mvp.roray.utils.memory</groupId>
-    <artifactId>roray-ffm-utils</artifactId>
+    <groupId>express.mvp</groupId>
+    <artifactId>roray-ffm</artifactId>
     <version>0.1.0-SNAPSHOT</version>
 </dependency>
 ```
@@ -849,13 +849,13 @@ Future work noted in `ToDo.md` includes vectorized copy/zero helpers, additional
 
 ---
 
-By following this guide, you can leverage `roray-ffm-utils` to build high-throughput, low-latency, GC-free pipelines on top of Java's Foreign Function & Memory API.
+By following this guide, you can leverage `roray-ffm` to build high-throughput, low-latency, GC-free pipelines on top of Java's Foreign Function & Memory API.
 
 ---
 
 ## FFM Function Utilities
 
-The `express.mvp.roray.utils.functions` package provides zero-overhead utilities for calling native functions via Java's Foreign Function & Memory API.
+The `express.mvp.roray.ffm.functions` package provides zero-overhead utilities for calling native functions via Java's Foreign Function & Memory API.
 
 > **Platform:** Linux x86_64 and ARM64 (LP64 data model only). These utilities are NOT compatible with Windows or 32-bit systems.
 

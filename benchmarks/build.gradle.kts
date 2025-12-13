@@ -3,7 +3,7 @@ plugins {
     id("me.champeau.jmh") version "0.7.3"
 }
 
-group = "express.mvp.roray.utils"
+group = "express.mvp"
 version = "0.1.0-SNAPSHOT"
 
 repositories {

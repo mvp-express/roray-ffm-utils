@@ -402,7 +402,7 @@ class SegmentBinaryReaderWriterTest {
 
         assertEquals((byte) 0x11, slice.get(ValueLayout.JAVA_BYTE, 0));
         assertEquals((byte) 0x44, slice.get(ValueLayout.JAVA_BYTE, 3));
-        assertEquals(4, reader.position());
+        assertEquals(4, reader.getPosition());
     }
 
     @Test
@@ -414,7 +414,7 @@ class SegmentBinaryReaderWriterTest {
     @Test
     void testReadSegment_LengthExceedsRemainingThrows() {
         reader.wrap(segment);
-        reader.position(segment.byteSize() - 4);
+        reader.setPosition(segment.byteSize() - 4);
         assertThrows(IndexOutOfBoundsException.class, () -> reader.readSegment(8));
     }
 
@@ -529,7 +529,7 @@ class SegmentBinaryReaderWriterTest {
         assertEquals(111, reader.readIntBE());
 
         reader.skip(4); // Skip the '222' value
-        assertEquals(8, reader.position());
+        assertEquals(8, reader.getPosition());
 
         assertEquals(333, reader.readIntBE());
     }
@@ -823,7 +823,7 @@ class SegmentBinaryReaderWriterTest {
         reader.readStringFixedLength(utf8View);
         assertTrue(utf8View.equalsString(testStr));
 
-        reader.position(fixedLengthPosition);
+        reader.setPosition(fixedLengthPosition);
         reader.readString(utf8View);
         assertTrue(utf8View.equalsString(testStr));
     }

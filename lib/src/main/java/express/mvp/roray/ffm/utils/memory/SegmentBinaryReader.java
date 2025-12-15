@@ -29,12 +29,12 @@ public final class SegmentBinaryReader implements BinaryReader {
     }
 
     @Override
-    public long position() {
+    public long getPosition() {
         return position;
     }
 
     @Override
-    public void position(long newPosition) {
+    public void setPosition(long newPosition) {
         if (newPosition < 0 || newPosition > segment.byteSize()) {
             throw new IndexOutOfBoundsException("New position is out of bounds");
         }
@@ -43,11 +43,11 @@ public final class SegmentBinaryReader implements BinaryReader {
 
     @Override
     public void skip(long bytesToSkip) {
-        position(this.position + bytesToSkip);
+        setPosition(this.position + bytesToSkip);
     }
 
     @Override
-    public long remaining() {
+    public long remainingBytes() {
         return segment.byteSize() - position;
     }
 
@@ -219,9 +219,9 @@ public final class SegmentBinaryReader implements BinaryReader {
         if (length < 0) {
             throw new IllegalArgumentException("String length cannot be negative: " + length);
         }
-        if (length > remaining()) {
+        if (length > remainingBytes()) {
             throw new IndexOutOfBoundsException(
-                    "String length " + length + " exceeds remaining bytes " + remaining());
+                    "String length " + length + " exceeds remaining bytes " + remainingBytes());
         }
 
         long start = this.position;
@@ -273,9 +273,9 @@ public final class SegmentBinaryReader implements BinaryReader {
         if (length < 0) {
             throw new IllegalArgumentException("String length cannot be negative: " + length);
         }
-        if (length > remaining()) {
+        if (length > remainingBytes()) {
             throw new IndexOutOfBoundsException(
-                    "String length " + length + " exceeds remaining bytes " + remaining());
+                    "String length " + length + " exceeds remaining bytes " + remainingBytes());
         }
 
         long start = this.position;
@@ -373,12 +373,12 @@ public final class SegmentBinaryReader implements BinaryReader {
             throw new IllegalArgumentException("Length cannot be negative: " + length);
         }
 
-        if (length > remaining()) {
+        if (length > remainingBytes()) {
             throw new IndexOutOfBoundsException(
                     "Cannot read "
                             + length
                             + " bytes, only "
-                            + remaining()
+                            + remainingBytes()
                             + " bytes remaining at position "
                             + position);
         }

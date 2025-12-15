@@ -50,7 +50,7 @@ tasks.register("aggregateJavadoc") {
             <!DOCTYPE html>
             <html>
             <head>
-                <title>Roray FFM Utils API Documentation</title>
+                <title>Roray FFM API Documentation</title>
                 <style>
                     body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; margin: 40px; }
                     h1 { color: #1a202c; }
@@ -61,7 +61,7 @@ tasks.register("aggregateJavadoc") {
                 </style>
             </head>
             <body>
-                <h1>Roray FFM Utils API Documentation</h1>
+                <h1>Roray FFM API Documentation</h1>
                 <ul>
                     ${subprojects.filter { it.layout.buildDirectory.dir("docs/javadoc").get().asFile.exists() }
                         .joinToString("\n") { "<li><a href=\"${it.name}/index.html\">${it.name}</a></li>" }}

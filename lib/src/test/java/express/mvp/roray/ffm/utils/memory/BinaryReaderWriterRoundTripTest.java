@@ -227,13 +227,13 @@ class BinaryReaderWriterRoundTripTest {
         writer.writeIntLE(222);
         writer.writeIntLE(333);
 
-        reader.position(0);
+        reader.setPosition(0);
         assertEquals(111, reader.readIntLE());
 
-        reader.position(4);
+        reader.setPosition(4);
         assertEquals(222, reader.readIntLE());
 
-        reader.position(0);
+        reader.setPosition(0);
         assertEquals(111, reader.readIntLE());
         assertEquals(222, reader.readIntLE());
         assertEquals(333, reader.readIntLE());

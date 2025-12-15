@@ -2,6 +2,7 @@ package express.mvp.roray.ffm.utils.memory;
 
 import java.lang.foreign.MemorySegment;
 import java.lang.foreign.ValueLayout;
+import java.nio.ByteBuffer;
 import java.nio.charset.StandardCharsets;
 
 /**
@@ -18,7 +19,10 @@ public final class Utf8View {
     private long offset;
     private int length; // length in bytes
 
-    /** Wraps a segment slice. This makes the view object point to the new data. */
+    /**
+     * Wraps the target segment slice at the specified offset & length. This makes the Utf8View
+     * object point to the wrapped data in a flyweight read pattern.
+     */
     public void wrap(MemorySegment segment, long offset, int length) {
         this.segment = segment;
         this.offset = offset;
@@ -26,7 +30,7 @@ public final class Utf8View {
     }
 
     /**
-     * Returns the underlying MemorySegment this view is wrapping.
+     * Returns the underlying MemorySegment this Utf8View object is wrapping.
      *
      * @return The MemorySegment, or null if not wrapped.
      */
@@ -63,7 +67,8 @@ public final class Utf8View {
 
     /**
      * The ONLY method that allocates a heap object. Use this only when you need to convert the view
-     * to a standard Java String (e.g., for logging).
+     * to a standard Java String (e.g., for logging). It will serialize the UTF-8 bytes into a new
+     * String. Hence, use sparingly on performance-critical paths.
      *
      * @return A new String object containing the data.
      */
@@ -72,9 +77,13 @@ public final class Utf8View {
         if (segment == null || length == 0) {
             return "";
         }
-        // This is the allocation point.
-        byte[] bytes = segment.asSlice(offset, length).toArray(ValueLayout.JAVA_BYTE);
-        return new String(bytes, StandardCharsets.UTF_8);
+        //        byte[] bytes = segment.asSlice(offset, length).toArray(ValueLayout.JAVA_BYTE);
+        //        return new String(bytes, StandardCharsets.UTF_8);
+
+        ByteBuffer bb =
+                segment.asSlice(offset, length)
+                        .asByteBuffer(); // view with position=0, limit=length
+        return StandardCharsets.UTF_8.decode(bb).toString();
     }
 
     /**
@@ -203,10 +212,18 @@ public final class Utf8View {
      * A zero-allocation method to compare this view with another Utf8View. Performs byte-by-byte
      * comparison without allocating any heap objects.
      *
+     * <p>Note the comparison rules for special cases: Returns false if the other Utf8View is null.
+     * Returns true if both views are invalid (null segment). Returns false if one view is invalid
+     * and the other is valid.
+     *
      * @param other The Utf8View to compare against.
      * @return true if the content is identical, false otherwise.
      */
     public boolean equals(Utf8View other) {
+
+        // TODO: need to think if this can be optimized for ASCII only data for HFT flows.
+        // need to consider SIMD/Vector API usage as well for even faster comparisons.
+
         if (other == null) {
             return false;
         }
@@ -242,6 +259,11 @@ public final class Utf8View {
      * Compares this view to another Utf8View lexicographically. Performs zero-allocation
      * byte-by-byte comparison.
      *
+     * <p>Note the comparison rules for special cases: Throws IllegalArgumentException if the other
+     * Utf8View is null. Considers two invalid views (null segments) as equal (returns 0). Returns
+     * -1 if this view is invalid and the other Utf8View is valid. Returns 1 if this view is valid
+     * and the other Utf8View is invalid.
+     *
      * @param other The Utf8View to compare against.
      * @return negative if this &lt; other, 0 if equal, positive if this &gt; other.
      * @throws IllegalArgumentException if other is null.
@@ -251,7 +273,6 @@ public final class Utf8View {
             throw new IllegalArgumentException("Cannot compare to null");
         }
 
-        // Handle invalid views
         if (segment == null && other.segment == null) {
             return 0;
         }
@@ -262,17 +283,16 @@ public final class Utf8View {
             return 1;
         }
 
-        // Byte-by-byte comparison up to the shorter length
         int minLength = Math.min(length, other.length);
-        for (int i = 0; i < minLength; i++) {
-            int b1 = segment.get(ValueLayout.JAVA_BYTE, offset + i) & 0xFF;
-            int b2 = other.segment.get(ValueLayout.JAVA_BYTE, other.offset + i) & 0xFF;
-            if (b1 != b2) {
-                return b1 - b2;
+        for (int position = 0; position < minLength; position++) {
+            int thisByte = segment.get(ValueLayout.JAVA_BYTE, offset + position) & 0xFF;
+            int otherByte =
+                    other.segment.get(ValueLayout.JAVA_BYTE, other.offset + position) & 0xFF;
+            if (thisByte != otherByte) {
+                return thisByte - otherByte;
             }
         }
 
-        // If all bytes match up to minLength, the longer one is greater
         return length - other.length;
     }
 

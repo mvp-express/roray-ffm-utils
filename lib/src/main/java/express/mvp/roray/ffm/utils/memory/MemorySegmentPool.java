@@ -82,13 +82,11 @@ public final class MemorySegmentPool {
     public MemorySegment acquire() {
         MemorySegment segment = pool.poll();
         if (segment != null) {
-            // Update metrics
             int inUse = currentlyInUse.incrementAndGet();
             updatePeakUsage(inUse);
             return segment;
         }
 
-        // Correct CAS loop for thread-safe growth
         for (; ; ) {
             int currentTotal = totalSegments.get();
             if (currentTotal >= maxPoolSize) {
@@ -96,7 +94,6 @@ public final class MemorySegmentPool {
                         "MemorySegmentPool is exhausted. Max size (" + maxPoolSize + ") reached.");
             }
             if (totalSegments.compareAndSet(currentTotal, currentTotal + 1)) {
-                // Update metrics
                 totalAllocations.incrementAndGet();
                 int inUse = currentlyInUse.incrementAndGet();
                 updatePeakUsage(inUse);
@@ -139,14 +136,32 @@ public final class MemorySegmentPool {
         }
     }
 
+    /**
+     * Returns the number of pooled segments that can be acquired immediately without forcing a new
+     * allocation.
+     *
+     * @return Available segment count.
+     */
     public int getAvailableCount() {
         return pool.size();
     }
 
+    /**
+     * Returns the total number of segments managed by this pool including both in-use and
+     * available.
+     *
+     * @return Total segment count.
+     */
     public int getTotalCount() {
         return totalSegments.get();
     }
 
+    /**
+     * Returns the configured capacity of each pooled segment (in bytes) so callers can size their
+     * payloads appropriately.
+     *
+     * @return Segment size in bytes.
+     */
     public long getSegmentSize() {
         return segmentSize;
     }

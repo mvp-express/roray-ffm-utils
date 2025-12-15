@@ -8,21 +8,19 @@ package express.mvp.roray.ffm.utils.memory;
 @SuppressWarnings("checkstyle:AbbreviationAsWordInName")
 public interface BinaryReader {
 
-    // --- Core Buffer Operations ---
-
     /** Gets the current read offset in bytes. */
-    long position();
+    long getPosition();
 
     /** Sets the current read offset in bytes. */
-    void position(long newPosition);
+    void setPosition(long newPosition);
 
     /** Skips a specified number of bytes. */
     void skip(long bytesToSkip);
 
     /** Gets the number of remaining readable bytes. */
-    long remaining();
+    long remainingBytes();
 
-    // --- Primitive Reading (Big Endian - Network Byte Order) ---
+    // Primitive Reading (Big Endian - Network Byte Order)
 
     byte readByte();
 
@@ -36,9 +34,9 @@ public interface BinaryReader {
 
     double readDoubleBE();
 
-    boolean readBoolean(); // Typically a single byte
+    boolean readBoolean();
 
-    // --- Primitive Reading (Little Endian) ---
+    // Primitive Reading (Little Endian)
 
     short readShortLE();
 
@@ -50,22 +48,21 @@ public interface BinaryReader {
 
     double readDoubleLE();
 
-    // --- Variable-Length Integer Reading ---
+    // Variable-Length Integer Reading
 
-    /** Reads a variable-length 32-bit integer (efficient for small numbers). */
+    /** Reads a variable-length 32-bit integer. */
     int readVarInt();
 
-    /** Reads a variable-length 64-bit integer (efficient for small numbers). */
+    /** Reads a variable-length 64-bit integer. */
     long readVarLong();
 
-    // --- String & Byte Array Reading (prefixed with a VarInt length) ---
+    // String & Byte Array Reading (prefixed with a VarInt length)
 
-    // String readString();
     void readString(Utf8View viewToPopulate);
 
     byte[] readBytes();
 
-    // --- Nullable Variants (prefixed with a presence byte) ---
+    // Nullable Variants (prefixed with a presence byte)
 
     Byte readNullableByte();
 
@@ -85,13 +82,9 @@ public interface BinaryReader {
 
     Double readNullableDoubleLE();
 
-    // ... etc for other types ...
-    // String readNullableString();
     boolean readNullableString(Utf8View viewToPopulate);
 
     byte[] readNullableBytes();
-
-    // --- Zero-Copy Bulk Reading ---
 
     /**
      * Reads a slice of the underlying data without copying it to the heap. This is a highly

@@ -11,13 +11,12 @@ import java.nio.ByteOrder;
  */
 public final class Layouts {
 
-    /** Private constructor to prevent instantiation. */
     private Layouts() {}
 
     public static final ValueLayout.OfByte BYTE = ValueLayout.JAVA_BYTE;
     public static final ValueLayout.OfBoolean BOOLEAN = ValueLayout.JAVA_BOOLEAN;
 
-    // --- Big Endian (Network Byte Order) ---
+    // Big Endian (Network Byte Order)
 
     public static final ValueLayout.OfShort SHORT_BE =
             (ValueLayout.OfShort)
@@ -35,7 +34,7 @@ public final class Layouts {
             (ValueLayout.OfDouble)
                     ValueLayout.JAVA_DOUBLE.withOrder(ByteOrder.BIG_ENDIAN).withByteAlignment(1);
 
-    // --- Little Endian ---
+    // Little Endian
 
     public static final ValueLayout.OfShort SHORT_LE =
             (ValueLayout.OfShort)

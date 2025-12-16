@@ -3,20 +3,24 @@ package express.mvp.roray.ffm.utils.memory;
 import java.lang.foreign.MemorySegment;
 
 /**
- * A high-performance, zero-copy BinaryReader implementation using MemorySegment. This class is
- * stateful and not thread-safe. A single instance should be used by a single thread at a time. It
- * can be reused by calling the wrap() method.
+ * A high-performance, zero-copy BinaryReader implementation using MemorySegment.
+ * This class is stateful and not thread-safe. A single instance should be used by a single
+ * thread at a time. It can be reused by calling the wrap() method.
  */
 public final class SegmentBinaryReader implements BinaryReader {
 
     private MemorySegment segment;
     private long position;
 
-    /** Creates a reader that is not yet backed by a segment. Call wrap() before use. */
-    public SegmentBinaryReader() {}
+    /**
+     * Creates a reader that is not yet backed by a segment. Call wrap() before use.
+     */
+    public SegmentBinaryReader() {
+    }
 
     /**
-     * Wraps a MemorySegment, preparing the reader for use and resetting its position. This allows a
+     * Wraps a MemorySegment, preparing the reader for use and resetting its
+     * position. This allows a
      * single reader instance to be reused for multiple segments.
      *
      * @param segment The segment to read from.
@@ -29,12 +33,12 @@ public final class SegmentBinaryReader implements BinaryReader {
     }
 
     @Override
-    public long position() {
+    public long getPosition() {
         return position;
     }
 
     @Override
-    public void position(long newPosition) {
+    public void setPosition(long newPosition) {
         if (newPosition < 0 || newPosition > segment.byteSize()) {
             throw new IndexOutOfBoundsException("New position is out of bounds");
         }
@@ -43,11 +47,11 @@ public final class SegmentBinaryReader implements BinaryReader {
 
     @Override
     public void skip(long bytesToSkip) {
-        position(this.position + bytesToSkip);
+        setPosition(this.position + bytesToSkip);
     }
 
     @Override
-    public long remaining() {
+    public long remainingBytes() {
         return segment.byteSize() - position;
     }
 
@@ -149,6 +153,15 @@ public final class SegmentBinaryReader implements BinaryReader {
         return value;
     }
 
+    /**
+     * Decodes a 64-bit integer using the Unsigned LEB128 (Little Endian Base 128)
+     * format.
+     *
+     * @return the decoded long value.
+     * @throws IllegalStateException if the variable-length value exceeds 10 bytes.
+     * @see <a href="https://en.wikipedia.org/wiki/LEB128#Unsigned_LEB128">Unsigned
+     *      LEB128</a>
+     */
     @Override
     public long readVarLong() {
         long value = 0;
@@ -165,50 +178,13 @@ public final class SegmentBinaryReader implements BinaryReader {
         return value;
     }
 
-    // @Override
-    // public String readString() {
-    // int length = readVarInt();
-    // if (length == 0)
-    // return "";
-
-    // // Your high-performance manual UTF-8 decoder
-    // StringBuilder sb = new StringBuilder();
-    // long endPos = position + length;
-
-    // while (position < endPos) {
-    // byte b1 = readByte();
-    // if ((b1 & 0x80) == 0) { // 1-byte ASCII
-    // sb.append((char) b1);
-    // } else if ((b1 & 0xE0) == 0xC0) { // 2-byte
-    // byte b2 = readByte();
-    // sb.append((char) (((b1 & 0x1F) << 6) | (b2 & 0x3F)));
-    // } else if ((b1 & 0xF0) == 0xE0) { // 3-byte
-    // byte b2 = readByte();
-    // byte b3 = readByte();
-    // sb.append((char) (((b1 & 0x0F) << 12) | ((b2 & 0x3F) << 6) | (b3 & 0x3F)));
-    // } else if ((b1 & 0xF8) == 0xF0) { // 4-byte (surrogate pair)
-    // byte b2 = readByte();
-    // byte b3 = readByte();
-    // byte b4 = readByte();
-    // int codePoint = ((b1 & 0x07) << 18) | ((b2 & 0x3F) << 12) | ((b3 & 0x3F) <<
-    // 6) | (b4 & 0x3F);
-    // sb.appendCodePoint(codePoint);
-    // }
-    // }
-    // return sb.toString();
-    // }
-
-    // @Override
-    // public String readNullableString() {
-    // return readBoolean() ? readString() : null;
-    // }
-
     /**
-     * Reads a VarInt-prefixed UTF-8 string into the provided Utf8View without allocating any
-     * objects on the heap.
+     * Reads a VarInt-prefixed UTF-8 string into the provided Utf8View without
+     * allocating any objects on the heap.
      *
-     * @param viewToPopulate A reusable view object that will be configured to point to the string
-     *     data within the reader's segment.
+     * @param viewToPopulate A reusable view object that will be configured to point
+     *                       to the string
+     *                       data within the reader's segment.
      */
     public void readString(Utf8View viewToPopulate) {
         if (viewToPopulate == null) {
@@ -219,9 +195,9 @@ public final class SegmentBinaryReader implements BinaryReader {
         if (length < 0) {
             throw new IllegalArgumentException("String length cannot be negative: " + length);
         }
-        if (length > remaining()) {
+        if (length > remainingBytes()) {
             throw new IndexOutOfBoundsException(
-                    "String length " + length + " exceeds remaining bytes " + remaining());
+                    "String length " + length + " exceeds remaining bytes " + remainingBytes());
         }
 
         long start = this.position;
@@ -237,30 +213,33 @@ public final class SegmentBinaryReader implements BinaryReader {
      * Reads a nullable, presence-bit prefixed UTF-8 string.
      *
      * @param viewToPopulate A reusable view object.
-     * @return true if the string was present (and the view was populated), false if the string was
-     *     null.
+     * @return true if the string was present (and the view was populated),
+     *         false if the string was null.
      */
     public boolean readNullableString(Utf8View viewToPopulate) {
         if (viewToPopulate == null) {
             throw new IllegalArgumentException("Utf8View cannot be null");
         }
-        if (!readBoolean()) { // Read the presence bit
-            return false; // Value is null
+        if (!readBoolean()) {
+            return false;
         }
         readString(viewToPopulate);
         return true;
     }
 
     /**
-     * Reads a fixed-length prefixed UTF-8 string into the provided Utf8View without allocating any
-     * objects on the heap. This method is the counterpart to {@link
+     * Reads a fixed-length prefixed UTF-8 string into the provided Utf8View without
+     * allocating any objects on the heap. This method is the counterpart to {@link
      * SegmentBinaryWriter#writeStringFixedLength(String)}.
      *
-     * <p><b>Wire format:</b> 4-byte big-endian length prefix followed by UTF-8 encoded bytes.
+     * <p>
+     * <b>Wire format:</b> 4-byte big-endian length prefix followed by UTF-8 encoded
+     * bytes.
      *
-     * @param viewToPopulate A reusable view object that will be configured to point to the string
-     *     data within the reader's segment.
-     * @throws IllegalArgumentException if viewToPopulate is null or length is negative
+     * @param viewToPopulate A reusable view object that will be configured to point
+     *                       to the string data within the reader's segment.
+     * @throws IllegalArgumentException  if viewToPopulate is null or length is
+     *                                   negative
      * @throws IndexOutOfBoundsException if string length exceeds remaining bytes
      * @see SegmentBinaryWriter#writeStringFixedLength(String)
      */
@@ -273,9 +252,9 @@ public final class SegmentBinaryReader implements BinaryReader {
         if (length < 0) {
             throw new IllegalArgumentException("String length cannot be negative: " + length);
         }
-        if (length > remaining()) {
+        if (length > remainingBytes()) {
             throw new IndexOutOfBoundsException(
-                    "String length " + length + " exceeds remaining bytes " + remaining());
+                    "String length " + length + " exceeds remaining bytes " + remainingBytes());
         }
 
         long start = this.position;
@@ -288,11 +267,12 @@ public final class SegmentBinaryReader implements BinaryReader {
     }
 
     /**
-     * Reads a nullable, presence-bit prefixed UTF-8 string with fixed-length encoding.
+     * Reads a nullable, presence-bit prefixed UTF-8 string with fixed-length
+     * encoding.
      *
      * @param viewToPopulate A reusable view object.
-     * @return true if the string was present (and the view was populated), false if the string was
-     *     null.
+     * @return true if the string was present (and the view was populated), false if
+     *         the string was null.
      * @see #readStringFixedLength(Utf8View)
      */
     public boolean readNullableStringFixedLength(Utf8View viewToPopulate) {
@@ -373,12 +353,12 @@ public final class SegmentBinaryReader implements BinaryReader {
             throw new IllegalArgumentException("Length cannot be negative: " + length);
         }
 
-        if (length > remaining()) {
+        if (length > remainingBytes()) {
             throw new IndexOutOfBoundsException(
                     "Cannot read "
                             + length
                             + " bytes, only "
-                            + remaining()
+                            + remainingBytes()
                             + " bytes remaining at position "
                             + position);
         }
@@ -449,11 +429,10 @@ public final class SegmentBinaryReader implements BinaryReader {
                     throw new IllegalArgumentException(
                             "Malformed UTF-8: invalid continuation byte");
                 }
-                int codePoint =
-                        ((b1 & 0x07) << 18)
-                                | ((b2 & 0x3F) << 12)
-                                | ((b3 & 0x3F) << 6)
-                                | (b4 & 0x3F);
+                int codePoint = ((b1 & 0x07) << 18)
+                        | ((b2 & 0x3F) << 12)
+                        | ((b3 & 0x3F) << 6)
+                        | (b4 & 0x3F);
                 if (codePoint < 0x10000 || codePoint > 0x10FFFF) {
                     throw new IllegalArgumentException("Malformed UTF-8: code point out of range");
                 }

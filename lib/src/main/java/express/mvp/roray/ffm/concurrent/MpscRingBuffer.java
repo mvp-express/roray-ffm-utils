@@ -23,7 +23,7 @@ import java.lang.invoke.VarHandle;
  *       models.
  * </ul>
  *
- * <p>This implementation is inspired by JCTools' MpscArrayQueue but built natively on Java 21+ FFM.
+ * <p>This implementation is inspired by JCTools' MpscArrayQueue but built natively on Java 22+ FFM.
  *
  * @param <E> the type of elements held in this buffer
  */

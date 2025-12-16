@@ -10,8 +10,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 /**
- * Comprehensive tests for Utf8View covering edge cases, zero-GC operations, comparison methods, and
- * UTF-8 validation.
+ * Utf8View tests covering edge cases, zero-GC operations, comparison methods, and UTF-8 validation.
  */
 class Utf8ViewTest {
 
@@ -53,7 +52,7 @@ class Utf8ViewTest {
 
     @Test
     void testEmptyString() {
-        MemorySegment segment = arena.allocate(1);
+        MemorySegment segment = arena.allocate(0);
         view1.wrap(segment, 0, 0);
 
         assertEquals("", view1.toString());

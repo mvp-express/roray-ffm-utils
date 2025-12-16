@@ -9,7 +9,9 @@ import java.lang.foreign.ValueLayout;
  *
  * <p>Not thread-safe. Designed for single-threaded hot paths.
  */
+@Deprecated("will implement a complete off-heap key,value map later")
 public class OffHeapLongObjectMapImpl<V> implements OffHeapLongObjectMap<V> {
+    // TODO: implement a complete off-heap key,value map later
 
     private static final byte FREE = 0;
     private static final byte OCCUPIED = 1;

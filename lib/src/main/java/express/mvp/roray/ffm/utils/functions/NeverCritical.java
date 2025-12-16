@@ -36,23 +36,7 @@ import java.lang.annotation.Target;
  *     "io_uring_wait_cqe", descriptor
  *     // NO critical option here - this blocks!
  * );
- *
- * // This handle CAN safely use critical mode (not annotated)
- * private static final MethodHandle io_uring_cq_ready = FACTORY.downcall(
- *     "io_uring_cq_ready", descriptor,
- *     Linker.Option.critical(false)  // Safe: just reads memory
- * );
  * }</pre>
- *
- * <h2>Static Analysis</h2>
- *
- * <p>For actual enforcement, consider using static analysis tools like:
- *
- * <ul>
- *   <li>Error Prone (custom BugChecker)
- *   <li>SpotBugs (custom detector)
- *   <li>Checker Framework (custom type system)
- * </ul>
  *
  * @see CriticalSafe
  */

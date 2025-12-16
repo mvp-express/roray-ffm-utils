@@ -6,8 +6,12 @@ import java.lang.foreign.ValueLayout;
 /**
  * An intrusive linked list implementation using off-heap memory segments.
  *
- * <p>This implementation uses the memory segment's own memory to store the next pointer, avoiding
+ * <p>
+ * This implementation uses the memory segment's own memory to store the next
+ * pointer, avoiding
  * separate node allocations.
+ * 
+ * <p>Not thread-safe. Designed for single-threaded hot paths.
  */
 public class IntrusiveLinkedListImpl implements IntrusiveLinkedList {
 
@@ -25,25 +29,22 @@ public class IntrusiveLinkedListImpl implements IntrusiveLinkedList {
     }
 
     @Override
-    public void add(MemorySegment segment) {
+    public boolean offer(MemorySegment segment) {
         long addr = segment.address();
         if (addr == 0) {
-            throw new IllegalArgumentException("Segment address is 0");
+            return false;
         }
-
-        // Set next pointer of new segment to 0 (NULL)
         segment.set(ValueLayout.JAVA_LONG, nextOffset, 0L);
-
         if (tail == 0) {
             head = addr;
             tail = addr;
         } else {
-            // Link current tail to new segment
             MemorySegment tailSeg = MemorySegment.ofAddress(tail).reinterpret(nextOffset + 8);
             tailSeg.set(ValueLayout.JAVA_LONG, nextOffset, addr);
             tail = addr;
         }
         size++;
+        return true;
     }
 
     @Override
@@ -53,7 +54,6 @@ public class IntrusiveLinkedListImpl implements IntrusiveLinkedList {
         }
 
         long currentHead = head;
-        // Read next pointer from current head
         MemorySegment headSeg = MemorySegment.ofAddress(currentHead).reinterpret(nextOffset + 8);
         long next = headSeg.get(ValueLayout.JAVA_LONG, nextOffset);
 
@@ -81,6 +81,5 @@ public class IntrusiveLinkedListImpl implements IntrusiveLinkedList {
 
     @Override
     public void close() {
-        // Nothing to close as we don't own the segments
     }
 }

@@ -7,8 +7,8 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * Marker annotation to document that a native function is safe to call with {@code
- * Linker.Option.critical(false)}.
+ * Marker annotation to document that a native function is safe to call with 
+ * {@code* Linker.Option.critical(true)}.
  *
  * <p>A function is safe for critical mode when it:
  *
@@ -20,9 +20,9 @@ import java.lang.annotation.Target;
  *   <li>Executes in bounded, short time
  * </ul>
  *
- * <p>Critical mode skips the thread state transition overhead (~10-20ns savings) but prevents the
- * JVM from reaching a safepoint during the call. Misusing critical mode with blocking calls can
- * cause GC pauses and deadlocks.
+ * <p>Critical mode skips the thread state transition overhead (~10-20ns savings) but
+ * prevents the JVM from reaching a safepoint during the call. 
+ * Misusing critical mode with blocking calls can cause GC pauses and deadlocks.
  *
  * <h2>Good Candidates for Critical Mode</h2>
  *
@@ -39,7 +39,7 @@ import java.lang.annotation.Target;
  * @CriticalSafe("Pure memory read, no syscall")
  * private static final MethodHandle io_uring_cq_ready = FACTORY.downcall(
  *     "io_uring_cq_ready", descriptor,
- *     Linker.Option.critical(false)
+ *     Linker.Option.critical(true)
  * );
  * }</pre>
  *

@@ -68,8 +68,7 @@ class OffHeapLongObjectMapTest {
     @Test
     void testCollisionHandling() {
         // This depends on implementation details (hash function), but we can try to force
-        // collisions
-        // or just add enough items to trigger probing.
+        // collisions or just add enough items to trigger probing.
         try (OffHeapLongObjectMap<Integer> map = new OffHeapLongObjectMapImpl<>(4)) {
             map.put(1L, 1);
             map.put(5L, 5); // If size is 4, 1 and 5 might collide (1 % 4 == 1, 5 % 4 == 1)

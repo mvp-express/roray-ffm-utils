@@ -9,9 +9,9 @@ import java.nio.charset.StandardCharsets;
  * A reusable, zero-allocation flyweight for viewing a UTF-8 encoded slice of a MemorySegment as a
  * String.
  *
- * <p>This object does NOT copy the string data. It holds a reference to the underlying segment. The
- * {@link #toString()} method is the only one that allocates a new String on the heap and should
- * only be used for debugging or moving data off the critical path.
+ * <p>This object does NOT copy the string data. It holds a reference to the underlying segment.
+ * The {@link #toString()} method is the only one that allocates a new String on the heap and
+ * should only be used for debugging or moving data off the critical path.
  */
 @SuppressWarnings("checkstyle:NeedBraces") // Single-line returns used for performance-critical code
 public final class Utf8View {

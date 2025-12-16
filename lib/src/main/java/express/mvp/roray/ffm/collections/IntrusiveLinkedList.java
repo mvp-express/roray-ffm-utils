@@ -7,6 +7,9 @@ import java.lang.foreign.MemorySegment;
  *
  * <p>This avoids allocating a Node wrapper for every element. The element is represented by a
  * MemorySegment (or an offset within a segment).
+ * 
+ * <p>Not thread-safe. Designed for single-threaded hot paths.
+ * 
  */
 public interface IntrusiveLinkedList extends AutoCloseable {
 
@@ -14,8 +17,9 @@ public interface IntrusiveLinkedList extends AutoCloseable {
      * Adds an element to the tail of the list.
      *
      * @param segment The memory segment representing the element.
+     * @return true if the element was added successfully.
      */
-    void add(MemorySegment segment);
+    boolean offer(MemorySegment segment);
 
     /**
      * Removes and returns the head of the list.

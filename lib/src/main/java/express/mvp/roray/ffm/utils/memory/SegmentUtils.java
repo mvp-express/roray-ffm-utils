@@ -1,26 +1,20 @@
 package express.mvp.roray.ffm.utils.memory;
 
-// import jdk.incubator.vector.ByteVector;
-// import jdk.incubator.vector.VectorSpecies;
-
 import java.lang.foreign.MemorySegment;
-// import java.lang.foreign.ValueLayout;
 import java.nio.ByteBuffer;
-// import java.nio.ByteOrder;
 import java.util.zip.CRC32;
 
 /**
- * A collection of stateless, high-performance utility methods for operating on {@link
- * MemorySegment}s.
+ * A collection of stateless, high-performance utility methods for operating on
+ * {@link MemorySegment}s.
  */
 public final class SegmentUtils {
 
-    /** Private constructor to prevent instantiation. */
     private SegmentUtils() {}
 
     /**
-     * Thread-local pool of CRC32 instances to avoid allocation on every checksum calculation. Each
-     * thread gets its own CRC32 instance, eliminating contention and GC pressure.
+     * Thread-local pool of CRC32 instances to avoid allocation on every checksum calculation.
+     * Each thread gets its own CRC32 instance, eliminating contention and GC pressure.
      */
     private static final ThreadLocal<CRC32> CRC32_POOL = ThreadLocal.withInitial(CRC32::new);
 

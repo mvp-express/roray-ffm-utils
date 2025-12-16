@@ -10,7 +10,7 @@ import org.junit.jupiter.api.Test;
 class IntrusiveLinkedListTest {
 
     @Test
-    void testAddAndPoll() {
+    void testOfferAndPoll() {
         try (Arena arena = Arena.ofConfined();
                 IntrusiveLinkedList list = new IntrusiveLinkedListImpl()) {
 
@@ -20,8 +20,8 @@ class IntrusiveLinkedListTest {
             MemorySegment seg2 = arena.allocate(16);
 
             // Use offset 0 for the 'next' pointer
-            list.add(seg1);
-            list.add(seg2);
+            assertTrue(list.offer(seg1));
+            assertTrue(list.offer(seg2));
 
             assertEquals(2, list.size());
             assertFalse(list.isEmpty());
@@ -47,14 +47,17 @@ class IntrusiveLinkedListTest {
             MemorySegment s2 = arena.allocate(8);
             MemorySegment s3 = arena.allocate(8);
 
-            list.add(s1);
+            assertTrue(list.offer(s1));
             assertEquals(s1.address(), list.poll().address());
             assertTrue(list.isEmpty());
 
-            list.add(s2);
-            list.add(s3);
+            assertTrue(list.offer(s2));
+            assertTrue(list.offer(s3));
             assertEquals(s2.address(), list.poll().address());
             assertEquals(s3.address(), list.poll().address());
+
+            assertNull(list.poll());
+            assertTrue(list.isEmpty());
         }
     }
 }

@@ -11,7 +11,7 @@
  * java.lang.foreign.FunctionDescriptor}, {@link java.lang.foreign.MemoryLayout}) that should be
  * stored in {@code static final} fields for optimal JIT performance.
  *
- * <h2>Core Utilities (Phase 1)</h2>
+ * <h2>Core Utilities</h2>
  *
  * <ul>
  *   <li>{@link express.mvp.roray.ffm.utils.functions.FunctionDescriptorBuilder} - Fluent builder
@@ -24,7 +24,7 @@
  *       stubs
  * </ul>
  *
- * <h2>Extended Utilities (Phase 2)</h2>
+ * <h2>Extended Utilities</h2>
  *
  * <ul>
  *   <li>{@link express.mvp.roray.ffm.utils.functions.ErrnoCapture} - Helper for capturing and

@@ -1,4 +1,4 @@
-package express.mvp.roray.ffm.collections;
+package express.mvp.roray.ffm.ds.list;
 
 import static org.junit.jupiter.api.Assertions.*;
 

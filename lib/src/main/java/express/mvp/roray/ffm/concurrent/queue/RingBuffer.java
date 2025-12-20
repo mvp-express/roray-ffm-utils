@@ -1,10 +1,13 @@
-package express.mvp.roray.ffm.collections;
+package express.mvp.roray.ffm.concurrent.queue;
 
 /**
  * A primitive int-based ring buffer (circular queue) backed by off-heap memory.
  *
- * <p>Designed for zero-allocation passing of indices (pointers) between threads. Implementations
- * should support Single-Producer/Single-Consumer (SPSC) or Multi-Producer/Multi-Consumer (MPMC)
+ * <p>
+ * Designed for zero-allocation passing of indices (pointers) between threads.
+ * Implementations
+ * should support Single-Producer/Single-Consumer (SPSC) or
+ * Multi-Producer/Multi-Consumer (MPMC)
  * semantics as needed.
  */
 public interface RingBuffer extends AutoCloseable {

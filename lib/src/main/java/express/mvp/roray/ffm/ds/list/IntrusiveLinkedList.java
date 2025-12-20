@@ -1,14 +1,18 @@
-package express.mvp.roray.ffm.collections;
+package express.mvp.roray.ffm.ds.list;
 
 import java.lang.foreign.MemorySegment;
 
 /**
- * An intrusive linked list where the "next" pointer is stored within the element's memory.
+ * An intrusive linked list where the "next" pointer is stored within the
+ * element's memory.
  *
- * <p>This avoids allocating a Node wrapper for every element. The element is represented by a
+ * <p>
+ * This avoids allocating a Node wrapper for every element. The element is
+ * represented by a
  * MemorySegment (or an offset within a segment).
  * 
- * <p>Not thread-safe. Designed for single-threaded hot paths.
+ * <p>
+ * Not thread-safe. Designed for single-threaded hot paths.
  * 
  */
 public interface IntrusiveLinkedList extends AutoCloseable {

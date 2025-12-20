@@ -1,4 +1,4 @@
-package express.mvp.roray.ffm.concurrent;
+package express.mvp.roray.ffm.concurrent.queue;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -100,7 +100,8 @@ class MpscRingBufferTest {
                 received.add(item);
                 count++;
             } else {
-                // If producers are done and queue is empty but we haven't got everything, something
+                // If producers are done and queue is empty but we haven't got everything,
+                // something
                 // is wrong
                 if (doneLatch.getCount() == 0 && queue.isEmpty()) {
                     // Give it a moment, maybe race condition in test logic?

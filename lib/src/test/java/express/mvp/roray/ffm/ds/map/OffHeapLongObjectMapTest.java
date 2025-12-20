@@ -1,4 +1,4 @@
-package express.mvp.roray.ffm.collections;
+package express.mvp.roray.ffm.ds.map;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -67,7 +67,8 @@ class OffHeapLongObjectMapTest {
 
     @Test
     void testCollisionHandling() {
-        // This depends on implementation details (hash function), but we can try to force
+        // This depends on implementation details (hash function), but we can try to
+        // force
         // collisions or just add enough items to trigger probing.
         try (OffHeapLongObjectMap<Integer> map = new OffHeapLongObjectMapImpl<>(4)) {
             map.put(1L, 1);

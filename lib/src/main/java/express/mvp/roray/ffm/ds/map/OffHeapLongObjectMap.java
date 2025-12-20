@@ -1,10 +1,14 @@
-package express.mvp.roray.ffm.collections;
+package express.mvp.roray.ffm.ds.map;
 
 /**
- * A primitive long-to-Object map backed by off-heap memory for the keys/structure.
+ * A primitive long-to-Object map backed by off-heap memory for the
+ * keys/structure.
  *
- * <p>Designed for zero-allocation lookups on hot paths. The keys are stored in off-heap memory
- * (MemorySegment). The values are stored in a standard Java Object array (on-heap).
+ * <p>
+ * Designed for zero-allocation lookups on hot paths. The keys are stored in
+ * off-heap memory
+ * (MemorySegment). The values are stored in a standard Java Object array
+ * (on-heap).
  *
  * @param <V> The value type.
  */

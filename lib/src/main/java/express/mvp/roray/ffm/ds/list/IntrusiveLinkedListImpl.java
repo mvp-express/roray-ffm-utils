@@ -1,4 +1,4 @@
-package express.mvp.roray.ffm.collections;
+package express.mvp.roray.ffm.ds.list;
 
 import java.lang.foreign.MemorySegment;
 import java.lang.foreign.ValueLayout;
@@ -11,7 +11,8 @@ import java.lang.foreign.ValueLayout;
  * pointer, avoiding
  * separate node allocations.
  * 
- * <p>Not thread-safe. Designed for single-threaded hot paths.
+ * <p>
+ * Not thread-safe. Designed for single-threaded hot paths.
  */
 public class IntrusiveLinkedListImpl implements IntrusiveLinkedList {
 

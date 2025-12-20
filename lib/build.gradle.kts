@@ -92,6 +92,9 @@ dependencies {
     // This dependency is used internally, and not exposed to consumers on their own compile classpath.
     implementation(libs.guava)
 
+    // SpotBugs annotations for null-safety documentation
+    compileOnly("com.github.spotbugs:spotbugs-annotations:4.8.6")
+
     testImplementation(platform("org.junit:junit-bom:5.10.0"))
     testImplementation("org.junit.jupiter:junit-jupiter")
 }

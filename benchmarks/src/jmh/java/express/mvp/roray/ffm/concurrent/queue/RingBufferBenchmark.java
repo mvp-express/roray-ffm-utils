@@ -1,4 +1,4 @@
-package express.mvp.roray.ffm.collections;
+package express.mvp.roray.ffm.concurrent.queue;
 
 import org.openjdk.jmh.annotations.*;
 import org.openjdk.jmh.infra.Blackhole;
@@ -14,12 +14,12 @@ import java.util.concurrent.TimeUnit;
 @Fork(1)
 public class RingBufferBenchmark {
 
-    @Param({"1024", "65536"})
+    @Param({ "1024", "65536" })
     int capacity;
 
     RingBuffer ringBuffer;
     ArrayBlockingQueue<Integer> jdkQueue;
-    
+
     // For JCTools comparison if we add it later
     // MpmcArrayQueue<Integer> jcQueue;
 
@@ -39,7 +39,7 @@ public class RingBufferBenchmark {
         // Single producer single consumer pattern in a loop
         // Note: This is a synthetic test. Real contention requires @Group threads.
         // Here we just test raw instruction overhead.
-        
+
         if (ringBuffer.offer(42)) {
             bh.consume(ringBuffer.poll());
         }

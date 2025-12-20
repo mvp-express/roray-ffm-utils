@@ -1,4 +1,4 @@
-package express.mvp.roray.ffm.concurrent;
+package express.mvp.roray.ffm.concurrent.queue;
 
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemorySegment;
@@ -7,23 +7,31 @@ import java.lang.invoke.MethodHandles;
 import java.lang.invoke.VarHandle;
 
 /**
- * A high-performance, lock-free, off-heap friendly Multi-Producer Single-Consumer (MPSC) ring
+ * A high-performance, lock-free, off-heap friendly Multi-Producer
+ * Single-Consumer (MPSC) ring
  * buffer.
  *
- * <p><b>Design Principles:</b>
+ * <p>
+ * <b>Design Principles:</b>
  *
  * <ul>
- *   <li><b>FFM-First:</b> Uses {@link MemorySegment} and {@link VarHandle} for safe, efficient
- *       memory access.
- *   <li><b>Zero-Allocation:</b> No objects allocated during {@link #offer(Object)} or {@link
- *       #poll()}.
- *   <li><b>False Sharing Protection:</b> Critical fields (producer/consumer indices) are padded to
- *       separate cache lines.
- *   <li><b>Mechanical Sympathy:</b> Optimized for modern CPU architectures with relaxed consistency
- *       models.
+ * <li><b>FFM-First:</b> Uses {@link MemorySegment} and {@link VarHandle} for
+ * safe, efficient
+ * memory access.
+ * <li><b>Zero-Allocation:</b> No objects allocated during
+ * {@link #offer(Object)} or {@link
+ * #poll()}.
+ * <li><b>False Sharing Protection:</b> Critical fields (producer/consumer
+ * indices) are padded to
+ * separate cache lines.
+ * <li><b>Mechanical Sympathy:</b> Optimized for modern CPU architectures with
+ * relaxed consistency
+ * models.
  * </ul>
  *
- * <p>This implementation is inspired by JCTools' MpscArrayQueue but built natively on Java 22+ FFM.
+ * <p>
+ * This implementation is inspired by JCTools' MpscArrayQueue but built natively
+ * on Java 22+ FFM.
  *
  * @param <E> the type of elements held in this buffer
  */
@@ -47,8 +55,8 @@ public final class MpscRingBuffer<E> implements AutoCloseable {
 
     // Offsets for cache line padding (assuming 64-byte cache lines)
     // Layout:
-    // [0-7]   producerIndex
-    // [8-63]  padding
+    // [0-7] producerIndex
+    // [8-63] padding
     // [64-71] producerLimit (cached consumer index for producers)
     // [72-127] padding
     // [128-135] consumerIndex
@@ -78,7 +86,8 @@ public final class MpscRingBuffer<E> implements AutoCloseable {
         this.mask = capacity - 1;
         this.buffer = new Object[capacity];
 
-        // Allocate off-heap memory for indices to ensure stable addresses and no GC interference
+        // Allocate off-heap memory for indices to ensure stable addresses and no GC
+        // interference
         this.arena = Arena.ofShared();
         this.state = arena.allocate(ALLOCATION_SIZE, 64); // 64-byte alignment
 
@@ -91,7 +100,8 @@ public final class MpscRingBuffer<E> implements AutoCloseable {
     /**
      * Offers an element to the queue.
      *
-     * <p>This method is thread-safe for multiple producers.
+     * <p>
+     * This method is thread-safe for multiple producers.
      *
      * @param e the element to offer (must not be null)
      * @return true if successful, false if the queue is full
@@ -140,7 +150,8 @@ public final class MpscRingBuffer<E> implements AutoCloseable {
     /**
      * Polls an element from the queue.
      *
-     * <p>This method is NOT thread-safe and must be called by a single consumer.
+     * <p>
+     * This method is NOT thread-safe and must be called by a single consumer.
      *
      * @return the element, or null if empty
      */

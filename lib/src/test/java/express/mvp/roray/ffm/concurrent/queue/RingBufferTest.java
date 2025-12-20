@@ -1,4 +1,4 @@
-package express.mvp.roray.ffm.collections;
+package express.mvp.roray.ffm.concurrent.queue;
 
 import static org.junit.jupiter.api.Assertions.*;
 

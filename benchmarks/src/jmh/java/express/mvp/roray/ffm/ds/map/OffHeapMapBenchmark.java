@@ -1,4 +1,4 @@
-package express.mvp.roray.ffm.collections;
+package express.mvp.roray.ffm.ds.map;
 
 import org.openjdk.jmh.annotations.*;
 import org.openjdk.jmh.infra.Blackhole;
@@ -16,13 +16,13 @@ import java.util.concurrent.TimeUnit;
 @Fork(1)
 public class OffHeapMapBenchmark {
 
-    @Param({"1024", "65536"})
+    @Param({ "1024", "65536" })
     int capacity;
 
     OffHeapLongIntMap offHeapMap;
     Map<Long, Integer> jdkMap;
     Map<Long, Integer> concurrentMap;
-    
+
     long key = 12345L;
 
     @Setup(Level.Trial)
@@ -30,12 +30,12 @@ public class OffHeapMapBenchmark {
         offHeapMap = new OffHeapLongIntMapImpl(capacity);
         jdkMap = new HashMap<>(capacity);
         concurrentMap = new ConcurrentHashMap<>(capacity);
-        
+
         // Pre-populate to avoid resize noise during benchmark
         for (int i = 0; i < capacity / 2; i++) {
             offHeapMap.put(i, i);
-            jdkMap.put((long)i, i);
-            concurrentMap.put((long)i, i);
+            jdkMap.put((long) i, i);
+            concurrentMap.put((long) i, i);
         }
     }
 
@@ -53,18 +53,18 @@ public class OffHeapMapBenchmark {
     public void testJdkMapGet(Blackhole bh) {
         bh.consume(jdkMap.get(key));
     }
-    
+
     @Benchmark
     public void testConcurrentMapGet(Blackhole bh) {
         bh.consume(concurrentMap.get(key));
     }
-    
+
     @Benchmark
     public void testOffHeapPut(Blackhole bh) {
         // Overwrite existing key to avoid resizing/full map issues in loop
         offHeapMap.put(key, 999);
     }
-    
+
     @Benchmark
     public void testJdkMapPut(Blackhole bh) {
         jdkMap.put(key, 999);

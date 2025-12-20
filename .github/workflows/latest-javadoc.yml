@@ -3,10 +3,6 @@ name: Build and Publish Latest Javadoc
 on:
   push:
     branches: [main]
-    paths:
-      - '**/*.java'
-      - 'build.gradle.kts'
-      - '**/build.gradle.kts'
   workflow_dispatch:
 
 permissions:
@@ -33,7 +29,7 @@ jobs:
         uses: gradle/actions/setup-gradle@v3
 
       - name: Generate Javadoc
-        run: ./gradlew aggregateJavadoc
+        run: ./gradlew --no-configuration-cache aggregateJavadoc
 
       - name: Publish latest Javadoc
         uses: peaceiris/actions-gh-pages@v4

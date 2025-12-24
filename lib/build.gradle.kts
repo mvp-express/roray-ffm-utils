@@ -11,10 +11,11 @@ plugins {
     alias(libs.plugins.spotless)
     alias(libs.plugins.spotbugs)
     checkstyle
+    id("com.vanniktech.maven.publish") version "0.35.0"
 }
 
 group = "express.mvp"
-version = "0.1.0-SNAPSHOT"
+version = "0.1.0"
 
 repositories {
     // Use Maven Central for resolving dependencies.
@@ -115,5 +116,45 @@ tasks.withType<Test> {
 
 tasks.jar {
     archiveBaseName.set("roray-ffm")
+}
+
+mavenPublishing {
+    publishToMavenCentral()
+    signAllPublications()
+
+    coordinates(
+        groupId = group.toString(),
+        artifactId = "roray-ffm",
+        version = version.toString(),
+    )
+
+    pom {
+        name.set("roray-ffm")
+        description.set("High-performance memory toolkit for Java's Foreign Function and Memory API.")
+        inceptionYear.set("2025")
+        url.set("https://github.com/mvp-express/roray-ffm-utils")
+
+        licenses {
+            license {
+                name.set("The Apache License, Version 2.0")
+                url.set("http://www.apache.org/licenses/LICENSE-2.0.txt")
+                distribution.set("http://www.apache.org/licenses/LICENSE-2.0.txt")
+            }
+        }
+
+        developers {
+            developer {
+                id.set("roray")
+                name.set("Rohan Ray")
+                email.set("roraydev@gmail.com")
+            }
+        }
+
+        scm {
+            url.set("https://github.com/mvp-express/roray-ffm-utils")
+            connection.set("scm:git:git://github.com/mvp-express/roray-ffm-utils.git")
+            developerConnection.set("scm:git:ssh://git@github.com/mvp-express/roray-ffm-utils.git")
+        }
+    }
 }
 

@@ -13,7 +13,7 @@ subprojects {
                 links("https://docs.oracle.com/en/java/javase/24/docs/api/")
                 addBooleanOption("Xdoclint:none", true)
                 header = "<b>Roray FFM Utils</b>"
-                bottom = "Copyright &#169; 2024-2025 MVP.Express. All rights reserved."
+                bottom = "Copyright &#169; 2025-2026 MVP.Express. All rights reserved."
             }
         }
     }

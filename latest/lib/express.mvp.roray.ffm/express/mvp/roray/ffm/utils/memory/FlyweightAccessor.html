@@ -81,7 +81,7 @@ loadScripts(document, 'script');</script>
 <div class="block">Defines the contract for a flyweight object.
 
 <p>A flyweight is a lightweight Java object that does not hold data itself. Instead, it wraps a
-<a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/foreign/MemorySegment.html" title="class or interface in java.lang.foreign" class="external-link"><code>MemorySegment</code></a> and provides structured accessor methods (getters/setters) that read from
+<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/MemorySegment.html" title="class or interface in java.lang.foreign" class="external-link"><code>MemorySegment</code></a> and provides structured accessor methods (getters/setters) that read from
 and write to the underlying memory at specific offsets. This enables zero-copy, object-oriented
 data manipulation.</div>
 </div>
@@ -109,7 +109,7 @@ data manipulation.</div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Checks if this flyweight is currently wrapped around a valid segment.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/foreign/MemorySegment.html" title="class or interface in java.lang.foreign" class="external-link">MemorySegment</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/MemorySegment.html" title="class or interface in java.lang.foreign" class="external-link">MemorySegment</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#segment()" class="member-name-link">segment</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns the underlying MemorySegment this flyweight is currently pointing to.</div>
@@ -120,7 +120,7 @@ data manipulation.</div>
 <div class="block">Validates that this flyweight is in a valid state (has a non-null segment).</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#wrap(java.lang.foreign.MemorySegment,long)" class="member-name-link">wrap</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/foreign/MemorySegment.html" title="class or interface in java.lang.foreign" class="external-link">MemorySegment</a>&nbsp;segment,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#wrap(java.lang.foreign.MemorySegment,long)" class="member-name-link">wrap</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/MemorySegment.html" title="class or interface in java.lang.foreign" class="external-link">MemorySegment</a>&nbsp;segment,
  long&nbsp;offset)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Wraps a memory segment at a specific offset to make this flyweight point to the underlying
@@ -149,7 +149,7 @@ data.</div>
 <section class="detail" id="wrap(java.lang.foreign.MemorySegment,long)">
 <h3>wrap</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">wrap</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/foreign/MemorySegment.html" title="class or interface in java.lang.foreign" class="external-link">MemorySegment</a>&nbsp;segment,
+<div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">wrap</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/MemorySegment.html" title="class or interface in java.lang.foreign" class="external-link">MemorySegment</a>&nbsp;segment,
  long&nbsp;offset)</span></div>
 <div class="block">Wraps a memory segment at a specific offset to make this flyweight point to the underlying
 data. This is the core method for reusing the flyweight object.</div>
@@ -165,7 +165,7 @@ data. This is the core method for reusing the flyweight object.</div>
 <section class="detail" id="segment()">
 <h3>segment</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/foreign/MemorySegment.html" title="class or interface in java.lang.foreign" class="external-link">MemorySegment</a></span>&nbsp;<span class="element-name">segment</span>()</div>
+<div class="member-signature"><span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/MemorySegment.html" title="class or interface in java.lang.foreign" class="external-link">MemorySegment</a></span>&nbsp;<span class="element-name">segment</span>()</div>
 <div class="block">Returns the underlying MemorySegment this flyweight is currently pointing to.</div>
 <dl class="notes">
 <dt>Returns:</dt>
@@ -222,7 +222,7 @@ known as the "block length".</div>
 <div class="block">Validates that this flyweight is in a valid state (has a non-null segment).</div>
 <dl class="notes">
 <dt>Throws:</dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/IllegalStateException.html" title="class or interface in java.lang" class="external-link">IllegalStateException</a></code> - if the flyweight is not wrapped.</dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/IllegalStateException.html" title="class or interface in java.lang" class="external-link">IllegalStateException</a></code> - if the flyweight is not wrapped.</dd>
 </dl>
 </div>
 </section>

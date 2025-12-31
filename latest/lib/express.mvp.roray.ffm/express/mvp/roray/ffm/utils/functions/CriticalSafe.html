@@ -77,12 +77,12 @@ loadScripts(document, 'script');</script>
 <section class="class-description" id="class-description">
 <hr>
 <div class="horizontal-scroll">
-<div class="type-signature"><span class="annotations"><a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/annotation/Documented.html" title="class or interface in java.lang.annotation" class="external-link">@Documented</a>
-<a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/annotation/Retention.html" title="class or interface in java.lang.annotation" class="external-link">@Retention</a>(<a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/annotation/RetentionPolicy.html#SOURCE" title="class or interface in java.lang.annotation" class="external-link">SOURCE</a>)
-<a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/annotation/Target.html" title="class or interface in java.lang.annotation" class="external-link">@Target</a>({<a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/annotation/ElementType.html#FIELD" title="class or interface in java.lang.annotation" class="external-link">FIELD</a>,<a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/annotation/ElementType.html#METHOD" title="class or interface in java.lang.annotation" class="external-link">METHOD</a>,<a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/annotation/ElementType.html#LOCAL_VARIABLE" title="class or interface in java.lang.annotation" class="external-link">LOCAL_VARIABLE</a>})
+<div class="type-signature"><span class="annotations"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/annotation/Documented.html" title="class or interface in java.lang.annotation" class="external-link">@Documented</a>
+<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/annotation/Retention.html" title="class or interface in java.lang.annotation" class="external-link">@Retention</a>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/annotation/RetentionPolicy.html#SOURCE" title="class or interface in java.lang.annotation" class="external-link">SOURCE</a>)
+<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/annotation/Target.html" title="class or interface in java.lang.annotation" class="external-link">@Target</a>({<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/annotation/ElementType.html#FIELD" title="class or interface in java.lang.annotation" class="external-link">FIELD</a>,<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/annotation/ElementType.html#METHOD" title="class or interface in java.lang.annotation" class="external-link">METHOD</a>,<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/annotation/ElementType.html#LOCAL_VARIABLE" title="class or interface in java.lang.annotation" class="external-link">LOCAL_VARIABLE</a>})
 </span><span class="modifiers">public @interface </span><span class="element-name type-name-label">CriticalSafe</span></div>
-<div class="block">Marker annotation to document that a native function is safe to call with 
-<code>* Linker.Option.critical(true)</code>.
+<div class="block">Marker annotation to document that a native function is safe to call with <code>*
+Linker.Option.critical(true)</code>.
 
 <p>A function is safe for critical mode when it:
 
@@ -94,9 +94,9 @@ loadScripts(document, 'script');</script>
   <li>Executes in bounded, short time
 </ul>
 
-<p>Critical mode skips the thread state transition overhead (~10-20ns savings) but
-prevents the JVM from reaching a safepoint during the call. 
-Misusing critical mode with blocking calls can cause GC pauses and deadlocks.
+<p>Critical mode skips the thread state transition overhead (~10-20ns savings) but prevents the
+JVM from reaching a safepoint during the call. Misusing critical mode with blocking calls can
+cause GC pauses and deadlocks.
 
 <h2 id="good-candidates-for-critical-mode-heading">Good Candidates for Critical Mode</h2>
 
@@ -136,7 +136,7 @@ private static final MethodHandle io_uring_cq_ready = FACTORY.downcall(
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Optional Element</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code><a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-first even-row-color"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second even-row-color"><code><a href="#value()" class="member-name-link">value</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Explanation of why this function is safe for critical mode.</div>
@@ -157,7 +157,7 @@ private static final MethodHandle io_uring_cq_ready = FACTORY.downcall(
 <section class="detail" id="value()">
 <h3>value</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">value</span></div>
+<div class="member-signature"><span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">value</span></div>
 <div class="block">Explanation of why this function is safe for critical mode.</div>
 <dl class="notes">
 <dt>Default:</dt>

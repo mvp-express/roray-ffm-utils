@@ -80,19 +80,19 @@ loadScripts(document, 'script');</script>
 <div class="header">
 <h1 title="Class PooledSegment" class="title">Class PooledSegment</h1>
 </div>
-<div class="inheritance" title="Inheritance Tree"><a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">java.lang.Object</a>
+<div class="inheritance" title="Inheritance Tree"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">java.lang.Object</a>
 <div class="inheritance">express.mvp.roray.ffm.utils.memory.PooledSegment</div>
 </div>
 <section class="class-description" id="class-description">
 <dl class="notes">
 <dt>All Implemented Interfaces:</dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/AutoCloseable.html" title="class or interface in java.lang" class="external-link">AutoCloseable</a></code></dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/AutoCloseable.html" title="class or interface in java.lang" class="external-link">AutoCloseable</a></code></dd>
 </dl>
 <hr>
 <div class="horizontal-scroll">
 <div class="type-signature"><span class="modifiers">public final class </span><span class="element-name type-name-label">PooledSegment</span>
-<span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>
-implements <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/AutoCloseable.html" title="class or interface in java.lang" class="external-link">AutoCloseable</a></span></div>
+<span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>
+implements <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/AutoCloseable.html" title="class or interface in java.lang" class="external-link">AutoCloseable</a></span></div>
 <div class="block">An AutoCloseable wrapper for a MemorySegment that automatically releases the segment back to its
 pool when used in a try-with-resources block.
 
@@ -130,7 +130,7 @@ segment is returned to the pool and may be reused by other code.
 <div class="summary-table two-column-summary">
 <div class="table-header col-first">Constructor</div>
 <div class="table-header col-last">Description</div>
-<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(java.lang.foreign.MemorySegment,express.mvp.roray.ffm.utils.memory.MemorySegmentPool)" class="member-name-link">PooledSegment</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/foreign/MemorySegment.html" title="class or interface in java.lang.foreign" class="external-link">MemorySegment</a>&nbsp;segment,
+<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(java.lang.foreign.MemorySegment,express.mvp.roray.ffm.utils.memory.MemorySegmentPool)" class="member-name-link">PooledSegment</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/MemorySegment.html" title="class or interface in java.lang.foreign" class="external-link">MemorySegment</a>&nbsp;segment,
  <a href="MemorySegmentPool.html" title="class in express.mvp.roray.ffm.utils.memory">MemorySegmentPool</a>&nbsp;pool)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 </div>
@@ -150,7 +150,7 @@ segment is returned to the pool and may be reused by other code.
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#close()" class="member-name-link">close</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/foreign/MemorySegment.html" title="class or interface in java.lang.foreign" class="external-link">MemorySegment</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/MemorySegment.html" title="class or interface in java.lang.foreign" class="external-link">MemorySegment</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#segment()" class="member-name-link">segment</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Gets the underlying MemorySegment.</div>
@@ -159,8 +159,8 @@ segment is returned to the pool and may be reused by other code.
 </div>
 </div>
 <div class="inherited-list">
-<h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;<a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/Object.html#method-summary" title="class or interface in java.lang" class="external-link">Object</a></h3>
-<code><a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
+<h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#method-summary" title="class or interface in java.lang" class="external-link">Object</a></h3>
+<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
 </section>
 </li>
 </ul>
@@ -176,7 +176,7 @@ segment is returned to the pool and may be reused by other code.
 <section class="detail" id="&lt;init&gt;(java.lang.foreign.MemorySegment,express.mvp.roray.ffm.utils.memory.MemorySegmentPool)">
 <h3>PooledSegment</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">PooledSegment</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/foreign/MemorySegment.html" title="class or interface in java.lang.foreign" class="external-link">MemorySegment</a>&nbsp;segment,
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">PooledSegment</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/MemorySegment.html" title="class or interface in java.lang.foreign" class="external-link">MemorySegment</a>&nbsp;segment,
  <a href="MemorySegmentPool.html" title="class in express.mvp.roray.ffm.utils.memory">MemorySegmentPool</a>&nbsp;pool)</span></div>
 </div>
 </section>
@@ -193,7 +193,7 @@ segment is returned to the pool and may be reused by other code.
 <section class="detail" id="segment()">
 <h3>segment</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/foreign/MemorySegment.html" title="class or interface in java.lang.foreign" class="external-link">MemorySegment</a></span>&nbsp;<span class="element-name">segment</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/MemorySegment.html" title="class or interface in java.lang.foreign" class="external-link">MemorySegment</a></span>&nbsp;<span class="element-name">segment</span>()</div>
 <div class="block">Gets the underlying MemorySegment.</div>
 </div>
 </section>
@@ -205,7 +205,7 @@ segment is returned to the pool and may be reused by other code.
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">close</span>()</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/AutoCloseable.html#close()" title="class or interface in java.lang" class="external-link">close</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/AutoCloseable.html" title="class or interface in java.lang" class="external-link">AutoCloseable</a></code></dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/AutoCloseable.html#close()" title="class or interface in java.lang" class="external-link">close</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/AutoCloseable.html" title="class or interface in java.lang" class="external-link">AutoCloseable</a></code></dd>
 </dl>
 </div>
 </section>

@@ -76,7 +76,7 @@ loadScripts(document, 'script');</script>
 <section class="class-description" id="class-description">
 <dl class="notes">
 <dt>All Superinterfaces:</dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/AutoCloseable.html" title="class or interface in java.lang" class="external-link">AutoCloseable</a></code></dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/AutoCloseable.html" title="class or interface in java.lang" class="external-link">AutoCloseable</a></code></dd>
 </dl>
 <dl class="notes">
 <dt>All Known Implementing Classes:</dt>
@@ -85,17 +85,13 @@ loadScripts(document, 'script');</script>
 <hr>
 <div class="horizontal-scroll">
 <div class="type-signature"><span class="modifiers">public interface </span><span class="element-name type-name-label">IntrusiveLinkedList</span><span class="extends-implements">
-extends <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/AutoCloseable.html" title="class or interface in java.lang" class="external-link">AutoCloseable</a></span></div>
-<div class="block">An intrusive linked list where the "next" pointer is stored within the
-element's memory.
+extends <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/AutoCloseable.html" title="class or interface in java.lang" class="external-link">AutoCloseable</a></span></div>
+<div class="block">An intrusive linked list where the "next" pointer is stored within the element's memory.
 
-<p>
-This avoids allocating a Node wrapper for every element. The element is
-represented by a
+<p>This avoids allocating a Node wrapper for every element. The element is represented by a
 MemorySegment (or an offset within a segment).
 
-<p>
-Not thread-safe. Designed for single-threaded hot paths.</div>
+<p>Not thread-safe. Designed for single-threaded hot paths.</div>
 </div>
 </section>
 <section class="summary">
@@ -118,11 +114,11 @@ Not thread-safe. Designed for single-threaded hot paths.</div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#isEmpty()" class="member-name-link">isEmpty</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#offer(java.lang.foreign.MemorySegment)" class="member-name-link">offer</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/foreign/MemorySegment.html" title="class or interface in java.lang.foreign" class="external-link">MemorySegment</a>&nbsp;segment)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#offer(java.lang.foreign.MemorySegment)" class="member-name-link">offer</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/MemorySegment.html" title="class or interface in java.lang.foreign" class="external-link">MemorySegment</a>&nbsp;segment)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Adds an element to the tail of the list.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/foreign/MemorySegment.html" title="class or interface in java.lang.foreign" class="external-link">MemorySegment</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/MemorySegment.html" title="class or interface in java.lang.foreign" class="external-link">MemorySegment</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#poll()" class="member-name-link">poll</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Removes and returns the head of the list.</div>
@@ -148,7 +144,7 @@ Not thread-safe. Designed for single-threaded hot paths.</div>
 <section class="detail" id="offer(java.lang.foreign.MemorySegment)">
 <h3>offer</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type">boolean</span>&nbsp;<span class="element-name">offer</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/foreign/MemorySegment.html" title="class or interface in java.lang.foreign" class="external-link">MemorySegment</a>&nbsp;segment)</span></div>
+<div class="member-signature"><span class="return-type">boolean</span>&nbsp;<span class="element-name">offer</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/MemorySegment.html" title="class or interface in java.lang.foreign" class="external-link">MemorySegment</a>&nbsp;segment)</span></div>
 <div class="block">Adds an element to the tail of the list.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
@@ -163,7 +159,7 @@ Not thread-safe. Designed for single-threaded hot paths.</div>
 <section class="detail" id="poll()">
 <h3>poll</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/foreign/MemorySegment.html" title="class or interface in java.lang.foreign" class="external-link">MemorySegment</a></span>&nbsp;<span class="element-name">poll</span>()</div>
+<div class="member-signature"><span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/MemorySegment.html" title="class or interface in java.lang.foreign" class="external-link">MemorySegment</a></span>&nbsp;<span class="element-name">poll</span>()</div>
 <div class="block">Removes and returns the head of the list.</div>
 <dl class="notes">
 <dt>Returns:</dt>
@@ -195,7 +191,7 @@ Not thread-safe. Designed for single-threaded hot paths.</div>
 <div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">close</span>()</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/AutoCloseable.html#close()" title="class or interface in java.lang" class="external-link">close</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/AutoCloseable.html" title="class or interface in java.lang" class="external-link">AutoCloseable</a></code></dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/AutoCloseable.html#close()" title="class or interface in java.lang" class="external-link">close</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/AutoCloseable.html" title="class or interface in java.lang" class="external-link">AutoCloseable</a></code></dd>
 </dl>
 </div>
 </section>

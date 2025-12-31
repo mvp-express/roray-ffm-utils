@@ -107,14 +107,14 @@ loadScripts(document, 'script');</script>
 <div class="header">
 <h1 title="Class ErrnoCapture" class="title">Class ErrnoCapture</h1>
 </div>
-<div class="inheritance" title="Inheritance Tree"><a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">java.lang.Object</a>
+<div class="inheritance" title="Inheritance Tree"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">java.lang.Object</a>
 <div class="inheritance">express.mvp.roray.ffm.utils.functions.ErrnoCapture</div>
 </div>
 <section class="class-description" id="class-description">
 <hr>
 <div class="horizontal-scroll">
 <div class="type-signature"><span class="modifiers">public final class </span><span class="element-name type-name-label">ErrnoCapture</span>
-<span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span></div>
+<span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span></div>
 <div class="block">Helper for capturing and interpreting <code>errno</code> from native calls.
 
 <p>When a native function fails, it typically returns -1 and sets <code>errno</code> to indicate the
@@ -308,15 +308,15 @@ try (Arena arena = Arena.ofConfined()) {
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/foreign/MemorySegment.html" title="class or interface in java.lang.foreign" class="external-link">MemorySegment</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#allocateCaptureState(java.lang.foreign.Arena)" class="member-name-link">allocateCaptureState</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/foreign/Arena.html" title="class or interface in java.lang.foreign" class="external-link">Arena</a>&nbsp;arena)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/MemorySegment.html" title="class or interface in java.lang.foreign" class="external-link">MemorySegment</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#allocateCaptureState(java.lang.foreign.Arena)" class="member-name-link">allocateCaptureState</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/Arena.html" title="class or interface in java.lang.foreign" class="external-link">Arena</a>&nbsp;arena)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Allocates a memory segment suitable for capturing call state.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/foreign/Linker.Option.html" title="class or interface in java.lang.foreign" class="external-link">Linker.Option</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/Linker.Option.html" title="class or interface in java.lang.foreign" class="external-link">Linker.Option</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#captureOption()" class="member-name-link">captureOption</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Returns the <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/foreign/Linker.Option.html" title="class or interface in java.lang.foreign" class="external-link"><code>Linker.Option</code></a> to capture errno.</div>
+<div class="block">Returns the <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/Linker.Option.html" title="class or interface in java.lang.foreign" class="external-link"><code>Linker.Option</code></a> to capture errno.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static long</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#captureStateSize()" class="member-name-link">captureStateSize</a>()</code></div>
@@ -324,11 +324,11 @@ try (Arena arena = Arena.ofConfined()) {
 <div class="block">Gets the size required for the capture state segment.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getErrno(java.lang.foreign.MemorySegment)" class="member-name-link">getErrno</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/foreign/MemorySegment.html" title="class or interface in java.lang.foreign" class="external-link">MemorySegment</a>&nbsp;capturedState)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getErrno(java.lang.foreign.MemorySegment)" class="member-name-link">getErrno</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/MemorySegment.html" title="class or interface in java.lang.foreign" class="external-link">MemorySegment</a>&nbsp;capturedState)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Extracts the errno value from a captured call state.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#strerror(int)" class="member-name-link">strerror</a><wbr>(int&nbsp;errno)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Returns a human-readable description of an errno value.</div>
@@ -337,8 +337,8 @@ try (Arena arena = Arena.ofConfined()) {
 </div>
 </div>
 <div class="inherited-list">
-<h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;<a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/Object.html#method-summary" title="class or interface in java.lang" class="external-link">Object</a></h3>
-<code><a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
+<h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#method-summary" title="class or interface in java.lang" class="external-link">Object</a></h3>
+<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
 </section>
 </li>
 </ul>
@@ -753,8 +753,8 @@ try (Arena arena = Arena.ofConfined()) {
 <section class="detail" id="captureOption()">
 <h3>captureOption</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/foreign/Linker.Option.html" title="class or interface in java.lang.foreign" class="external-link">Linker.Option</a></span>&nbsp;<span class="element-name">captureOption</span>()</div>
-<div class="block">Returns the <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/foreign/Linker.Option.html" title="class or interface in java.lang.foreign" class="external-link"><code>Linker.Option</code></a> to capture errno.
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/Linker.Option.html" title="class or interface in java.lang.foreign" class="external-link">Linker.Option</a></span>&nbsp;<span class="element-name">captureOption</span>()</div>
+<div class="block">Returns the <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/Linker.Option.html" title="class or interface in java.lang.foreign" class="external-link"><code>Linker.Option</code></a> to capture errno.
 
 <p>When this option is used, the resulting MethodHandle will have a <code>MemorySegment</code>
 prepended to its parameter list. This segment must be allocated using <a href="#allocateCaptureState(java.lang.foreign.Arena)"><code>allocateCaptureState(Arena)</code></a> before each invocation.</div>
@@ -769,7 +769,7 @@ prepended to its parameter list. This segment must be allocated using <a href="#
 <section class="detail" id="allocateCaptureState(java.lang.foreign.Arena)">
 <h3>allocateCaptureState</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/foreign/MemorySegment.html" title="class or interface in java.lang.foreign" class="external-link">MemorySegment</a></span>&nbsp;<span class="element-name">allocateCaptureState</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/foreign/Arena.html" title="class or interface in java.lang.foreign" class="external-link">Arena</a>&nbsp;arena)</span></div>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/MemorySegment.html" title="class or interface in java.lang.foreign" class="external-link">MemorySegment</a></span>&nbsp;<span class="element-name">allocateCaptureState</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/Arena.html" title="class or interface in java.lang.foreign" class="external-link">Arena</a>&nbsp;arena)</span></div>
 <div class="block">Allocates a memory segment suitable for capturing call state.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
@@ -797,7 +797,7 @@ prepended to its parameter list. This segment must be allocated using <a href="#
 <section class="detail" id="getErrno(java.lang.foreign.MemorySegment)">
 <h3>getErrno</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">getErrno</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/foreign/MemorySegment.html" title="class or interface in java.lang.foreign" class="external-link">MemorySegment</a>&nbsp;capturedState)</span></div>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">getErrno</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/MemorySegment.html" title="class or interface in java.lang.foreign" class="external-link">MemorySegment</a>&nbsp;capturedState)</span></div>
 <div class="block">Extracts the errno value from a captured call state.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
@@ -812,7 +812,7 @@ prepended to its parameter list. This segment must be allocated using <a href="#
 <section class="detail" id="strerror(int)">
 <h3>strerror</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">strerror</span><wbr><span class="parameters">(int&nbsp;errno)</span></div>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">strerror</span><wbr><span class="parameters">(int&nbsp;errno)</span></div>
 <div class="block">Returns a human-readable description of an errno value.</div>
 <dl class="notes">
 <dt>Parameters:</dt>

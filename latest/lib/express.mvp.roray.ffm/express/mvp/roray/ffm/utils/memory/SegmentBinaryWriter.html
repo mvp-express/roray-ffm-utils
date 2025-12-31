@@ -114,7 +114,7 @@ loadScripts(document, 'script');</script>
 <div class="header">
 <h1 title="Class SegmentBinaryWriter" class="title">Class SegmentBinaryWriter</h1>
 </div>
-<div class="inheritance" title="Inheritance Tree"><a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">java.lang.Object</a>
+<div class="inheritance" title="Inheritance Tree"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">java.lang.Object</a>
 <div class="inheritance">express.mvp.roray.ffm.utils.memory.SegmentBinaryWriter</div>
 </div>
 <section class="class-description" id="class-description">
@@ -125,13 +125,11 @@ loadScripts(document, 'script');</script>
 <hr>
 <div class="horizontal-scroll">
 <div class="type-signature"><span class="modifiers">public final class </span><span class="element-name type-name-label">SegmentBinaryWriter</span>
-<span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>
+<span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>
 implements <a href="BinaryWriter.html" title="interface in express.mvp.roray.ffm.utils.memory">BinaryWriter</a></span></div>
-<div class="block">A high-performance, zero-copy BinaryWriter implementation using
-MemorySegment. This class is
-stateful and not thread-safe. A single instance should be used by a single
-thread at a time.
-It can be reused by calling the wrap() method.</div>
+<div class="block">A high-performance, zero-copy BinaryWriter implementation using MemorySegment. This class is
+stateful and not thread-safe. A single instance should be used by a single thread at a time. It
+can be reused by calling the wrap() method.</div>
 </div>
 </section>
 <section class="summary">
@@ -181,10 +179,9 @@ It can be reused by calling the wrap() method.</div>
 <div class="block">Advances the writer's position by the given number of bytes.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="SegmentBinaryWriter.html" title="class in express.mvp.roray.ffm.utils.memory">SegmentBinaryWriter</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#wrap(java.lang.foreign.MemorySegment)" class="member-name-link">wrap</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/foreign/MemorySegment.html" title="class or interface in java.lang.foreign" class="external-link">MemorySegment</a>&nbsp;segment)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#wrap(java.lang.foreign.MemorySegment)" class="member-name-link">wrap</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/MemorySegment.html" title="class or interface in java.lang.foreign" class="external-link">MemorySegment</a>&nbsp;segment)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Wraps a MemorySegment, preparing the writer for use and resetting its
-position.</div>
+<div class="block">Wraps a MemorySegment, preparing the writer for use and resetting its position.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="BinaryWriter.html" title="interface in express.mvp.roray.ffm.utils.memory">BinaryWriter</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#writeBoolean(boolean)" class="member-name-link">writeBoolean</a><wbr>(boolean&nbsp;value)</code></div>
@@ -220,57 +217,57 @@ position.</div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#writeLongLE(long)" class="member-name-link">writeLongLE</a><wbr>(long&nbsp;value)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="BinaryWriter.html" title="interface in express.mvp.roray.ffm.utils.memory">BinaryWriter</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#writeNullableBoolean(java.lang.Boolean)" class="member-name-link">writeNullableBoolean</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/Boolean.html" title="class or interface in java.lang" class="external-link">Boolean</a>&nbsp;value)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#writeNullableBoolean(java.lang.Boolean)" class="member-name-link">writeNullableBoolean</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Boolean.html" title="class or interface in java.lang" class="external-link">Boolean</a>&nbsp;value)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="BinaryWriter.html" title="interface in express.mvp.roray.ffm.utils.memory">BinaryWriter</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#writeNullableByte(java.lang.Byte)" class="member-name-link">writeNullableByte</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/Byte.html" title="class or interface in java.lang" class="external-link">Byte</a>&nbsp;value)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#writeNullableByte(java.lang.Byte)" class="member-name-link">writeNullableByte</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Byte.html" title="class or interface in java.lang" class="external-link">Byte</a>&nbsp;value)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="BinaryWriter.html" title="interface in express.mvp.roray.ffm.utils.memory">BinaryWriter</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#writeNullableBytes(byte%5B%5D)" class="member-name-link">writeNullableBytes</a><wbr>(byte[]&nbsp;value)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="BinaryWriter.html" title="interface in express.mvp.roray.ffm.utils.memory">BinaryWriter</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#writeNullableDoubleBE(java.lang.Double)" class="member-name-link">writeNullableDoubleBE</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/Double.html" title="class or interface in java.lang" class="external-link">Double</a>&nbsp;value)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#writeNullableDoubleBE(java.lang.Double)" class="member-name-link">writeNullableDoubleBE</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Double.html" title="class or interface in java.lang" class="external-link">Double</a>&nbsp;value)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="BinaryWriter.html" title="interface in express.mvp.roray.ffm.utils.memory">BinaryWriter</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#writeNullableDoubleLE(java.lang.Double)" class="member-name-link">writeNullableDoubleLE</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/Double.html" title="class or interface in java.lang" class="external-link">Double</a>&nbsp;value)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#writeNullableDoubleLE(java.lang.Double)" class="member-name-link">writeNullableDoubleLE</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Double.html" title="class or interface in java.lang" class="external-link">Double</a>&nbsp;value)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="BinaryWriter.html" title="interface in express.mvp.roray.ffm.utils.memory">BinaryWriter</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#writeNullableFloatBE(java.lang.Float)" class="member-name-link">writeNullableFloatBE</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/Float.html" title="class or interface in java.lang" class="external-link">Float</a>&nbsp;value)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#writeNullableFloatBE(java.lang.Float)" class="member-name-link">writeNullableFloatBE</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Float.html" title="class or interface in java.lang" class="external-link">Float</a>&nbsp;value)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="BinaryWriter.html" title="interface in express.mvp.roray.ffm.utils.memory">BinaryWriter</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#writeNullableFloatLE(java.lang.Float)" class="member-name-link">writeNullableFloatLE</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/Float.html" title="class or interface in java.lang" class="external-link">Float</a>&nbsp;value)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#writeNullableFloatLE(java.lang.Float)" class="member-name-link">writeNullableFloatLE</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Float.html" title="class or interface in java.lang" class="external-link">Float</a>&nbsp;value)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="BinaryWriter.html" title="interface in express.mvp.roray.ffm.utils.memory">BinaryWriter</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#writeNullableIntBE(java.lang.Integer)" class="member-name-link">writeNullableIntBE</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/Integer.html" title="class or interface in java.lang" class="external-link">Integer</a>&nbsp;value)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#writeNullableIntBE(java.lang.Integer)" class="member-name-link">writeNullableIntBE</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Integer.html" title="class or interface in java.lang" class="external-link">Integer</a>&nbsp;value)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="BinaryWriter.html" title="interface in express.mvp.roray.ffm.utils.memory">BinaryWriter</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#writeNullableIntLE(java.lang.Integer)" class="member-name-link">writeNullableIntLE</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/Integer.html" title="class or interface in java.lang" class="external-link">Integer</a>&nbsp;value)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#writeNullableIntLE(java.lang.Integer)" class="member-name-link">writeNullableIntLE</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Integer.html" title="class or interface in java.lang" class="external-link">Integer</a>&nbsp;value)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="BinaryWriter.html" title="interface in express.mvp.roray.ffm.utils.memory">BinaryWriter</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#writeNullableLongBE(java.lang.Long)" class="member-name-link">writeNullableLongBE</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/Long.html" title="class or interface in java.lang" class="external-link">Long</a>&nbsp;value)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#writeNullableLongBE(java.lang.Long)" class="member-name-link">writeNullableLongBE</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Long.html" title="class or interface in java.lang" class="external-link">Long</a>&nbsp;value)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="BinaryWriter.html" title="interface in express.mvp.roray.ffm.utils.memory">BinaryWriter</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#writeNullableLongLE(java.lang.Long)" class="member-name-link">writeNullableLongLE</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/Long.html" title="class or interface in java.lang" class="external-link">Long</a>&nbsp;value)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#writeNullableLongLE(java.lang.Long)" class="member-name-link">writeNullableLongLE</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Long.html" title="class or interface in java.lang" class="external-link">Long</a>&nbsp;value)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="BinaryWriter.html" title="interface in express.mvp.roray.ffm.utils.memory">BinaryWriter</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#writeNullableShortBE(java.lang.Short)" class="member-name-link">writeNullableShortBE</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/Short.html" title="class or interface in java.lang" class="external-link">Short</a>&nbsp;value)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#writeNullableShortBE(java.lang.Short)" class="member-name-link">writeNullableShortBE</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Short.html" title="class or interface in java.lang" class="external-link">Short</a>&nbsp;value)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="BinaryWriter.html" title="interface in express.mvp.roray.ffm.utils.memory">BinaryWriter</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#writeNullableString(java.lang.String,java.lang.foreign.MemorySegment)" class="member-name-link">writeNullableString</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;value,
- <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/foreign/MemorySegment.html" title="class or interface in java.lang.foreign" class="external-link">MemorySegment</a>&nbsp;scratchBuffer)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#writeNullableString(java.lang.String,java.lang.foreign.MemorySegment)" class="member-name-link">writeNullableString</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;value,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/MemorySegment.html" title="class or interface in java.lang.foreign" class="external-link">MemorySegment</a>&nbsp;scratchBuffer)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="BinaryWriter.html" title="interface in express.mvp.roray.ffm.utils.memory">BinaryWriter</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#writeNullableStringFixedLength(java.lang.String)" class="member-name-link">writeNullableStringFixedLength</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;value)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#writeNullableStringFixedLength(java.lang.String)" class="member-name-link">writeNullableStringFixedLength</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;value)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Writes a nullable String using fixed-length encoding.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="BinaryWriter.html" title="interface in express.mvp.roray.ffm.utils.memory">BinaryWriter</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#writeSegment(java.lang.foreign.MemorySegment)" class="member-name-link">writeSegment</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/foreign/MemorySegment.html" title="class or interface in java.lang.foreign" class="external-link">MemorySegment</a>&nbsp;source)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#writeSegment(java.lang.foreign.MemorySegment)" class="member-name-link">writeSegment</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/MemorySegment.html" title="class or interface in java.lang.foreign" class="external-link">MemorySegment</a>&nbsp;source)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Writes all bytes from the source MemorySegment to this writer's underlying sink.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="BinaryWriter.html" title="interface in express.mvp.roray.ffm.utils.memory">BinaryWriter</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#writeSegmentRaw(java.lang.foreign.MemorySegment,long,long)" class="member-name-link">writeSegmentRaw</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/foreign/MemorySegment.html" title="class or interface in java.lang.foreign" class="external-link">MemorySegment</a>&nbsp;source,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#writeSegmentRaw(java.lang.foreign.MemorySegment,long,long)" class="member-name-link">writeSegmentRaw</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/MemorySegment.html" title="class or interface in java.lang.foreign" class="external-link">MemorySegment</a>&nbsp;source,
  long&nbsp;offset,
  long&nbsp;length)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
@@ -283,18 +280,17 @@ position.</div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#writeShortLE(short)" class="member-name-link">writeShortLE</a><wbr>(short&nbsp;value)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="BinaryWriter.html" title="interface in express.mvp.roray.ffm.utils.memory">BinaryWriter</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#writeString(java.lang.String,java.lang.foreign.MemorySegment)" class="member-name-link">writeString</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;value,
- <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/foreign/MemorySegment.html" title="class or interface in java.lang.foreign" class="external-link">MemorySegment</a>&nbsp;scratchBuffer)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#writeString(java.lang.String,java.lang.foreign.MemorySegment)" class="member-name-link">writeString</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;value,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/MemorySegment.html" title="class or interface in java.lang.foreign" class="external-link">MemorySegment</a>&nbsp;scratchBuffer)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Encodes and writes a String with zero heap allocations by using a provided
-off-heap scratch
+<div class="block">Encodes and writes a String with zero heap allocations by using a provided off-heap scratch
 buffer for the UTF-8 encoding process.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="BinaryWriter.html" title="interface in express.mvp.roray.ffm.utils.memory">BinaryWriter</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#writeStringFixedLength(java.lang.String)" class="member-name-link">writeStringFixedLength</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;value)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#writeStringFixedLength(java.lang.String)" class="member-name-link">writeStringFixedLength</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;value)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Writes a String using single-pass UTF-8 encoding directly to the target
-buffer with a fixed 4-byte big-endian length prefix.</div>
+<div class="block">Writes a String using single-pass UTF-8 encoding directly to the target buffer with a fixed
+4-byte big-endian length prefix.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="BinaryWriter.html" title="interface in express.mvp.roray.ffm.utils.memory">BinaryWriter</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#writeVarInt(int)" class="member-name-link">writeVarInt</a><wbr>(int&nbsp;value)</code></div>
@@ -320,8 +316,8 @@ buffer with a fixed 4-byte big-endian length prefix.</div>
 </div>
 </div>
 <div class="inherited-list">
-<h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;<a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/Object.html#method-summary" title="class or interface in java.lang" class="external-link">Object</a></h3>
-<code><a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
+<h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#method-summary" title="class or interface in java.lang" class="external-link">Object</a></h3>
+<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
 </section>
 </li>
 </ul>
@@ -353,9 +349,8 @@ buffer with a fixed 4-byte big-endian length prefix.</div>
 <section class="detail" id="wrap(java.lang.foreign.MemorySegment)">
 <h3>wrap</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="SegmentBinaryWriter.html" title="class in express.mvp.roray.ffm.utils.memory">SegmentBinaryWriter</a></span>&nbsp;<span class="element-name">wrap</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/foreign/MemorySegment.html" title="class or interface in java.lang.foreign" class="external-link">MemorySegment</a>&nbsp;segment)</span></div>
-<div class="block">Wraps a MemorySegment, preparing the writer for use and resetting its
-position.</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="SegmentBinaryWriter.html" title="class in express.mvp.roray.ffm.utils.memory">SegmentBinaryWriter</a></span>&nbsp;<span class="element-name">wrap</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/MemorySegment.html" title="class or interface in java.lang.foreign" class="external-link">MemorySegment</a>&nbsp;segment)</span></div>
+<div class="block">Wraps a MemorySegment, preparing the writer for use and resetting its position.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>segment</code> - The segment to write to.</dd>
@@ -423,7 +418,7 @@ position.</div>
 <section class="detail" id="writeNullableByte(java.lang.Byte)">
 <h3>writeNullableByte</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="BinaryWriter.html" title="interface in express.mvp.roray.ffm.utils.memory">BinaryWriter</a></span>&nbsp;<span class="element-name">writeNullableByte</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/Byte.html" title="class or interface in java.lang" class="external-link">Byte</a>&nbsp;value)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="BinaryWriter.html" title="interface in express.mvp.roray.ffm.utils.memory">BinaryWriter</a></span>&nbsp;<span class="element-name">writeNullableByte</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Byte.html" title="class or interface in java.lang" class="external-link">Byte</a>&nbsp;value)</span></div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="BinaryWriter.html#writeNullableByte(java.lang.Byte)">writeNullableByte</a></code>&nbsp;in interface&nbsp;<code><a href="BinaryWriter.html" title="interface in express.mvp.roray.ffm.utils.memory">BinaryWriter</a></code></dd>
@@ -560,18 +555,14 @@ position.</div>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="BinaryWriter.html" title="interface in express.mvp.roray.ffm.utils.memory">BinaryWriter</a></span>&nbsp;<span class="element-name">writeVarIntFast</span><wbr><span class="parameters">(int&nbsp;value)</span></div>
 <div class="block">Writes a variable-length integer using an optimized batch-write strategy.
 
-<p>
-This method pre-computes all VarInt bytes and writes them in a single memory
-operation using a 64-bit write, avoiding the per-byte overhead of the
-standard
-<a href="#writeVarInt(int)"><code>writeVarInt(int)</code></a> method.
+<p>This method pre-computes all VarInt bytes and writes them in a single memory operation
+using a 64-bit write, avoiding the per-byte overhead of the standard <a href="#writeVarInt(int)"><code>writeVarInt(int)</code></a>
+method.
 
-<p>
-<b>Performance:</b> Approximately 5-10% faster than <a href="#writeVarInt(int)"><code>writeVarInt(int)</code></a> for
-typical values by reducing memory operation count from 1-5 to exactly 1.
+<p><b>Performance:</b> Approximately 5-10% faster than <a href="#writeVarInt(int)"><code>writeVarInt(int)</code></a> for typical
+values by reducing memory operation count from 1-5 to exactly 1.
 
-<p>
-<b>Wire format:</b> Identical to <a href="#writeVarInt(int)"><code>writeVarInt(int)</code></a> - fully compatible.</div>
+<p><b>Wire format:</b> Identical to <a href="#writeVarInt(int)"><code>writeVarInt(int)</code></a> - fully compatible.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>value</code> - The integer value to encode as VarInt.</dd>
@@ -594,10 +585,8 @@ typical values by reducing memory operation count from 1-5 to exactly 1.
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="BinaryWriter.html" title="interface in express.mvp.roray.ffm.utils.memory">BinaryWriter</a></span>&nbsp;<span class="element-name">writeVarLongFast</span><wbr><span class="parameters">(long&nbsp;value)</span></div>
 <div class="block">Writes a variable-length long using an optimized batch-write strategy.
 
-<p>
-This method pre-computes all VarLong bytes and writes them in batched memory
-operations, avoiding the per-byte overhead of the standard
-<a href="#writeVarLong(long)"><code>writeVarLong(long)</code></a> method.</div>
+<p>This method pre-computes all VarLong bytes and writes them in batched memory operations,
+avoiding the per-byte overhead of the standard <a href="#writeVarLong(long)"><code>writeVarLong(long)</code></a> method.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>value</code> - The long value to encode as VarLong.</dd>
@@ -631,57 +620,45 @@ operations, avoiding the per-byte overhead of the standard
 <section class="detail" id="writeString(java.lang.String,java.lang.foreign.MemorySegment)">
 <h3>writeString</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="BinaryWriter.html" title="interface in express.mvp.roray.ffm.utils.memory">BinaryWriter</a></span>&nbsp;<span class="element-name">writeString</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;value,
- <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/foreign/MemorySegment.html" title="class or interface in java.lang.foreign" class="external-link">MemorySegment</a>&nbsp;scratchBuffer)</span></div>
-<div class="block">Encodes and writes a String with zero heap allocations by using a provided
-off-heap scratch
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="BinaryWriter.html" title="interface in express.mvp.roray.ffm.utils.memory">BinaryWriter</a></span>&nbsp;<span class="element-name">writeString</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;value,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/MemorySegment.html" title="class or interface in java.lang.foreign" class="external-link">MemorySegment</a>&nbsp;scratchBuffer)</span></div>
+<div class="block">Encodes and writes a String with zero heap allocations by using a provided off-heap scratch
 buffer for the UTF-8 encoding process.
 
-<p>
-This method uses a <b>two-pass encoding strategy</b>:
+<p>This method uses a <b>two-pass encoding strategy</b>:
 
 <ol>
-<li>First pass: Encode UTF-8 bytes into the scratch buffer to determine exact
-byte length
-<li>Second pass: Write VarInt length prefix, then copy encoded bytes to
-target segment
+  <li>First pass: Encode UTF-8 bytes into the scratch buffer to determine exact byte length
+  <li>Second pass: Write VarInt length prefix, then copy encoded bytes to target segment
 </ol>
 
-<p>
-<b>Wire format:</b> VarInt length prefix (1-5 bytes) followed by UTF-8
-encoded bytes.
+<p><b>Wire format:</b> VarInt length prefix (1-5 bytes) followed by UTF-8 encoded bytes.
 
-<p>
-<b>Trade-offs:</b>
+<p><b>Trade-offs:</b>
 
 <ul>
-<li>Pro: Compact wire format (VarInt uses 1 byte for strings &lt; 128 bytes)
-<li>Pro: Compatible with standard wire protocols
-<li>Con: Requires scratch buffer allocation/management
-<li>Con: Two memory operations (encode + copy)
+  <li>Pro: Compact wire format (VarInt uses 1 byte for strings &lt; 128 bytes)
+  <li>Pro: Compatible with standard wire protocols
+  <li>Con: Requires scratch buffer allocation/management
+  <li>Con: Two memory operations (encode + copy)
 </ul>
 
-<p>
-<b>Alternative:</b> For maximum encode performance when a fixed-size length
-prefix is
-acceptable, use <a href="#writeStringFixedLength(java.lang.String)"><code>writeStringFixedLength(String)</code></a> which encodes
-directly to the target
+<p><b>Alternative:</b> For maximum encode performance when a fixed-size length prefix is
+acceptable, use <a href="#writeStringFixedLength(java.lang.String)"><code>writeStringFixedLength(String)</code></a> which encodes directly to the target
 buffer in a single pass (approximately 15-25% faster for typical strings).</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="BinaryWriter.html#writeString(java.lang.String,java.lang.foreign.MemorySegment)">writeString</a></code>&nbsp;in interface&nbsp;<code><a href="BinaryWriter.html" title="interface in express.mvp.roray.ffm.utils.memory">BinaryWriter</a></code></dd>
 <dt>Parameters:</dt>
 <dd><code>value</code> - The String to write. Must not be null.</dd>
-<dd><code>scratchBuffer</code> - An off-heap MemorySegment used for temporary encoding.
-                     Its size must be
-                     sufficient to hold the string's UTF-8 bytes (worst case:
-                     3 bytes per char for BMP, 4
-                     bytes for supplementary characters).</dd>
+<dd><code>scratchBuffer</code> - An off-heap MemorySegment used for temporary encoding. Its size must be
+    sufficient to hold the string's UTF-8 bytes (worst case: 3 bytes per char for BMP, 4
+    bytes for supplementary characters).</dd>
 <dt>Returns:</dt>
 <dd>This writer instance, for chaining.</dd>
 <dt>Throws:</dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/IllegalArgumentException.html" title="class or interface in java.lang" class="external-link">IllegalArgumentException</a></code> - if value or scratchBuffer is null, or if
-                                 scratch buffer is too small</dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/IllegalArgumentException.html" title="class or interface in java.lang" class="external-link">IllegalArgumentException</a></code> - if value or scratchBuffer is null, or if scratch buffer is
+    too small</dd>
 <dt>See Also:</dt>
 <dd>
 <ul class="tag-list">
@@ -696,43 +673,36 @@ buffer in a single pass (approximately 15-25% faster for typical strings).</div>
 <section class="detail" id="writeStringFixedLength(java.lang.String)">
 <h3>writeStringFixedLength</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="BinaryWriter.html" title="interface in express.mvp.roray.ffm.utils.memory">BinaryWriter</a></span>&nbsp;<span class="element-name">writeStringFixedLength</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;value)</span></div>
-<div class="block">Writes a String using single-pass UTF-8 encoding directly to the target
-buffer with a fixed 4-byte big-endian length prefix.
-This method achieves maximum encoding performance by
-eliminating the scratch buffer and intermediate copy required by
-<a href="#writeString(java.lang.String,java.lang.foreign.MemorySegment)"><code>writeString(String, MemorySegment)</code></a>.
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="BinaryWriter.html" title="interface in express.mvp.roray.ffm.utils.memory">BinaryWriter</a></span>&nbsp;<span class="element-name">writeStringFixedLength</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;value)</span></div>
+<div class="block">Writes a String using single-pass UTF-8 encoding directly to the target buffer with a fixed
+4-byte big-endian length prefix. This method achieves maximum encoding performance by
+eliminating the scratch buffer and intermediate copy required by <a href="#writeString(java.lang.String,java.lang.foreign.MemorySegment)"><code>writeString(String, MemorySegment)</code></a>.
 
-<p>
-<b>Wire format:</b> Fixed 4-byte big-endian length prefix followed by UTF-8
-encoded bytes.
+<p><b>Wire format:</b> Fixed 4-byte big-endian length prefix followed by UTF-8 encoded bytes.
 
-<p>
-<b>Algorithm:</b>
+<p><b>Algorithm:</b>
 
 <ol>
-<li>Reserve 4 bytes for length prefix at current position
-<li>Encode UTF-8 bytes directly to target segment with bounds checking
-<li>Write actual byte length back to reserved prefix position
+  <li>Reserve 4 bytes for length prefix at current position
+  <li>Encode UTF-8 bytes directly to target segment with bounds checking
+  <li>Write actual byte length back to reserved prefix position
 </ol>
 
-<p>
-<b>Trade-offs compared to <a href="#writeString(java.lang.String,java.lang.foreign.MemorySegment)"><code>writeString(String, MemorySegment)</code></a>:</b>
+<p><b>Trade-offs compared to <a href="#writeString(java.lang.String,java.lang.foreign.MemorySegment)"><code>writeString(String, MemorySegment)</code></a>:</b>
 
 <ul>
-<li>Pro: ~15-25% faster encoding (single pass, no scratch buffer, no copy)
-<li>Pro: No scratch buffer required
-<li>Con: Fixed 4-byte overhead even for small strings (vs 1 byte for VarInt)
-<li>Con: Maximum string size limited to ~2GB (Integer.MAX_VALUE bytes)
+  <li>Pro: ~15-25% faster encoding (single pass, no scratch buffer, no copy)
+  <li>Pro: No scratch buffer required
+  <li>Con: Fixed 4-byte overhead even for small strings (vs 1 byte for VarInt)
+  <li>Con: Maximum string size limited to ~2GB (Integer.MAX_VALUE bytes)
 </ul>
 
-<p>
-<b>Use cases:</b>
+<p><b>Use cases:</b>
 
 <ul>
-<li>High-frequency encoding in hot paths where performance is critical
-<li>Internal/binary protocols where wire format overhead is acceptable
-<li>Scenarios where scratch buffer management is undesirable
+  <li>High-frequency encoding in hot paths where performance is critical
+  <li>Internal/binary protocols where wire format overhead is acceptable
+  <li>Scenarios where scratch buffer management is undesirable
 </ul></div>
 <dl class="notes">
 <dt>Parameters:</dt>
@@ -740,10 +710,8 @@ encoded bytes.
 <dt>Returns:</dt>
 <dd>This writer instance, for chaining.</dd>
 <dt>Throws:</dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/IllegalArgumentException.html" title="class or interface in java.lang" class="external-link">IllegalArgumentException</a></code> - if value is null or contains unpaired
-                                  surrogates</dd>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/IndexOutOfBoundsException.html" title="class or interface in java.lang" class="external-link">IndexOutOfBoundsException</a></code> - if the target segment lacks capacity for
-                                  the encoded string</dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/IllegalArgumentException.html" title="class or interface in java.lang" class="external-link">IllegalArgumentException</a></code> - if value is null or contains unpaired surrogates</dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/IndexOutOfBoundsException.html" title="class or interface in java.lang" class="external-link">IndexOutOfBoundsException</a></code> - if the target segment lacks capacity for the encoded string</dd>
 <dt>See Also:</dt>
 <dd>
 <ul class="tag-list-long">
@@ -758,11 +726,10 @@ encoded bytes.
 <section class="detail" id="writeNullableStringFixedLength(java.lang.String)">
 <h3>writeNullableStringFixedLength</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="BinaryWriter.html" title="interface in express.mvp.roray.ffm.utils.memory">BinaryWriter</a></span>&nbsp;<span class="element-name">writeNullableStringFixedLength</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;value)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="BinaryWriter.html" title="interface in express.mvp.roray.ffm.utils.memory">BinaryWriter</a></span>&nbsp;<span class="element-name">writeNullableStringFixedLength</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;value)</span></div>
 <div class="block">Writes a nullable String using fixed-length encoding.
 
-<p>
-Format: 1-byte presence flag, followed by fixed-length string data if present.</div>
+<p>Format: 1-byte presence flag, followed by fixed-length string data if present.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>value</code> - The String to write, or null.</dd>
@@ -794,7 +761,7 @@ Format: 1-byte presence flag, followed by fixed-length string data if present.</
 <section class="detail" id="writeSegment(java.lang.foreign.MemorySegment)">
 <h3>writeSegment</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="BinaryWriter.html" title="interface in express.mvp.roray.ffm.utils.memory">BinaryWriter</a></span>&nbsp;<span class="element-name">writeSegment</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/foreign/MemorySegment.html" title="class or interface in java.lang.foreign" class="external-link">MemorySegment</a>&nbsp;source)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="BinaryWriter.html" title="interface in express.mvp.roray.ffm.utils.memory">BinaryWriter</a></span>&nbsp;<span class="element-name">writeSegment</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/MemorySegment.html" title="class or interface in java.lang.foreign" class="external-link">MemorySegment</a>&nbsp;source)</span></div>
 <div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="BinaryWriter.html#writeSegment(java.lang.foreign.MemorySegment)">BinaryWriter</a></code></span></div>
 <div class="block">Writes all bytes from the source MemorySegment to this writer's underlying sink.</div>
 <dl class="notes">
@@ -812,7 +779,7 @@ Format: 1-byte presence flag, followed by fixed-length string data if present.</
 <section class="detail" id="writeSegmentRaw(java.lang.foreign.MemorySegment,long,long)">
 <h3>writeSegmentRaw</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="BinaryWriter.html" title="interface in express.mvp.roray.ffm.utils.memory">BinaryWriter</a></span>&nbsp;<span class="element-name">writeSegmentRaw</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/foreign/MemorySegment.html" title="class or interface in java.lang.foreign" class="external-link">MemorySegment</a>&nbsp;source,
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="BinaryWriter.html" title="interface in express.mvp.roray.ffm.utils.memory">BinaryWriter</a></span>&nbsp;<span class="element-name">writeSegmentRaw</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/MemorySegment.html" title="class or interface in java.lang.foreign" class="external-link">MemorySegment</a>&nbsp;source,
  long&nbsp;offset,
  long&nbsp;length)</span></div>
 <div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="BinaryWriter.html#writeSegmentRaw(java.lang.foreign.MemorySegment,long,long)">BinaryWriter</a></code></span></div>
@@ -835,8 +802,8 @@ the length is already known or stored elsewhere.</div>
 <section class="detail" id="writeNullableString(java.lang.String,java.lang.foreign.MemorySegment)">
 <h3>writeNullableString</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="BinaryWriter.html" title="interface in express.mvp.roray.ffm.utils.memory">BinaryWriter</a></span>&nbsp;<span class="element-name">writeNullableString</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;value,
- <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/foreign/MemorySegment.html" title="class or interface in java.lang.foreign" class="external-link">MemorySegment</a>&nbsp;scratchBuffer)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="BinaryWriter.html" title="interface in express.mvp.roray.ffm.utils.memory">BinaryWriter</a></span>&nbsp;<span class="element-name">writeNullableString</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;value,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/MemorySegment.html" title="class or interface in java.lang.foreign" class="external-link">MemorySegment</a>&nbsp;scratchBuffer)</span></div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="BinaryWriter.html#writeNullableString(java.lang.String,java.lang.foreign.MemorySegment)">writeNullableString</a></code>&nbsp;in interface&nbsp;<code><a href="BinaryWriter.html" title="interface in express.mvp.roray.ffm.utils.memory">BinaryWriter</a></code></dd>
@@ -848,7 +815,7 @@ the length is already known or stored elsewhere.</div>
 <section class="detail" id="writeNullableIntBE(java.lang.Integer)">
 <h3>writeNullableIntBE</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="BinaryWriter.html" title="interface in express.mvp.roray.ffm.utils.memory">BinaryWriter</a></span>&nbsp;<span class="element-name">writeNullableIntBE</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/Integer.html" title="class or interface in java.lang" class="external-link">Integer</a>&nbsp;value)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="BinaryWriter.html" title="interface in express.mvp.roray.ffm.utils.memory">BinaryWriter</a></span>&nbsp;<span class="element-name">writeNullableIntBE</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Integer.html" title="class or interface in java.lang" class="external-link">Integer</a>&nbsp;value)</span></div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="BinaryWriter.html#writeNullableIntBE(java.lang.Integer)">writeNullableIntBE</a></code>&nbsp;in interface&nbsp;<code><a href="BinaryWriter.html" title="interface in express.mvp.roray.ffm.utils.memory">BinaryWriter</a></code></dd>
@@ -884,7 +851,7 @@ the length is already known or stored elsewhere.</div>
 <section class="detail" id="writeNullableLongBE(java.lang.Long)">
 <h3>writeNullableLongBE</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="BinaryWriter.html" title="interface in express.mvp.roray.ffm.utils.memory">BinaryWriter</a></span>&nbsp;<span class="element-name">writeNullableLongBE</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/Long.html" title="class or interface in java.lang" class="external-link">Long</a>&nbsp;value)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="BinaryWriter.html" title="interface in express.mvp.roray.ffm.utils.memory">BinaryWriter</a></span>&nbsp;<span class="element-name">writeNullableLongBE</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Long.html" title="class or interface in java.lang" class="external-link">Long</a>&nbsp;value)</span></div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="BinaryWriter.html#writeNullableLongBE(java.lang.Long)">writeNullableLongBE</a></code>&nbsp;in interface&nbsp;<code><a href="BinaryWriter.html" title="interface in express.mvp.roray.ffm.utils.memory">BinaryWriter</a></code></dd>
@@ -896,7 +863,7 @@ the length is already known or stored elsewhere.</div>
 <section class="detail" id="writeNullableShortBE(java.lang.Short)">
 <h3>writeNullableShortBE</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="BinaryWriter.html" title="interface in express.mvp.roray.ffm.utils.memory">BinaryWriter</a></span>&nbsp;<span class="element-name">writeNullableShortBE</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/Short.html" title="class or interface in java.lang" class="external-link">Short</a>&nbsp;value)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="BinaryWriter.html" title="interface in express.mvp.roray.ffm.utils.memory">BinaryWriter</a></span>&nbsp;<span class="element-name">writeNullableShortBE</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Short.html" title="class or interface in java.lang" class="external-link">Short</a>&nbsp;value)</span></div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="BinaryWriter.html#writeNullableShortBE(java.lang.Short)">writeNullableShortBE</a></code>&nbsp;in interface&nbsp;<code><a href="BinaryWriter.html" title="interface in express.mvp.roray.ffm.utils.memory">BinaryWriter</a></code></dd>
@@ -920,7 +887,7 @@ the length is already known or stored elsewhere.</div>
 <section class="detail" id="writeNullableDoubleLE(java.lang.Double)">
 <h3>writeNullableDoubleLE</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="BinaryWriter.html" title="interface in express.mvp.roray.ffm.utils.memory">BinaryWriter</a></span>&nbsp;<span class="element-name">writeNullableDoubleLE</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/Double.html" title="class or interface in java.lang" class="external-link">Double</a>&nbsp;value)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="BinaryWriter.html" title="interface in express.mvp.roray.ffm.utils.memory">BinaryWriter</a></span>&nbsp;<span class="element-name">writeNullableDoubleLE</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Double.html" title="class or interface in java.lang" class="external-link">Double</a>&nbsp;value)</span></div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="BinaryWriter.html#writeNullableDoubleLE(java.lang.Double)">writeNullableDoubleLE</a></code>&nbsp;in interface&nbsp;<code><a href="BinaryWriter.html" title="interface in express.mvp.roray.ffm.utils.memory">BinaryWriter</a></code></dd>
@@ -932,7 +899,7 @@ the length is already known or stored elsewhere.</div>
 <section class="detail" id="writeNullableBoolean(java.lang.Boolean)">
 <h3>writeNullableBoolean</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="BinaryWriter.html" title="interface in express.mvp.roray.ffm.utils.memory">BinaryWriter</a></span>&nbsp;<span class="element-name">writeNullableBoolean</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/Boolean.html" title="class or interface in java.lang" class="external-link">Boolean</a>&nbsp;value)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="BinaryWriter.html" title="interface in express.mvp.roray.ffm.utils.memory">BinaryWriter</a></span>&nbsp;<span class="element-name">writeNullableBoolean</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Boolean.html" title="class or interface in java.lang" class="external-link">Boolean</a>&nbsp;value)</span></div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="BinaryWriter.html#writeNullableBoolean(java.lang.Boolean)">writeNullableBoolean</a></code>&nbsp;in interface&nbsp;<code><a href="BinaryWriter.html" title="interface in express.mvp.roray.ffm.utils.memory">BinaryWriter</a></code></dd>
@@ -944,7 +911,7 @@ the length is already known or stored elsewhere.</div>
 <section class="detail" id="writeNullableFloatLE(java.lang.Float)">
 <h3>writeNullableFloatLE</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="BinaryWriter.html" title="interface in express.mvp.roray.ffm.utils.memory">BinaryWriter</a></span>&nbsp;<span class="element-name">writeNullableFloatLE</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/Float.html" title="class or interface in java.lang" class="external-link">Float</a>&nbsp;value)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="BinaryWriter.html" title="interface in express.mvp.roray.ffm.utils.memory">BinaryWriter</a></span>&nbsp;<span class="element-name">writeNullableFloatLE</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Float.html" title="class or interface in java.lang" class="external-link">Float</a>&nbsp;value)</span></div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="BinaryWriter.html#writeNullableFloatLE(java.lang.Float)">writeNullableFloatLE</a></code>&nbsp;in interface&nbsp;<code><a href="BinaryWriter.html" title="interface in express.mvp.roray.ffm.utils.memory">BinaryWriter</a></code></dd>
@@ -956,7 +923,7 @@ the length is already known or stored elsewhere.</div>
 <section class="detail" id="writeNullableIntLE(java.lang.Integer)">
 <h3>writeNullableIntLE</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="BinaryWriter.html" title="interface in express.mvp.roray.ffm.utils.memory">BinaryWriter</a></span>&nbsp;<span class="element-name">writeNullableIntLE</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/Integer.html" title="class or interface in java.lang" class="external-link">Integer</a>&nbsp;value)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="BinaryWriter.html" title="interface in express.mvp.roray.ffm.utils.memory">BinaryWriter</a></span>&nbsp;<span class="element-name">writeNullableIntLE</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Integer.html" title="class or interface in java.lang" class="external-link">Integer</a>&nbsp;value)</span></div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="BinaryWriter.html#writeNullableIntLE(java.lang.Integer)">writeNullableIntLE</a></code>&nbsp;in interface&nbsp;<code><a href="BinaryWriter.html" title="interface in express.mvp.roray.ffm.utils.memory">BinaryWriter</a></code></dd>
@@ -968,7 +935,7 @@ the length is already known or stored elsewhere.</div>
 <section class="detail" id="writeNullableDoubleBE(java.lang.Double)">
 <h3>writeNullableDoubleBE</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="BinaryWriter.html" title="interface in express.mvp.roray.ffm.utils.memory">BinaryWriter</a></span>&nbsp;<span class="element-name">writeNullableDoubleBE</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/Double.html" title="class or interface in java.lang" class="external-link">Double</a>&nbsp;value)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="BinaryWriter.html" title="interface in express.mvp.roray.ffm.utils.memory">BinaryWriter</a></span>&nbsp;<span class="element-name">writeNullableDoubleBE</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Double.html" title="class or interface in java.lang" class="external-link">Double</a>&nbsp;value)</span></div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="BinaryWriter.html#writeNullableDoubleBE(java.lang.Double)">writeNullableDoubleBE</a></code>&nbsp;in interface&nbsp;<code><a href="BinaryWriter.html" title="interface in express.mvp.roray.ffm.utils.memory">BinaryWriter</a></code></dd>
@@ -980,7 +947,7 @@ the length is already known or stored elsewhere.</div>
 <section class="detail" id="writeNullableLongLE(java.lang.Long)">
 <h3>writeNullableLongLE</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="BinaryWriter.html" title="interface in express.mvp.roray.ffm.utils.memory">BinaryWriter</a></span>&nbsp;<span class="element-name">writeNullableLongLE</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/Long.html" title="class or interface in java.lang" class="external-link">Long</a>&nbsp;value)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="BinaryWriter.html" title="interface in express.mvp.roray.ffm.utils.memory">BinaryWriter</a></span>&nbsp;<span class="element-name">writeNullableLongLE</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Long.html" title="class or interface in java.lang" class="external-link">Long</a>&nbsp;value)</span></div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="BinaryWriter.html#writeNullableLongLE(java.lang.Long)">writeNullableLongLE</a></code>&nbsp;in interface&nbsp;<code><a href="BinaryWriter.html" title="interface in express.mvp.roray.ffm.utils.memory">BinaryWriter</a></code></dd>
@@ -992,7 +959,7 @@ the length is already known or stored elsewhere.</div>
 <section class="detail" id="writeNullableFloatBE(java.lang.Float)">
 <h3>writeNullableFloatBE</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="BinaryWriter.html" title="interface in express.mvp.roray.ffm.utils.memory">BinaryWriter</a></span>&nbsp;<span class="element-name">writeNullableFloatBE</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/Float.html" title="class or interface in java.lang" class="external-link">Float</a>&nbsp;value)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="BinaryWriter.html" title="interface in express.mvp.roray.ffm.utils.memory">BinaryWriter</a></span>&nbsp;<span class="element-name">writeNullableFloatBE</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Float.html" title="class or interface in java.lang" class="external-link">Float</a>&nbsp;value)</span></div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="BinaryWriter.html#writeNullableFloatBE(java.lang.Float)">writeNullableFloatBE</a></code>&nbsp;in interface&nbsp;<code><a href="BinaryWriter.html" title="interface in express.mvp.roray.ffm.utils.memory">BinaryWriter</a></code></dd>

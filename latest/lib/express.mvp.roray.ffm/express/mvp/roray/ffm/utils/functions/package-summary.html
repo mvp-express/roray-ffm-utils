@@ -82,7 +82,7 @@ for native interop, while maintaining zero runtime overhead.
 <h2 id="design-philosophy-heading">Design Philosophy</h2>
 
 <p>All abstractions in this package are designed for <b>setup-time cost only</b>. The helpers
-produce standard FFM objects (<a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/invoke/MethodHandle.html" title="class or interface in java.lang.invoke" class="external-link"><code>MethodHandle</code></a>, <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/foreign/FunctionDescriptor.html" title="class or interface in java.lang.foreign" class="external-link"><code>FunctionDescriptor</code></a>, <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/foreign/MemoryLayout.html" title="class or interface in java.lang.foreign" class="external-link"><code>MemoryLayout</code></a>) that should be
+produce standard FFM objects (<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/invoke/MethodHandle.html" title="class or interface in java.lang.invoke" class="external-link"><code>MethodHandle</code></a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/FunctionDescriptor.html" title="class or interface in java.lang.foreign" class="external-link"><code>FunctionDescriptor</code></a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/MemoryLayout.html" title="class or interface in java.lang.foreign" class="external-link"><code>MemoryLayout</code></a>) that should be
 stored in <code>static final</code> fields for optimal JIT performance.
 
 <h2 id="core-utilities-heading">Core Utilities</h2>
@@ -150,7 +150,7 @@ public static int getPid() throws Throwable {
 <dt>See Also:</dt>
 <dd>
 <ul class="tag-list">
-<li><a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/foreign/package-summary.html" class="external-link"><code>java.lang.foreign</code></a></li>
+<li><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/package-summary.html" class="external-link"><code>java.lang.foreign</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -167,8 +167,8 @@ public static int getPid() throws Throwable {
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color class-summary class-summary-tab6"><a href="CriticalSafe.html" title="annotation interface in express.mvp.roray.ffm.utils.functions">CriticalSafe</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab6">
-<div class="block">Marker annotation to document that a native function is safe to call with 
-<code>* Linker.Option.critical(true)</code>.</div>
+<div class="block">Marker annotation to document that a native function is safe to call with <code>*
+Linker.Option.critical(true)</code>.</div>
 </div>
 <div class="col-first odd-row-color class-summary class-summary-tab2"><a href="DowncallFactory.html" title="class in express.mvp.roray.ffm.utils.functions">DowncallFactory</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab2">
@@ -180,11 +180,11 @@ public static int getPid() throws Throwable {
 </div>
 <div class="col-first odd-row-color class-summary class-summary-tab2"><a href="FunctionDescriptorBuilder.html" title="class in express.mvp.roray.ffm.utils.functions">FunctionDescriptorBuilder</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab2">
-<div class="block">Fluent builder for <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/foreign/FunctionDescriptor.html" title="class or interface in java.lang.foreign" class="external-link"><code>FunctionDescriptor</code></a> - all costs are paid at setup time.</div>
+<div class="block">Fluent builder for <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/FunctionDescriptor.html" title="class or interface in java.lang.foreign" class="external-link"><code>FunctionDescriptor</code></a> - all costs are paid at setup time.</div>
 </div>
 <div class="col-first even-row-color class-summary class-summary-tab2"><a href="LinuxLayouts.html" title="class in express.mvp.roray.ffm.utils.functions">LinuxLayouts</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab2">
-<div class="block">Pre-defined <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/foreign/MemoryLayout.html" title="class or interface in java.lang.foreign" class="external-link"><code>MemoryLayout</code></a> constants for common Linux/C types and structures.</div>
+<div class="block">Pre-defined <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/MemoryLayout.html" title="class or interface in java.lang.foreign" class="external-link"><code>MemoryLayout</code></a> constants for common Linux/C types and structures.</div>
 </div>
 <div class="col-first odd-row-color class-summary class-summary-tab6"><a href="NeverCritical.html" title="annotation interface in express.mvp.roray.ffm.utils.functions">NeverCritical</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab6">
@@ -193,7 +193,7 @@ Linker.Option.critical(false)</code>.</div>
 </div>
 <div class="col-first even-row-color class-summary class-summary-tab2"><a href="StructAccessor.html" title="class in express.mvp.roray.ffm.utils.functions">StructAccessor</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab2">
-<div class="block">Provides convenient accessors for reading and writing struct fields in a <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/foreign/MemorySegment.html" title="class or interface in java.lang.foreign" class="external-link"><code>MemorySegment</code></a>.</div>
+<div class="block">Provides convenient accessors for reading and writing struct fields in a <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/MemorySegment.html" title="class or interface in java.lang.foreign" class="external-link"><code>MemorySegment</code></a>.</div>
 </div>
 <div class="col-first odd-row-color class-summary class-summary-tab2"><a href="UpcallFactory.html" title="class in express.mvp.roray.ffm.utils.functions">UpcallFactory</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab2">

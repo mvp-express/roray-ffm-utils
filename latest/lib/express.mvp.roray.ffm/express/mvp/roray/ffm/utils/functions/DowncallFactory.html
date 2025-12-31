@@ -78,16 +78,16 @@ loadScripts(document, 'script');</script>
 <div class="header">
 <h1 title="Class DowncallFactory" class="title">Class DowncallFactory</h1>
 </div>
-<div class="inheritance" title="Inheritance Tree"><a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">java.lang.Object</a>
+<div class="inheritance" title="Inheritance Tree"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">java.lang.Object</a>
 <div class="inheritance">express.mvp.roray.ffm.utils.functions.DowncallFactory</div>
 </div>
 <section class="class-description" id="class-description">
 <hr>
 <div class="horizontal-scroll">
 <div class="type-signature"><span class="modifiers">public final class </span><span class="element-name type-name-label">DowncallFactory</span>
-<span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span></div>
+<span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span></div>
 <div class="block">Factory for creating downcall handles with common patterns. All operations are setup-time only -
-produces raw <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/invoke/MethodHandle.html" title="class or interface in java.lang.invoke" class="external-link"><code>MethodHandle</code></a>s that should be stored in <code>static final</code> fields for
+produces raw <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/invoke/MethodHandle.html" title="class or interface in java.lang.invoke" class="external-link"><code>MethodHandle</code></a>s that should be stored in <code>static final</code> fields for
 optimal JIT performance.
 
 <p>Example usage:
@@ -114,32 +114,32 @@ private static final MethodHandle getpid = FACTORY.downcall(
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/invoke/MethodHandle.html" title="class or interface in java.lang.invoke" class="external-link">MethodHandle</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#downcall(java.lang.String,java.lang.foreign.FunctionDescriptor)" class="member-name-link">downcall</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;functionName,
- <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/foreign/FunctionDescriptor.html" title="class or interface in java.lang.foreign" class="external-link">FunctionDescriptor</a>&nbsp;descriptor)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/invoke/MethodHandle.html" title="class or interface in java.lang.invoke" class="external-link">MethodHandle</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#downcall(java.lang.String,java.lang.foreign.FunctionDescriptor)" class="member-name-link">downcall</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;functionName,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/FunctionDescriptor.html" title="class or interface in java.lang.foreign" class="external-link">FunctionDescriptor</a>&nbsp;descriptor)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Creates a downcall handle.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/invoke/MethodHandle.html" title="class or interface in java.lang.invoke" class="external-link">MethodHandle</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#downcall(java.lang.String,java.lang.foreign.FunctionDescriptor,java.lang.foreign.Linker.Option...)" class="member-name-link">downcall</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;functionName,
- <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/foreign/FunctionDescriptor.html" title="class or interface in java.lang.foreign" class="external-link">FunctionDescriptor</a>&nbsp;descriptor,
- <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/foreign/Linker.Option.html" title="class or interface in java.lang.foreign" class="external-link">Linker.Option</a>...&nbsp;options)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/invoke/MethodHandle.html" title="class or interface in java.lang.invoke" class="external-link">MethodHandle</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#downcall(java.lang.String,java.lang.foreign.FunctionDescriptor,java.lang.foreign.Linker.Option...)" class="member-name-link">downcall</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;functionName,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/FunctionDescriptor.html" title="class or interface in java.lang.foreign" class="external-link">FunctionDescriptor</a>&nbsp;descriptor,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/Linker.Option.html" title="class or interface in java.lang.foreign" class="external-link">Linker.Option</a>...&nbsp;options)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Creates a downcall handle with linker options.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/invoke/MethodHandle.html" title="class or interface in java.lang.invoke" class="external-link">MethodHandle</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#downcallVirtual(java.lang.foreign.FunctionDescriptor)" class="member-name-link">downcallVirtual</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/foreign/FunctionDescriptor.html" title="class or interface in java.lang.foreign" class="external-link">FunctionDescriptor</a>&nbsp;descriptor)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/invoke/MethodHandle.html" title="class or interface in java.lang.invoke" class="external-link">MethodHandle</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#downcallVirtual(java.lang.foreign.FunctionDescriptor)" class="member-name-link">downcallVirtual</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/FunctionDescriptor.html" title="class or interface in java.lang.foreign" class="external-link">FunctionDescriptor</a>&nbsp;descriptor)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Creates a "virtual" downcall handle that takes a function pointer as its first argument.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/invoke/MethodHandle.html" title="class or interface in java.lang.invoke" class="external-link">MethodHandle</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#downcallVirtual(java.lang.foreign.FunctionDescriptor,java.lang.foreign.Linker.Option...)" class="member-name-link">downcallVirtual</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/foreign/FunctionDescriptor.html" title="class or interface in java.lang.foreign" class="external-link">FunctionDescriptor</a>&nbsp;descriptor,
- <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/foreign/Linker.Option.html" title="class or interface in java.lang.foreign" class="external-link">Linker.Option</a>...&nbsp;options)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/invoke/MethodHandle.html" title="class or interface in java.lang.invoke" class="external-link">MethodHandle</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#downcallVirtual(java.lang.foreign.FunctionDescriptor,java.lang.foreign.Linker.Option...)" class="member-name-link">downcallVirtual</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/FunctionDescriptor.html" title="class or interface in java.lang.foreign" class="external-link">FunctionDescriptor</a>&nbsp;descriptor,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/Linker.Option.html" title="class or interface in java.lang.foreign" class="external-link">Linker.Option</a>...&nbsp;options)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Creates a virtual downcall handle with linker options.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/foreign/MemorySegment.html" title="class or interface in java.lang.foreign" class="external-link">MemorySegment</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#findSymbol(java.lang.String)" class="member-name-link">findSymbol</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;symbolName)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/MemorySegment.html" title="class or interface in java.lang.foreign" class="external-link">MemorySegment</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#findSymbol(java.lang.String)" class="member-name-link">findSymbol</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;symbolName)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Look up a symbol address without creating a downcall handle.</div>
 </div>
@@ -148,24 +148,24 @@ private static final MethodHandle getpid = FACTORY.downcall(
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Create a factory using the native linker and its default lookup.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/foreign/Linker.html" title="class or interface in java.lang.foreign" class="external-link">Linker</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/Linker.html" title="class or interface in java.lang.foreign" class="external-link">Linker</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#linker()" class="member-name-link">linker</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Get the underlying linker.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/foreign/SymbolLookup.html" title="class or interface in java.lang.foreign" class="external-link">SymbolLookup</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/SymbolLookup.html" title="class or interface in java.lang.foreign" class="external-link">SymbolLookup</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#lookup()" class="member-name-link">lookup</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Get the underlying symbol lookup.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="DowncallFactory.html" title="class in express.mvp.roray.ffm.utils.functions">DowncallFactory</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#withLibrary(java.lang.foreign.Arena,java.lang.String)" class="member-name-link">withLibrary</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/foreign/Arena.html" title="class or interface in java.lang.foreign" class="external-link">Arena</a>&nbsp;arena,
- <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;libraryPath)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#withLibrary(java.lang.foreign.Arena,java.lang.String)" class="member-name-link">withLibrary</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/Arena.html" title="class or interface in java.lang.foreign" class="external-link">Arena</a>&nbsp;arena,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;libraryPath)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Create a factory for a library loaded from the specified path.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="DowncallFactory.html" title="class in express.mvp.roray.ffm.utils.functions">DowncallFactory</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#withLookup(java.lang.foreign.SymbolLookup)" class="member-name-link">withLookup</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/foreign/SymbolLookup.html" title="class or interface in java.lang.foreign" class="external-link">SymbolLookup</a>&nbsp;libraryLookup)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#withLookup(java.lang.foreign.SymbolLookup)" class="member-name-link">withLookup</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/SymbolLookup.html" title="class or interface in java.lang.foreign" class="external-link">SymbolLookup</a>&nbsp;libraryLookup)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Create a factory with a custom symbol lookup (e.g., for a loaded library).</div>
 </div>
@@ -173,8 +173,8 @@ private static final MethodHandle getpid = FACTORY.downcall(
 </div>
 </div>
 <div class="inherited-list">
-<h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;<a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/Object.html#method-summary" title="class or interface in java.lang" class="external-link">Object</a></h3>
-<code><a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
+<h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#method-summary" title="class or interface in java.lang" class="external-link">Object</a></h3>
+<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
 </section>
 </li>
 </ul>
@@ -191,8 +191,8 @@ private static final MethodHandle getpid = FACTORY.downcall(
 <h3>forNativeLinker</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="DowncallFactory.html" title="class in express.mvp.roray.ffm.utils.functions">DowncallFactory</a></span>&nbsp;<span class="element-name">forNativeLinker</span>()</div>
-<div class="block">Create a factory using the native linker and its default lookup.
-Suitable for standard C library functions.</div>
+<div class="block">Create a factory using the native linker and its default lookup. Suitable for standard C
+library functions.</div>
 </div>
 </section>
 </li>
@@ -200,7 +200,7 @@ Suitable for standard C library functions.</div>
 <section class="detail" id="withLookup(java.lang.foreign.SymbolLookup)">
 <h3>withLookup</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="DowncallFactory.html" title="class in express.mvp.roray.ffm.utils.functions">DowncallFactory</a></span>&nbsp;<span class="element-name">withLookup</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/foreign/SymbolLookup.html" title="class or interface in java.lang.foreign" class="external-link">SymbolLookup</a>&nbsp;libraryLookup)</span></div>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="DowncallFactory.html" title="class in express.mvp.roray.ffm.utils.functions">DowncallFactory</a></span>&nbsp;<span class="element-name">withLookup</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/SymbolLookup.html" title="class or interface in java.lang.foreign" class="external-link">SymbolLookup</a>&nbsp;libraryLookup)</span></div>
 <div class="block">Create a factory with a custom symbol lookup (e.g., for a loaded library).</div>
 </div>
 </section>
@@ -209,8 +209,8 @@ Suitable for standard C library functions.</div>
 <section class="detail" id="withLibrary(java.lang.foreign.Arena,java.lang.String)">
 <h3>withLibrary</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="DowncallFactory.html" title="class in express.mvp.roray.ffm.utils.functions">DowncallFactory</a></span>&nbsp;<span class="element-name">withLibrary</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/foreign/Arena.html" title="class or interface in java.lang.foreign" class="external-link">Arena</a>&nbsp;arena,
- <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;libraryPath)</span></div>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="DowncallFactory.html" title="class in express.mvp.roray.ffm.utils.functions">DowncallFactory</a></span>&nbsp;<span class="element-name">withLibrary</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/Arena.html" title="class or interface in java.lang.foreign" class="external-link">Arena</a>&nbsp;arena,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;libraryPath)</span></div>
 <div class="block">Create a factory for a library loaded from the specified path.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
@@ -224,10 +224,10 @@ Suitable for standard C library functions.</div>
 <section class="detail" id="downcall(java.lang.String,java.lang.foreign.FunctionDescriptor)">
 <h3>downcall</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/invoke/MethodHandle.html" title="class or interface in java.lang.invoke" class="external-link">MethodHandle</a></span>&nbsp;<span class="element-name">downcall</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;functionName,
- <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/foreign/FunctionDescriptor.html" title="class or interface in java.lang.foreign" class="external-link">FunctionDescriptor</a>&nbsp;descriptor)</span></div>
-<div class="block">Creates a downcall handle. The returned <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/invoke/MethodHandle.html" title="class or interface in java.lang.invoke" class="external-link"><code>MethodHandle</code></a> should be stored in a
-<code>static final</code> field for optimal JIT performance.</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/invoke/MethodHandle.html" title="class or interface in java.lang.invoke" class="external-link">MethodHandle</a></span>&nbsp;<span class="element-name">downcall</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;functionName,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/FunctionDescriptor.html" title="class or interface in java.lang.foreign" class="external-link">FunctionDescriptor</a>&nbsp;descriptor)</span></div>
+<div class="block">Creates a downcall handle. The returned <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/invoke/MethodHandle.html" title="class or interface in java.lang.invoke" class="external-link"><code>MethodHandle</code></a> should be stored in a <code>
+static final</code> field for optimal JIT performance.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>functionName</code> - Name of the native function</dd>
@@ -235,7 +235,7 @@ Suitable for standard C library functions.</div>
 <dt>Returns:</dt>
 <dd>MethodHandle for calling the native function</dd>
 <dt>Throws:</dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/UnsatisfiedLinkError.html" title="class or interface in java.lang" class="external-link">UnsatisfiedLinkError</a></code> - if the symbol is not found</dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/UnsatisfiedLinkError.html" title="class or interface in java.lang" class="external-link">UnsatisfiedLinkError</a></code> - if the symbol is not found</dd>
 </dl>
 </div>
 </section>
@@ -244,9 +244,9 @@ Suitable for standard C library functions.</div>
 <section class="detail" id="downcall(java.lang.String,java.lang.foreign.FunctionDescriptor,java.lang.foreign.Linker.Option...)">
 <h3>downcall</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/invoke/MethodHandle.html" title="class or interface in java.lang.invoke" class="external-link">MethodHandle</a></span>&nbsp;<span class="element-name">downcall</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;functionName,
- <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/foreign/FunctionDescriptor.html" title="class or interface in java.lang.foreign" class="external-link">FunctionDescriptor</a>&nbsp;descriptor,
- <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/foreign/Linker.Option.html" title="class or interface in java.lang.foreign" class="external-link">Linker.Option</a>...&nbsp;options)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/invoke/MethodHandle.html" title="class or interface in java.lang.invoke" class="external-link">MethodHandle</a></span>&nbsp;<span class="element-name">downcall</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;functionName,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/FunctionDescriptor.html" title="class or interface in java.lang.foreign" class="external-link">FunctionDescriptor</a>&nbsp;descriptor,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/Linker.Option.html" title="class or interface in java.lang.foreign" class="external-link">Linker.Option</a>...&nbsp;options)</span></div>
 <div class="block">Creates a downcall handle with linker options.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
@@ -256,7 +256,7 @@ Suitable for standard C library functions.</div>
 <dt>Returns:</dt>
 <dd>MethodHandle for calling the native function</dd>
 <dt>Throws:</dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/UnsatisfiedLinkError.html" title="class or interface in java.lang" class="external-link">UnsatisfiedLinkError</a></code> - if the symbol is not found</dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/UnsatisfiedLinkError.html" title="class or interface in java.lang" class="external-link">UnsatisfiedLinkError</a></code> - if the symbol is not found</dd>
 </dl>
 </div>
 </section>
@@ -265,11 +265,11 @@ Suitable for standard C library functions.</div>
 <section class="detail" id="downcallVirtual(java.lang.foreign.FunctionDescriptor)">
 <h3>downcallVirtual</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/invoke/MethodHandle.html" title="class or interface in java.lang.invoke" class="external-link">MethodHandle</a></span>&nbsp;<span class="element-name">downcallVirtual</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/foreign/FunctionDescriptor.html" title="class or interface in java.lang.foreign" class="external-link">FunctionDescriptor</a>&nbsp;descriptor)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/invoke/MethodHandle.html" title="class or interface in java.lang.invoke" class="external-link">MethodHandle</a></span>&nbsp;<span class="element-name">downcallVirtual</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/FunctionDescriptor.html" title="class or interface in java.lang.foreign" class="external-link">FunctionDescriptor</a>&nbsp;descriptor)</span></div>
 <div class="block">Creates a "virtual" downcall handle that takes a function pointer as its first argument.
 Useful when function addresses are resolved dynamically (e.g., io_uring ops).
 
-<p>The returned <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/invoke/MethodHandle.html" title="class or interface in java.lang.invoke" class="external-link"><code>MethodHandle</code></a> should be stored in a <code>static final</code> field for
+<p>The returned <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/invoke/MethodHandle.html" title="class or interface in java.lang.invoke" class="external-link"><code>MethodHandle</code></a> should be stored in a <code>static final</code> field for
 optimal JIT performance.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
@@ -284,11 +284,11 @@ optimal JIT performance.</div>
 <section class="detail" id="downcallVirtual(java.lang.foreign.FunctionDescriptor,java.lang.foreign.Linker.Option...)">
 <h3>downcallVirtual</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/invoke/MethodHandle.html" title="class or interface in java.lang.invoke" class="external-link">MethodHandle</a></span>&nbsp;<span class="element-name">downcallVirtual</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/foreign/FunctionDescriptor.html" title="class or interface in java.lang.foreign" class="external-link">FunctionDescriptor</a>&nbsp;descriptor,
- <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/foreign/Linker.Option.html" title="class or interface in java.lang.foreign" class="external-link">Linker.Option</a>...&nbsp;options)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/invoke/MethodHandle.html" title="class or interface in java.lang.invoke" class="external-link">MethodHandle</a></span>&nbsp;<span class="element-name">downcallVirtual</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/FunctionDescriptor.html" title="class or interface in java.lang.foreign" class="external-link">FunctionDescriptor</a>&nbsp;descriptor,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/Linker.Option.html" title="class or interface in java.lang.foreign" class="external-link">Linker.Option</a>...&nbsp;options)</span></div>
 <div class="block">Creates a virtual downcall handle with linker options.
 
-<p>The returned <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/invoke/MethodHandle.html" title="class or interface in java.lang.invoke" class="external-link"><code>MethodHandle</code></a> should be stored in a <code>static final</code> field for
+<p>The returned <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/invoke/MethodHandle.html" title="class or interface in java.lang.invoke" class="external-link"><code>MethodHandle</code></a> should be stored in a <code>static final</code> field for
 optimal JIT performance.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
@@ -304,7 +304,7 @@ optimal JIT performance.</div>
 <section class="detail" id="findSymbol(java.lang.String)">
 <h3>findSymbol</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/foreign/MemorySegment.html" title="class or interface in java.lang.foreign" class="external-link">MemorySegment</a></span>&nbsp;<span class="element-name">findSymbol</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;symbolName)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/MemorySegment.html" title="class or interface in java.lang.foreign" class="external-link">MemorySegment</a></span>&nbsp;<span class="element-name">findSymbol</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;symbolName)</span></div>
 <div class="block">Look up a symbol address without creating a downcall handle.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
@@ -312,7 +312,7 @@ optimal JIT performance.</div>
 <dt>Returns:</dt>
 <dd>MemorySegment representing the symbol address</dd>
 <dt>Throws:</dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/UnsatisfiedLinkError.html" title="class or interface in java.lang" class="external-link">UnsatisfiedLinkError</a></code> - if the symbol is not found</dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/UnsatisfiedLinkError.html" title="class or interface in java.lang" class="external-link">UnsatisfiedLinkError</a></code> - if the symbol is not found</dd>
 </dl>
 </div>
 </section>
@@ -321,7 +321,7 @@ optimal JIT performance.</div>
 <section class="detail" id="linker()">
 <h3>linker</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/foreign/Linker.html" title="class or interface in java.lang.foreign" class="external-link">Linker</a></span>&nbsp;<span class="element-name">linker</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/Linker.html" title="class or interface in java.lang.foreign" class="external-link">Linker</a></span>&nbsp;<span class="element-name">linker</span>()</div>
 <div class="block">Get the underlying linker.</div>
 </div>
 </section>
@@ -330,7 +330,7 @@ optimal JIT performance.</div>
 <section class="detail" id="lookup()">
 <h3>lookup</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/foreign/SymbolLookup.html" title="class or interface in java.lang.foreign" class="external-link">SymbolLookup</a></span>&nbsp;<span class="element-name">lookup</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/SymbolLookup.html" title="class or interface in java.lang.foreign" class="external-link">SymbolLookup</a></span>&nbsp;<span class="element-name">lookup</span>()</div>
 <div class="block">Get the underlying symbol lookup.</div>
 </div>
 </section>

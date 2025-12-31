@@ -55,7 +55,9 @@ loadScripts(document, 'script');</script>
 <h2 class="title" id="I:A">A</h2>
 <dl class="index">
 <dt><a href="express.mvp.roray.ffm/express/mvp/roray/ffm/pool/LockFreeBufferPool.html#acquire()" class="member-name-link">acquire()</a> - Method in class express.mvp.roray.ffm.pool.<a href="express.mvp.roray.ffm/express/mvp/roray/ffm/pool/LockFreeBufferPool.html" title="class in express.mvp.roray.ffm.pool">LockFreeBufferPool</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Acquires a buffer reference from the pool.</div>
+</dd>
 <dt><a href="express.mvp.roray.ffm/express/mvp/roray/ffm/utils/memory/MemorySegmentPool.html#acquire()" class="member-name-link">acquire()</a> - Method in class express.mvp.roray.ffm.utils.memory.<a href="express.mvp.roray.ffm/express/mvp/roray/ffm/utils/memory/MemorySegmentPool.html" title="class in express.mvp.roray.ffm.utils.memory">MemorySegmentPool</a></dt>
 <dd>
 <div class="block">Acquires a memory segment from the pool.</div>
@@ -162,10 +164,12 @@ loadScripts(document, 'script');</script>
 <div class="block">Lock-free implementation of <a href="express.mvp.roray.ffm/express/mvp/roray/ffm/pool/BufferRef.html" title="interface in express.mvp.roray.ffm.pool"><code>BufferRef</code></a> with atomic reference counting.</div>
 </dd>
 <dt><a href="express.mvp.roray.ffm/express/mvp/roray/ffm/pool/BufferRefImpl.html#%3Cinit%3E(java.lang.foreign.MemorySegment,int,java.util.function.IntConsumer)" class="member-name-link">BufferRefImpl(MemorySegment, int, IntConsumer)</a> - Constructor for class express.mvp.roray.ffm.pool.<a href="express.mvp.roray.ffm/express/mvp/roray/ffm/pool/BufferRefImpl.html" title="class in express.mvp.roray.ffm.pool">BufferRefImpl</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Creates a new buffer reference for a pooled segment.</div>
+</dd>
 <dt><a href="express.mvp.roray.ffm/express/mvp/roray/ffm/utils/functions/FunctionDescriptorBuilder.html#build()" class="member-name-link">build()</a> - Method in class express.mvp.roray.ffm.utils.functions.<a href="express.mvp.roray.ffm/express/mvp/roray/ffm/utils/functions/FunctionDescriptorBuilder.html" title="class in express.mvp.roray.ffm.utils.functions">FunctionDescriptorBuilder</a></dt>
 <dd>
-<div class="block">Build the <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/foreign/FunctionDescriptor.html" title="class or interface in java.lang.foreign" class="external-link"><code>FunctionDescriptor</code></a>.</div>
+<div class="block">Build the <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/FunctionDescriptor.html" title="class or interface in java.lang.foreign" class="external-link"><code>FunctionDescriptor</code></a>.</div>
 </dd>
 <dt><a href="express.mvp.roray.ffm/express/mvp/roray/ffm/utils/memory/Layouts.html#BYTE" class="member-name-link">BYTE</a> - Static variable in class express.mvp.roray.ffm.utils.memory.<a href="express.mvp.roray.ffm/express/mvp/roray/ffm/utils/memory/Layouts.html" title="class in express.mvp.roray.ffm.utils.memory">Layouts</a></dt>
 <dd>&nbsp;</dd>
@@ -286,7 +290,7 @@ loadScripts(document, 'script');</script>
 <dd>&nbsp;</dd>
 <dt><a href="express.mvp.roray.ffm/express/mvp/roray/ffm/utils/functions/ErrnoCapture.html#captureOption()" class="member-name-link">captureOption()</a> - Static method in class express.mvp.roray.ffm.utils.functions.<a href="express.mvp.roray.ffm/express/mvp/roray/ffm/utils/functions/ErrnoCapture.html" title="class in express.mvp.roray.ffm.utils.functions">ErrnoCapture</a></dt>
 <dd>
-<div class="block">Returns the <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/foreign/Linker.Option.html" title="class or interface in java.lang.foreign" class="external-link"><code>Linker.Option</code></a> to capture errno.</div>
+<div class="block">Returns the <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/Linker.Option.html" title="class or interface in java.lang.foreign" class="external-link"><code>Linker.Option</code></a> to capture errno.</div>
 </dd>
 <dt><a href="express.mvp.roray.ffm/express/mvp/roray/ffm/utils/functions/ErrnoCapture.html#captureStateSize()" class="member-name-link">captureStateSize()</a> - Static method in class express.mvp.roray.ffm.utils.functions.<a href="express.mvp.roray.ffm/express/mvp/roray/ffm/utils/functions/ErrnoCapture.html" title="class in express.mvp.roray.ffm.utils.functions">ErrnoCapture</a></dt>
 <dd>
@@ -378,8 +382,8 @@ loadScripts(document, 'script');</script>
 </dd>
 <dt><a href="express.mvp.roray.ffm/express/mvp/roray/ffm/utils/functions/CriticalSafe.html" class="type-name-link" title="annotation interface in express.mvp.roray.ffm.utils.functions">CriticalSafe</a> - Annotation Interface in <a href="express.mvp.roray.ffm/express/mvp/roray/ffm/utils/functions/package-summary.html">express.mvp.roray.ffm.utils.functions</a></dt>
 <dd>
-<div class="block">Marker annotation to document that a native function is safe to call with 
-<code>* Linker.Option.critical(true)</code>.</div>
+<div class="block">Marker annotation to document that a native function is safe to call with <code>*
+Linker.Option.critical(true)</code>.</div>
 </dd>
 <dt><a href="express.mvp.roray.ffm/express/mvp/roray/ffm/pool/BufferPoolMetrics.html#currentAvailable()" class="member-name-link">currentAvailable()</a> - Method in record class express.mvp.roray.ffm.pool.<a href="express.mvp.roray.ffm/express/mvp/roray/ffm/pool/BufferPoolMetrics.html" title="class in express.mvp.roray.ffm.pool">BufferPoolMetrics</a></dt>
 <dd>
@@ -561,17 +565,19 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">EPOLLOUT - Available for write.</div>
 </dd>
-<dt><a href="express.mvp.roray.ffm/express/mvp/roray/ffm/utils/memory/Utf8View.html#equals(express.mvp.roray.ffm.utils.memory.Utf8View)" class="member-name-link">equals(Utf8View)</a> - Method in class express.mvp.roray.ffm.utils.memory.<a href="express.mvp.roray.ffm/express/mvp/roray/ffm/utils/memory/Utf8View.html" title="class in express.mvp.roray.ffm.utils.memory">Utf8View</a></dt>
-<dd>
-<div class="block">A zero-allocation method to compare this view with another Utf8View.</div>
-</dd>
 <dt><a href="express.mvp.roray.ffm/express/mvp/roray/ffm/pool/BufferPoolMetrics.html#equals(java.lang.Object)" class="member-name-link">equals(Object)</a> - Method in record class express.mvp.roray.ffm.pool.<a href="express.mvp.roray.ffm/express/mvp/roray/ffm/pool/BufferPoolMetrics.html" title="class in express.mvp.roray.ffm.pool">BufferPoolMetrics</a></dt>
 <dd>
 <div class="block">Indicates whether some other object is "equal to" this one.</div>
 </dd>
+<dt><a href="express.mvp.roray.ffm/express/mvp/roray/ffm/utils/memory/Utf8View.html#equals(java.lang.Object)" class="member-name-link">equals(Object)</a> - Method in class express.mvp.roray.ffm.utils.memory.<a href="express.mvp.roray.ffm/express/mvp/roray/ffm/utils/memory/Utf8View.html" title="class in express.mvp.roray.ffm.utils.memory">Utf8View</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="express.mvp.roray.ffm/express/mvp/roray/ffm/utils/memory/Utf8View.html#equalsString(java.lang.String)" class="member-name-link">equalsString(String)</a> - Method in class express.mvp.roray.ffm.utils.memory.<a href="express.mvp.roray.ffm/express/mvp/roray/ffm/utils/memory/Utf8View.html" title="class in express.mvp.roray.ffm.utils.memory">Utf8View</a></dt>
 <dd>
 <div class="block">A zero-allocation method to compare the view's content with a Java String.</div>
+</dd>
+<dt><a href="express.mvp.roray.ffm/express/mvp/roray/ffm/utils/memory/Utf8View.html#equalsView(express.mvp.roray.ffm.utils.memory.Utf8View)" class="member-name-link">equalsView(Utf8View)</a> - Method in class express.mvp.roray.ffm.utils.memory.<a href="express.mvp.roray.ffm/express/mvp/roray/ffm/utils/memory/Utf8View.html" title="class in express.mvp.roray.ffm.utils.memory">Utf8View</a></dt>
+<dd>
+<div class="block">A zero-allocation method to compare this view with another Utf8View.</div>
 </dd>
 <dt><a href="express.mvp.roray.ffm/express/mvp/roray/ffm/utils/functions/ErrnoCapture.html" class="type-name-link" title="class in express.mvp.roray.ffm.utils.functions">ErrnoCapture</a> - Class in <a href="express.mvp.roray.ffm/express/mvp/roray/ffm/utils/functions/package-summary.html">express.mvp.roray.ffm.utils.functions</a></dt>
 <dd>
@@ -599,8 +605,7 @@ loadScripts(document, 'script');</script>
 <dd>&nbsp;</dd>
 <dt><a href="express.mvp.roray.ffm/module-summary.html">express.mvp.roray.ffm</a> - module express.mvp.roray.ffm</dt>
 <dd>
-<div class="block">Core utilities for building zero-copy, off-heap friendly components using the
-Java Foreign
+<div class="block">Core utilities for building zero-copy, off-heap friendly components using the Java Foreign
 Function <span class="invalid-tag">invalid input: '&amp;'</span> Memory (FFM) API.</div>
 </dd>
 <dt><a href="express.mvp.roray.ffm/express/mvp/roray/ffm/concurrent/queue/package-summary.html">express.mvp.roray.ffm.concurrent.queue</a> - package express.mvp.roray.ffm.concurrent.queue</dt>
@@ -678,7 +683,7 @@ Function <span class="invalid-tag">invalid input: '&amp;'</span> Memory (FFM) AP
 <dd>&nbsp;</dd>
 <dt><a href="express.mvp.roray.ffm/express/mvp/roray/ffm/utils/functions/FunctionDescriptorBuilder.html" class="type-name-link" title="class in express.mvp.roray.ffm.utils.functions">FunctionDescriptorBuilder</a> - Class in <a href="express.mvp.roray.ffm/express/mvp/roray/ffm/utils/functions/package-summary.html">express.mvp.roray.ffm.utils.functions</a></dt>
 <dd>
-<div class="block">Fluent builder for <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/foreign/FunctionDescriptor.html" title="class or interface in java.lang.foreign" class="external-link"><code>FunctionDescriptor</code></a> - all costs are paid at setup time.</div>
+<div class="block">Fluent builder for <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/FunctionDescriptor.html" title="class or interface in java.lang.foreign" class="external-link"><code>FunctionDescriptor</code></a> - all costs are paid at setup time.</div>
 </dd>
 </dl>
 <h2 class="title" id="I:G">G</h2>
@@ -808,8 +813,7 @@ available.</div>
 <dd>&nbsp;</dd>
 <dt><a href="express.mvp.roray.ffm/express/mvp/roray/ffm/ds/list/IntrusiveLinkedList.html" class="type-name-link" title="interface in express.mvp.roray.ffm.ds.list">IntrusiveLinkedList</a> - Interface in <a href="express.mvp.roray.ffm/express/mvp/roray/ffm/ds/list/package-summary.html">express.mvp.roray.ffm.ds.list</a></dt>
 <dd>
-<div class="block">An intrusive linked list where the "next" pointer is stored within the
-element's memory.</div>
+<div class="block">An intrusive linked list where the "next" pointer is stored within the element's memory.</div>
 </dd>
 <dt><a href="express.mvp.roray.ffm/express/mvp/roray/ffm/ds/list/IntrusiveLinkedListImpl.html" class="type-name-link" title="class in express.mvp.roray.ffm.ds.list">IntrusiveLinkedListImpl</a> - Class in <a href="express.mvp.roray.ffm/express/mvp/roray/ffm/ds/list/package-summary.html">express.mvp.roray.ffm.ds.list</a></dt>
 <dd>
@@ -935,7 +939,7 @@ element's memory.</div>
 </dd>
 <dt><a href="express.mvp.roray.ffm/express/mvp/roray/ffm/utils/functions/LinuxLayouts.html" class="type-name-link" title="class in express.mvp.roray.ffm.utils.functions">LinuxLayouts</a> - Class in <a href="express.mvp.roray.ffm/express/mvp/roray/ffm/utils/functions/package-summary.html">express.mvp.roray.ffm.utils.functions</a></dt>
 <dd>
-<div class="block">Pre-defined <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/foreign/MemoryLayout.html" title="class or interface in java.lang.foreign" class="external-link"><code>MemoryLayout</code></a> constants for common Linux/C types and structures.</div>
+<div class="block">Pre-defined <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/MemoryLayout.html" title="class or interface in java.lang.foreign" class="external-link"><code>MemoryLayout</code></a> constants for common Linux/C types and structures.</div>
 </dd>
 <dt><a href="express.mvp.roray.ffm/express/mvp/roray/ffm/pool/LockFreeBufferPool.html" class="type-name-link" title="class in express.mvp.roray.ffm.pool">LockFreeBufferPool</a> - Class in <a href="express.mvp.roray.ffm/express/mvp/roray/ffm/pool/package-summary.html">express.mvp.roray.ffm.pool</a></dt>
 <dd>
@@ -981,8 +985,7 @@ virtual threads.</div>
 </dd>
 <dt><a href="express.mvp.roray.ffm/express/mvp/roray/ffm/concurrent/queue/MpscRingBuffer.html" class="type-name-link" title="class in express.mvp.roray.ffm.concurrent.queue">MpscRingBuffer&lt;E&gt;</a> - Class in <a href="express.mvp.roray.ffm/express/mvp/roray/ffm/concurrent/queue/package-summary.html">express.mvp.roray.ffm.concurrent.queue</a></dt>
 <dd>
-<div class="block">A high-performance, lock-free, off-heap friendly Multi-Producer
-Single-Consumer (MPSC) ring
+<div class="block">A high-performance, lock-free, off-heap friendly Multi-Producer Single-Consumer (MPSC) ring
 buffer.</div>
 </dd>
 <dt><a href="express.mvp.roray.ffm/express/mvp/roray/ffm/concurrent/queue/MpscRingBuffer.html#%3Cinit%3E(int)" class="member-name-link">MpscRingBuffer(int)</a> - Constructor for class express.mvp.roray.ffm.concurrent.queue.<a href="express.mvp.roray.ffm/express/mvp/roray/ffm/concurrent/queue/MpscRingBuffer.html" title="class in express.mvp.roray.ffm.concurrent.queue">MpscRingBuffer</a></dt>
@@ -1048,8 +1051,7 @@ Linker.Option.critical(false)</code>.</div>
 </dd>
 <dt><a href="express.mvp.roray.ffm/express/mvp/roray/ffm/ds/map/OffHeapLongIntMapImpl.html" class="type-name-link" title="class in express.mvp.roray.ffm.ds.map">OffHeapLongIntMapImpl</a> - Class in <a href="express.mvp.roray.ffm/express/mvp/roray/ffm/ds/map/package-summary.html">express.mvp.roray.ffm.ds.map</a></dt>
 <dd>
-<div class="block">A linear-probing, open-addressing hash map with off-heap keys and off-heap
-int values.</div>
+<div class="block">A linear-probing, open-addressing hash map with off-heap keys and off-heap int values.</div>
 </dd>
 <dt><a href="express.mvp.roray.ffm/express/mvp/roray/ffm/ds/map/OffHeapLongIntMapImpl.html#%3Cinit%3E(int)" class="member-name-link">OffHeapLongIntMapImpl(int)</a> - Constructor for class express.mvp.roray.ffm.ds.map.<a href="express.mvp.roray.ffm/express/mvp/roray/ffm/ds/map/OffHeapLongIntMapImpl.html" title="class in express.mvp.roray.ffm.ds.map">OffHeapLongIntMapImpl</a></dt>
 <dd>
@@ -1057,12 +1059,11 @@ int values.</div>
 </dd>
 <dt><a href="express.mvp.roray.ffm/express/mvp/roray/ffm/ds/map/OffHeapLongIntMapImpl.html#%3Cinit%3E(int,java.lang.foreign.Arena)" class="member-name-link">OffHeapLongIntMapImpl(int, Arena)</a> - Constructor for class express.mvp.roray.ffm.ds.map.<a href="express.mvp.roray.ffm/express/mvp/roray/ffm/ds/map/OffHeapLongIntMapImpl.html" title="class in express.mvp.roray.ffm.ds.map">OffHeapLongIntMapImpl</a></dt>
 <dd>
-<div class="block">Creates a new off-heap long-to-int map using a caller-provided <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/foreign/Arena.html" title="class or interface in java.lang.foreign" class="external-link"><code>Arena</code></a>.</div>
+<div class="block">Creates a new off-heap long-to-int map using a caller-provided <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/Arena.html" title="class or interface in java.lang.foreign" class="external-link"><code>Arena</code></a>.</div>
 </dd>
 <dt><a href="express.mvp.roray.ffm/express/mvp/roray/ffm/ds/map/OffHeapLongObjectMap.html" class="type-name-link" title="interface in express.mvp.roray.ffm.ds.map">OffHeapLongObjectMap&lt;V&gt;</a> - Interface in <a href="express.mvp.roray.ffm/express/mvp/roray/ffm/ds/map/package-summary.html">express.mvp.roray.ffm.ds.map</a></dt>
 <dd>
-<div class="block">A primitive long-to-Object map backed by off-heap memory for the
-keys/structure.</div>
+<div class="block">A primitive long-to-Object map backed by off-heap memory for the keys/structure.</div>
 </dd>
 <dt><a href="express.mvp.roray.ffm/express/mvp/roray/ffm/ds/map/OffHeapLongObjectMapImpl.html" class="type-name-link" title="class in express.mvp.roray.ffm.ds.map">OffHeapLongObjectMapImpl&lt;V&gt;</a> - Class in <a href="express.mvp.roray.ffm/express/mvp/roray/ffm/ds/map/package-summary.html">express.mvp.roray.ffm.ds.map</a></dt>
 <dd>
@@ -1151,13 +1152,11 @@ pool when used in a try-with-resources block.</div>
 <dd>&nbsp;</dd>
 <dt><a href="express.mvp.roray.ffm/express/mvp/roray/ffm/ds/map/OffHeapLongIntMapImpl.html#probeForPut(long)" class="member-name-link">probeForPut(long)</a> - Method in class express.mvp.roray.ffm.ds.map.<a href="express.mvp.roray.ffm/express/mvp/roray/ffm/ds/map/OffHeapLongIntMapImpl.html" title="class in express.mvp.roray.ffm.ds.map">OffHeapLongIntMapImpl</a></dt>
 <dd>
-<div class="block">Returns a packed long where the sign bit indicates whether the key already
-exists.</div>
+<div class="block">Returns a packed long where the sign bit indicates whether the key already exists.</div>
 </dd>
 <dt><a href="express.mvp.roray.ffm/express/mvp/roray/ffm/ds/map/OffHeapLongObjectMapImpl.html#probeForPut(long)" class="member-name-link">probeForPut(long)</a> - Method in class express.mvp.roray.ffm.ds.map.<a href="express.mvp.roray.ffm/express/mvp/roray/ffm/ds/map/OffHeapLongObjectMapImpl.html" title="class in express.mvp.roray.ffm.ds.map">OffHeapLongObjectMapImpl</a></dt>
 <dd>
-<div class="block">Returns a packed long where the sign bit indicates whether the key already
-exists.</div>
+<div class="block">Returns a packed long where the sign bit indicates whether the key already exists.</div>
 </dd>
 <dt><a href="express.mvp.roray.ffm/express/mvp/roray/ffm/ds/map/OffHeapLongIntMap.html#put(long,int)" class="member-name-link">put(long, int)</a> - Method in interface express.mvp.roray.ffm.ds.map.<a href="express.mvp.roray.ffm/express/mvp/roray/ffm/ds/map/OffHeapLongIntMap.html" title="interface in express.mvp.roray.ffm.ds.map">OffHeapLongIntMap</a></dt>
 <dd>&nbsp;</dd>
@@ -1264,8 +1263,7 @@ exists.</div>
 </dd>
 <dt><a href="express.mvp.roray.ffm/express/mvp/roray/ffm/utils/memory/SegmentBinaryReader.html#readNullableStringFixedLength(express.mvp.roray.ffm.utils.memory.Utf8View)" class="member-name-link">readNullableStringFixedLength(Utf8View)</a> - Method in class express.mvp.roray.ffm.utils.memory.<a href="express.mvp.roray.ffm/express/mvp/roray/ffm/utils/memory/SegmentBinaryReader.html" title="class in express.mvp.roray.ffm.utils.memory">SegmentBinaryReader</a></dt>
 <dd>
-<div class="block">Reads a nullable, presence-bit prefixed UTF-8 string with fixed-length
-encoding.</div>
+<div class="block">Reads a nullable, presence-bit prefixed UTF-8 string with fixed-length encoding.</div>
 </dd>
 <dt><a href="express.mvp.roray.ffm/express/mvp/roray/ffm/utils/memory/BinaryReader.html#readSegment(long)" class="member-name-link">readSegment(long)</a> - Method in interface express.mvp.roray.ffm.utils.memory.<a href="express.mvp.roray.ffm/express/mvp/roray/ffm/utils/memory/BinaryReader.html" title="interface in express.mvp.roray.ffm.utils.memory">BinaryReader</a></dt>
 <dd>
@@ -1285,13 +1283,13 @@ encoding.</div>
 <dd>&nbsp;</dd>
 <dt><a href="express.mvp.roray.ffm/express/mvp/roray/ffm/utils/memory/SegmentBinaryReader.html#readString(express.mvp.roray.ffm.utils.memory.Utf8View)" class="member-name-link">readString(Utf8View)</a> - Method in class express.mvp.roray.ffm.utils.memory.<a href="express.mvp.roray.ffm/express/mvp/roray/ffm/utils/memory/SegmentBinaryReader.html" title="class in express.mvp.roray.ffm.utils.memory">SegmentBinaryReader</a></dt>
 <dd>
-<div class="block">Reads a VarInt-prefixed UTF-8 string into the provided Utf8View without
-allocating any objects on the heap.</div>
+<div class="block">Reads a VarInt-prefixed UTF-8 string into the provided Utf8View without allocating any
+objects on the heap.</div>
 </dd>
 <dt><a href="express.mvp.roray.ffm/express/mvp/roray/ffm/utils/memory/SegmentBinaryReader.html#readStringFixedLength(express.mvp.roray.ffm.utils.memory.Utf8View)" class="member-name-link">readStringFixedLength(Utf8View)</a> - Method in class express.mvp.roray.ffm.utils.memory.<a href="express.mvp.roray.ffm/express/mvp/roray/ffm/utils/memory/SegmentBinaryReader.html" title="class in express.mvp.roray.ffm.utils.memory">SegmentBinaryReader</a></dt>
 <dd>
-<div class="block">Reads a fixed-length prefixed UTF-8 string into the provided Utf8View without
-allocating any objects on the heap.</div>
+<div class="block">Reads a fixed-length prefixed UTF-8 string into the provided Utf8View without allocating any
+objects on the heap.</div>
 </dd>
 <dt><a href="express.mvp.roray.ffm/express/mvp/roray/ffm/utils/memory/BinaryReader.html#readVarInt()" class="member-name-link">readVarInt()</a> - Method in interface express.mvp.roray.ffm.utils.memory.<a href="express.mvp.roray.ffm/express/mvp/roray/ffm/utils/memory/BinaryReader.html" title="interface in express.mvp.roray.ffm.utils.memory">BinaryReader</a></dt>
 <dd>
@@ -1305,8 +1303,7 @@ allocating any objects on the heap.</div>
 </dd>
 <dt><a href="express.mvp.roray.ffm/express/mvp/roray/ffm/utils/memory/SegmentBinaryReader.html#readVarLong()" class="member-name-link">readVarLong()</a> - Method in class express.mvp.roray.ffm.utils.memory.<a href="express.mvp.roray.ffm/express/mvp/roray/ffm/utils/memory/SegmentBinaryReader.html" title="class in express.mvp.roray.ffm.utils.memory">SegmentBinaryReader</a></dt>
 <dd>
-<div class="block">Decodes a 64-bit integer using the Unsigned LEB128 (Little Endian Base 128)
-format.</div>
+<div class="block">Decodes a 64-bit integer using the Unsigned LEB128 (Little Endian Base 128) format.</div>
 </dd>
 <dt><a href="express.mvp.roray.ffm/express/mvp/roray/ffm/pool/BufferRef.html#reference-counting-heading" class="search-tag-link">Reference Counting</a> - Section in interface express.mvp.roray.ffm.pool.BufferRef</dt>
 <dd>&nbsp;</dd>
@@ -1348,8 +1345,7 @@ format.</div>
 <dd>&nbsp;</dd>
 <dt><a href="express.mvp.roray.ffm/express/mvp/roray/ffm/ds/map/OffHeapLongIntMap.html#removePacked(long)" class="member-name-link">removePacked(long)</a> - Method in interface express.mvp.roray.ffm.ds.map.<a href="express.mvp.roray.ffm/express/mvp/roray/ffm/ds/map/OffHeapLongIntMap.html" title="interface in express.mvp.roray.ffm.ds.map">OffHeapLongIntMap</a></dt>
 <dd>
-<div class="block">Removes the key <span class="invalid-tag">invalid input: '&amp;'</span> returns its value in the same packed format as
-<a href="express.mvp.roray.ffm/express/mvp/roray/ffm/ds/map/OffHeapLongIntMap.html#getPacked(long)"><code>OffHeapLongIntMap.getPacked(long)</code></a>.</div>
+<div class="block">Removes the key <span class="invalid-tag">invalid input: '&amp;'</span> returns its value in the same packed format as <a href="express.mvp.roray.ffm/express/mvp/roray/ffm/ds/map/OffHeapLongIntMap.html#getPacked(long)"><code>OffHeapLongIntMap.getPacked(long)</code></a>.</div>
 </dd>
 <dt><a href="express.mvp.roray.ffm/express/mvp/roray/ffm/ds/map/OffHeapLongIntMapImpl.html#removePacked(long)" class="member-name-link">removePacked(long)</a> - Method in class express.mvp.roray.ffm.ds.map.<a href="express.mvp.roray.ffm/express/mvp/roray/ffm/ds/map/OffHeapLongIntMapImpl.html" title="class in express.mvp.roray.ffm.ds.map">OffHeapLongIntMapImpl</a></dt>
 <dd>&nbsp;</dd>
@@ -1440,15 +1436,13 @@ format.</div>
 </dd>
 <dt><a href="express.mvp.roray.ffm/express/mvp/roray/ffm/utils/memory/SegmentBinaryWriter.html" class="type-name-link" title="class in express.mvp.roray.ffm.utils.memory">SegmentBinaryWriter</a> - Class in <a href="express.mvp.roray.ffm/express/mvp/roray/ffm/utils/memory/package-summary.html">express.mvp.roray.ffm.utils.memory</a></dt>
 <dd>
-<div class="block">A high-performance, zero-copy BinaryWriter implementation using
-MemorySegment.</div>
+<div class="block">A high-performance, zero-copy BinaryWriter implementation using MemorySegment.</div>
 </dd>
 <dt><a href="express.mvp.roray.ffm/express/mvp/roray/ffm/utils/memory/SegmentBinaryWriter.html#%3Cinit%3E()" class="member-name-link">SegmentBinaryWriter()</a> - Constructor for class express.mvp.roray.ffm.utils.memory.<a href="express.mvp.roray.ffm/express/mvp/roray/ffm/utils/memory/SegmentBinaryWriter.html" title="class in express.mvp.roray.ffm.utils.memory">SegmentBinaryWriter</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="express.mvp.roray.ffm/express/mvp/roray/ffm/utils/memory/SegmentUtils.html" class="type-name-link" title="class in express.mvp.roray.ffm.utils.memory">SegmentUtils</a> - Class in <a href="express.mvp.roray.ffm/express/mvp/roray/ffm/utils/memory/package-summary.html">express.mvp.roray.ffm.utils.memory</a></dt>
 <dd>
-<div class="block">A collection of stateless, high-performance utility methods for operating on
-<a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/foreign/MemorySegment.html" title="class or interface in java.lang.foreign" class="external-link"><code>MemorySegment</code></a>s.</div>
+<div class="block">A collection of stateless, high-performance utility methods for operating on <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/MemorySegment.html" title="class or interface in java.lang.foreign" class="external-link"><code>MemorySegment</code></a>s.</div>
 </dd>
 <dt><a href="express.mvp.roray.ffm/express/mvp/roray/ffm/utils/memory/BitSetView.html#set(long)" class="member-name-link">set(long)</a> - Method in class express.mvp.roray.ffm.utils.memory.<a href="express.mvp.roray.ffm/express/mvp/roray/ffm/utils/memory/BitSetView.html" title="class in express.mvp.roray.ffm.utils.memory">BitSetView</a></dt>
 <dd>
@@ -1600,7 +1594,7 @@ MemorySegment.</div>
 </dd>
 <dt><a href="express.mvp.roray.ffm/express/mvp/roray/ffm/utils/functions/StructAccessor.html" class="type-name-link" title="class in express.mvp.roray.ffm.utils.functions">StructAccessor</a> - Class in <a href="express.mvp.roray.ffm/express/mvp/roray/ffm/utils/functions/package-summary.html">express.mvp.roray.ffm.utils.functions</a></dt>
 <dd>
-<div class="block">Provides convenient accessors for reading and writing struct fields in a <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/foreign/MemorySegment.html" title="class or interface in java.lang.foreign" class="external-link"><code>MemorySegment</code></a>.</div>
+<div class="block">Provides convenient accessors for reading and writing struct fields in a <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/MemorySegment.html" title="class or interface in java.lang.foreign" class="external-link"><code>MemorySegment</code></a>.</div>
 </dd>
 <dt><a href="express.mvp.roray.ffm/express/mvp/roray/ffm/pool/BufferPoolMetrics.html#successfulAcquisitions()" class="member-name-link">successfulAcquisitions()</a> - Method in record class express.mvp.roray.ffm.pool.<a href="express.mvp.roray.ffm/express/mvp/roray/ffm/pool/BufferPoolMetrics.html" title="class in express.mvp.roray.ffm.pool">BufferPoolMetrics</a></dt>
 <dd>
@@ -1656,7 +1650,7 @@ MemorySegment.</div>
 </dd>
 <dt><a href="express.mvp.roray.ffm/express/mvp/roray/ffm/utils/functions/UpcallFactory.html#upcallStub(java.lang.foreign.Arena,java.lang.invoke.MethodHandle,java.lang.foreign.FunctionDescriptor)" class="member-name-link">upcallStub(Arena, MethodHandle, FunctionDescriptor)</a> - Method in class express.mvp.roray.ffm.utils.functions.<a href="express.mvp.roray.ffm/express/mvp/roray/ffm/utils/functions/UpcallFactory.html" title="class in express.mvp.roray.ffm.utils.functions">UpcallFactory</a></dt>
 <dd>
-<div class="block">Creates an upcall stub from a <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/invoke/MethodHandle.html" title="class or interface in java.lang.invoke" class="external-link"><code>MethodHandle</code></a>.</div>
+<div class="block">Creates an upcall stub from a <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/invoke/MethodHandle.html" title="class or interface in java.lang.invoke" class="external-link"><code>MethodHandle</code></a>.</div>
 </dd>
 <dt><a href="express.mvp.roray.ffm/express/mvp/roray/ffm/utils/functions/UpcallFactory.html#upcallStub(java.lang.foreign.Arena,java.lang.invoke.MethodHandles.Lookup,T,java.lang.Class,java.lang.foreign.FunctionDescriptor)" class="member-name-link">upcallStub(Arena, MethodHandles.Lookup, T, Class, FunctionDescriptor)</a> - Method in class express.mvp.roray.ffm.utils.functions.<a href="express.mvp.roray.ffm/express/mvp/roray/ffm/utils/functions/UpcallFactory.html" title="class in express.mvp.roray.ffm.utils.functions">UpcallFactory</a></dt>
 <dd>
@@ -1765,13 +1759,11 @@ format.</div>
 </dd>
 <dt><a href="express.mvp.roray.ffm/express/mvp/roray/ffm/utils/memory/SegmentBinaryReader.html#wrap(java.lang.foreign.MemorySegment)" class="member-name-link">wrap(MemorySegment)</a> - Method in class express.mvp.roray.ffm.utils.memory.<a href="express.mvp.roray.ffm/express/mvp/roray/ffm/utils/memory/SegmentBinaryReader.html" title="class in express.mvp.roray.ffm.utils.memory">SegmentBinaryReader</a></dt>
 <dd>
-<div class="block">Wraps a MemorySegment, preparing the reader for use and resetting its
-position.</div>
+<div class="block">Wraps a MemorySegment, preparing the reader for use and resetting its position.</div>
 </dd>
 <dt><a href="express.mvp.roray.ffm/express/mvp/roray/ffm/utils/memory/SegmentBinaryWriter.html#wrap(java.lang.foreign.MemorySegment)" class="member-name-link">wrap(MemorySegment)</a> - Method in class express.mvp.roray.ffm.utils.memory.<a href="express.mvp.roray.ffm/express/mvp/roray/ffm/utils/memory/SegmentBinaryWriter.html" title="class in express.mvp.roray.ffm.utils.memory">SegmentBinaryWriter</a></dt>
 <dd>
-<div class="block">Wraps a MemorySegment, preparing the writer for use and resetting its
-position.</div>
+<div class="block">Wraps a MemorySegment, preparing the writer for use and resetting its position.</div>
 </dd>
 <dt><a href="express.mvp.roray.ffm/express/mvp/roray/ffm/utils/memory/FlyweightAccessor.html#wrap(java.lang.foreign.MemorySegment,long)" class="member-name-link">wrap(MemorySegment, long)</a> - Method in interface express.mvp.roray.ffm.utils.memory.<a href="express.mvp.roray.ffm/express/mvp/roray/ffm/utils/memory/FlyweightAccessor.html" title="interface in express.mvp.roray.ffm.utils.memory">FlyweightAccessor</a></dt>
 <dd>
@@ -1938,14 +1930,13 @@ data.</div>
 <dd>&nbsp;</dd>
 <dt><a href="express.mvp.roray.ffm/express/mvp/roray/ffm/utils/memory/SegmentBinaryWriter.html#writeString(java.lang.String,java.lang.foreign.MemorySegment)" class="member-name-link">writeString(String, MemorySegment)</a> - Method in class express.mvp.roray.ffm.utils.memory.<a href="express.mvp.roray.ffm/express/mvp/roray/ffm/utils/memory/SegmentBinaryWriter.html" title="class in express.mvp.roray.ffm.utils.memory">SegmentBinaryWriter</a></dt>
 <dd>
-<div class="block">Encodes and writes a String with zero heap allocations by using a provided
-off-heap scratch
+<div class="block">Encodes and writes a String with zero heap allocations by using a provided off-heap scratch
 buffer for the UTF-8 encoding process.</div>
 </dd>
 <dt><a href="express.mvp.roray.ffm/express/mvp/roray/ffm/utils/memory/SegmentBinaryWriter.html#writeStringFixedLength(java.lang.String)" class="member-name-link">writeStringFixedLength(String)</a> - Method in class express.mvp.roray.ffm.utils.memory.<a href="express.mvp.roray.ffm/express/mvp/roray/ffm/utils/memory/SegmentBinaryWriter.html" title="class in express.mvp.roray.ffm.utils.memory">SegmentBinaryWriter</a></dt>
 <dd>
-<div class="block">Writes a String using single-pass UTF-8 encoding directly to the target
-buffer with a fixed 4-byte big-endian length prefix.</div>
+<div class="block">Writes a String using single-pass UTF-8 encoding directly to the target buffer with a fixed
+4-byte big-endian length prefix.</div>
 </dd>
 <dt><a href="express.mvp.roray.ffm/express/mvp/roray/ffm/utils/memory/FlyweightAccessor.html#writeTo(express.mvp.roray.ffm.utils.memory.BinaryWriter)" class="member-name-link">writeTo(BinaryWriter)</a> - Method in interface express.mvp.roray.ffm.utils.memory.<a href="express.mvp.roray.ffm/express/mvp/roray/ffm/utils/memory/FlyweightAccessor.html" title="interface in express.mvp.roray.ffm.utils.memory">FlyweightAccessor</a></dt>
 <dd>

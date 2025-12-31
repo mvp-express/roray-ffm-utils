@@ -79,7 +79,7 @@ loadScripts(document, 'script');</script>
 <section class="class-description" id="class-description">
 <dl class="notes">
 <dt>All Superinterfaces:</dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/AutoCloseable.html" title="class or interface in java.lang" class="external-link">AutoCloseable</a></code></dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/AutoCloseable.html" title="class or interface in java.lang" class="external-link">AutoCloseable</a></code></dd>
 </dl>
 <dl class="notes">
 <dt>All Known Implementing Classes:</dt>
@@ -88,12 +88,10 @@ loadScripts(document, 'script');</script>
 <hr>
 <div class="horizontal-scroll">
 <div class="type-signature"><span class="modifiers">public interface </span><span class="element-name type-name-label">OffHeapLongIntMap</span><span class="extends-implements">
-extends <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/AutoCloseable.html" title="class or interface in java.lang" class="external-link">AutoCloseable</a></span></div>
+extends <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/AutoCloseable.html" title="class or interface in java.lang" class="external-link">AutoCloseable</a></span></div>
 <div class="block">A primitive long-to-int map backed entirely by off-heap memory.
 
-<p>
-Designed for zero-allocation, zero-GC lookups on hot paths. Both keys and
-values are stored in
+<p>Designed for zero-allocation, zero-GC lookups on hot paths. Both keys and values are stored in
 off-heap memory.</div>
 </div>
 </section>
@@ -136,8 +134,7 @@ off-heap memory.</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>long</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#removePacked(long)" class="member-name-link">removePacked</a><wbr>(long&nbsp;key)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
-<div class="block">Removes the key <span class="invalid-tag">invalid input: '&amp;'</span> returns its value in the same packed format as
-<a href="#getPacked(long)"><code>getPacked(long)</code></a>.</div>
+<div class="block">Removes the key <span class="invalid-tag">invalid input: '&amp;'</span> returns its value in the same packed format as <a href="#getPacked(long)"><code>getPacked(long)</code></a>.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>int</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#size()" class="member-name-link">size</a>()</code></div>
@@ -166,19 +163,15 @@ off-heap memory.</div>
 <dt>Parameters:</dt>
 <dd><code>key</code> - The key.</dd>
 <dt>Returns:</dt>
-<dd>A packed long where bit 63 (MSB) is the "found" flag and bits 0-31
-        contain the
-        int value. If the key is not found, the MSB is 0.
-
-        <p>
-        <b>Example:</b>
-
-        <pre><code>long packed = map.getPacked(key);
+<dd>A packed long where bit 63 (MSB) is the "found" flag and bits 0-31 contain the int
+    value. If the key is not found, the MSB is 0. Example:
+    <pre><code>long packed = map.getPacked(key);
 boolean found = packed &lt; 0;   // MSB (bit 63) set =&gt; negative =&gt; found
 if (found) {
     int value = (int) packed; // low 32 bits
     // use value
-        }
+}
+
 </code></pre></dd>
 </dl>
 </div>
@@ -198,8 +191,7 @@ if (found) {
 <h3>removePacked</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="return-type">long</span>&nbsp;<span class="element-name">removePacked</span><wbr><span class="parameters">(long&nbsp;key)</span></div>
-<div class="block">Removes the key <span class="invalid-tag">invalid input: '&amp;'</span> returns its value in the same packed format as
-<a href="#getPacked(long)"><code>getPacked(long)</code></a>.</div>
+<div class="block">Removes the key <span class="invalid-tag">invalid input: '&amp;'</span> returns its value in the same packed format as <a href="#getPacked(long)"><code>getPacked(long)</code></a>.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>key</code> - The key to remove.</dd>
@@ -249,7 +241,7 @@ if (found) {
 <div class="block">Releases the underlying off-heap memory.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/AutoCloseable.html#close()" title="class or interface in java.lang" class="external-link">close</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/AutoCloseable.html" title="class or interface in java.lang" class="external-link">AutoCloseable</a></code></dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/AutoCloseable.html#close()" title="class or interface in java.lang" class="external-link">close</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/AutoCloseable.html" title="class or interface in java.lang" class="external-link">AutoCloseable</a></code></dd>
 </dl>
 </div>
 </section>

@@ -104,24 +104,22 @@ loadScripts(document, 'script');</script>
 <div class="header">
 <h1 title="Class OffHeapLongIntMapImpl" class="title">Class OffHeapLongIntMapImpl</h1>
 </div>
-<div class="inheritance" title="Inheritance Tree"><a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">java.lang.Object</a>
+<div class="inheritance" title="Inheritance Tree"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">java.lang.Object</a>
 <div class="inheritance">express.mvp.roray.ffm.ds.map.OffHeapLongIntMapImpl</div>
 </div>
 <section class="class-description" id="class-description">
 <dl class="notes">
 <dt>All Implemented Interfaces:</dt>
-<dd><code><a href="OffHeapLongIntMap.html" title="interface in express.mvp.roray.ffm.ds.map">OffHeapLongIntMap</a>, <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/AutoCloseable.html" title="class or interface in java.lang" class="external-link">AutoCloseable</a></code></dd>
+<dd><code><a href="OffHeapLongIntMap.html" title="interface in express.mvp.roray.ffm.ds.map">OffHeapLongIntMap</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/AutoCloseable.html" title="class or interface in java.lang" class="external-link">AutoCloseable</a></code></dd>
 </dl>
 <hr>
 <div class="horizontal-scroll">
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">OffHeapLongIntMapImpl</span>
-<span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>
+<span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>
 implements <a href="OffHeapLongIntMap.html" title="interface in express.mvp.roray.ffm.ds.map">OffHeapLongIntMap</a></span></div>
-<div class="block">A linear-probing, open-addressing hash map with off-heap keys and off-heap
-int values.
+<div class="block">A linear-probing, open-addressing hash map with off-heap keys and off-heap int values.
 
-<p>
-Not thread-safe. Designed for single-threaded hot paths.</div>
+<p>Not thread-safe. Designed for single-threaded hot paths.</div>
 </div>
 </section>
 <section class="summary">
@@ -135,7 +133,7 @@ Not thread-safe. Designed for single-threaded hot paths.</div>
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Field</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>protected final <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/foreign/Arena.html" title="class or interface in java.lang.foreign" class="external-link">Arena</a></code></div>
+<div class="col-first even-row-color"><code>protected final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/Arena.html" title="class or interface in java.lang.foreign" class="external-link">Arena</a></code></div>
 <div class="col-second even-row-color"><code><a href="#arena" class="member-name-link">arena</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>protected final boolean</code></div>
@@ -150,7 +148,7 @@ Not thread-safe. Designed for single-threaded hot paths.</div>
 <div class="col-first even-row-color"><code>protected static final byte</code></div>
 <div class="col-second even-row-color"><code><a href="#FREE" class="member-name-link">FREE</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>protected final <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/foreign/MemorySegment.html" title="class or interface in java.lang.foreign" class="external-link">MemorySegment</a></code></div>
+<div class="col-first odd-row-color"><code>protected final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/MemorySegment.html" title="class or interface in java.lang.foreign" class="external-link">MemorySegment</a></code></div>
 <div class="col-second odd-row-color"><code><a href="#keys" class="member-name-link">keys</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>protected final int</code></div>
@@ -165,7 +163,7 @@ Not thread-safe. Designed for single-threaded hot paths.</div>
 <div class="col-first odd-row-color"><code>protected int</code></div>
 <div class="col-second odd-row-color"><code><a href="#size" class="member-name-link">size</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>protected final <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/foreign/MemorySegment.html" title="class or interface in java.lang.foreign" class="external-link">MemorySegment</a></code></div>
+<div class="col-first even-row-color"><code>protected final <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/MemorySegment.html" title="class or interface in java.lang.foreign" class="external-link">MemorySegment</a></code></div>
 <div class="col-second even-row-color"><code><a href="#states" class="member-name-link">states</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 </div>
@@ -184,9 +182,9 @@ Not thread-safe. Designed for single-threaded hot paths.</div>
 <div class="block">Creates a new off-heap long-to-int map with specified capacity.</div>
 </div>
 <div class="col-constructor-name odd-row-color"><code><a href="#%3Cinit%3E(int,java.lang.foreign.Arena)" class="member-name-link">OffHeapLongIntMapImpl</a><wbr>(int&nbsp;capacity,
- <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/foreign/Arena.html" title="class or interface in java.lang.foreign" class="external-link">Arena</a>&nbsp;arena)</code></div>
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/Arena.html" title="class or interface in java.lang.foreign" class="external-link">Arena</a>&nbsp;arena)</code></div>
 <div class="col-last odd-row-color">
-<div class="block">Creates a new off-heap long-to-int map using a caller-provided <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/foreign/Arena.html" title="class or interface in java.lang.foreign" class="external-link"><code>Arena</code></a>.</div>
+<div class="block">Creates a new off-heap long-to-int map using a caller-provided <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/Arena.html" title="class or interface in java.lang.foreign" class="external-link"><code>Arena</code></a>.</div>
 </div>
 </div>
 </section>
@@ -236,8 +234,7 @@ Not thread-safe. Designed for single-threaded hot paths.</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected final long</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#probeForPut(long)" class="member-name-link">probeForPut</a><wbr>(long&nbsp;key)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns a packed long where the sign bit indicates whether the key already
-exists.</div>
+<div class="block">Returns a packed long where the sign bit indicates whether the key already exists.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#put(long,int)" class="member-name-link">put</a><wbr>(long&nbsp;key,
@@ -246,8 +243,7 @@ exists.</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>long</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#removePacked(long)" class="member-name-link">removePacked</a><wbr>(long&nbsp;key)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Removes the key <span class="invalid-tag">invalid input: '&amp;'</span> returns its value in the same packed format as
-<a href="OffHeapLongIntMap.html#getPacked(long)"><code>OffHeapLongIntMap.getPacked(long)</code></a>.</div>
+<div class="block">Removes the key <span class="invalid-tag">invalid input: '&amp;'</span> returns its value in the same packed format as <a href="OffHeapLongIntMap.html#getPacked(long)"><code>OffHeapLongIntMap.getPacked(long)</code></a>.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#size()" class="member-name-link">size</a>()</code></div>
@@ -256,8 +252,8 @@ exists.</div>
 </div>
 </div>
 <div class="inherited-list">
-<h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;<a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/Object.html#method-summary" title="class or interface in java.lang" class="external-link">Object</a></h3>
-<code><a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
+<h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#method-summary" title="class or interface in java.lang" class="external-link">Object</a></h3>
+<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
 </section>
 </li>
 </ul>
@@ -321,7 +317,7 @@ exists.</div>
 <section class="detail" id="arena">
 <h3>arena</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/foreign/Arena.html" title="class or interface in java.lang.foreign" class="external-link">Arena</a></span>&nbsp;<span class="element-name">arena</span></div>
+<div class="member-signature"><span class="modifiers">protected final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/Arena.html" title="class or interface in java.lang.foreign" class="external-link">Arena</a></span>&nbsp;<span class="element-name">arena</span></div>
 </div>
 </section>
 </li>
@@ -337,7 +333,7 @@ exists.</div>
 <section class="detail" id="keys">
 <h3>keys</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/foreign/MemorySegment.html" title="class or interface in java.lang.foreign" class="external-link">MemorySegment</a></span>&nbsp;<span class="element-name">keys</span></div>
+<div class="member-signature"><span class="modifiers">protected final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/MemorySegment.html" title="class or interface in java.lang.foreign" class="external-link">MemorySegment</a></span>&nbsp;<span class="element-name">keys</span></div>
 </div>
 </section>
 </li>
@@ -345,7 +341,7 @@ exists.</div>
 <section class="detail" id="states">
 <h3>states</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/foreign/MemorySegment.html" title="class or interface in java.lang.foreign" class="external-link">MemorySegment</a></span>&nbsp;<span class="element-name">states</span></div>
+<div class="member-signature"><span class="modifiers">protected final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/MemorySegment.html" title="class or interface in java.lang.foreign" class="external-link">MemorySegment</a></span>&nbsp;<span class="element-name">states</span></div>
 </div>
 </section>
 </li>
@@ -396,10 +392,8 @@ exists.</div>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">OffHeapLongIntMapImpl</span><wbr><span class="parameters">(int&nbsp;capacity)</span></div>
 <div class="block">Creates a new off-heap long-to-int map with specified capacity.
 
-<p>
-<b>Arena ownership:</b> This map owns its arena. Calling <a href="#close()"><code>close()</code></a>
-closes the
-arena and releases all off-heap storage.</div>
+<p><b>Arena ownership:</b> This map owns its arena. Calling <a href="#close()"><code>close()</code></a> closes the arena
+and releases all off-heap storage.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>capacity</code> - the capacity (must be a power of 2)</dd>
@@ -412,20 +406,15 @@ arena and releases all off-heap storage.</div>
 <h3>OffHeapLongIntMapImpl</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">OffHeapLongIntMapImpl</span><wbr><span class="parameters">(int&nbsp;capacity,
- <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/foreign/Arena.html" title="class or interface in java.lang.foreign" class="external-link">Arena</a>&nbsp;arena)</span></div>
-<div class="block">Creates a new off-heap long-to-int map using a caller-provided <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/foreign/Arena.html" title="class or interface in java.lang.foreign" class="external-link"><code>Arena</code></a>.
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/Arena.html" title="class or interface in java.lang.foreign" class="external-link">Arena</a>&nbsp;arena)</span></div>
+<div class="block">Creates a new off-heap long-to-int map using a caller-provided <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/Arena.html" title="class or interface in java.lang.foreign" class="external-link"><code>Arena</code></a>.
 
-<p>
-<b>Arena ownership:</b> The map does <b>not</b> own the provided arena.
-Calling
-<a href="#close()"><code>close()</code></a> will release this map instance, but will <b>not</b> close
-the arena.
-The caller remains responsible for closing the arena.</div>
+<p><b>Arena ownership:</b> The map does <b>not</b> own the provided arena. Calling <a href="#close()"><code>close()</code></a> will release this map instance, but will <b>not</b> close the arena. The caller
+remains responsible for closing the arena.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>capacity</code> - the capacity (must be a power of 2)</dd>
-<dd><code>arena</code> - the arena to allocate the off-heap storage from
-                (caller-owned)</dd>
+<dd><code>arena</code> - the arena to allocate the off-heap storage from (caller-owned)</dd>
 </dl>
 </div>
 </section>
@@ -451,19 +440,15 @@ The caller remains responsible for closing the arena.</div>
 <dt>Parameters:</dt>
 <dd><code>key</code> - The key.</dd>
 <dt>Returns:</dt>
-<dd>A packed long where bit 63 (MSB) is the "found" flag and bits 0-31
-        contain the
-        int value. If the key is not found, the MSB is 0.
-
-        <p>
-        <b>Example:</b>
-
-        <pre><code>long packed = map.getPacked(key);
+<dd>A packed long where bit 63 (MSB) is the "found" flag and bits 0-31 contain the int
+    value. If the key is not found, the MSB is 0. Example:
+    <pre><code>long packed = map.getPacked(key);
 boolean found = packed &lt; 0;   // MSB (bit 63) set =&gt; negative =&gt; found
 if (found) {
     int value = (int) packed; // low 32 bits
     // use value
-        }
+}
+
 </code></pre></dd>
 </dl>
 </div>
@@ -488,8 +473,7 @@ if (found) {
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">removePacked</span><wbr><span class="parameters">(long&nbsp;key)</span></div>
 <div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="OffHeapLongIntMap.html#removePacked(long)">OffHeapLongIntMap</a></code></span></div>
-<div class="block">Removes the key <span class="invalid-tag">invalid input: '&amp;'</span> returns its value in the same packed format as
-<a href="OffHeapLongIntMap.html#getPacked(long)"><code>OffHeapLongIntMap.getPacked(long)</code></a>.</div>
+<div class="block">Removes the key <span class="invalid-tag">invalid input: '&amp;'</span> returns its value in the same packed format as <a href="OffHeapLongIntMap.html#getPacked(long)"><code>OffHeapLongIntMap.getPacked(long)</code></a>.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="OffHeapLongIntMap.html#removePacked(long)">removePacked</a></code>&nbsp;in interface&nbsp;<code><a href="OffHeapLongIntMap.html" title="interface in express.mvp.roray.ffm.ds.map">OffHeapLongIntMap</a></code></dd>
@@ -558,7 +542,7 @@ if (found) {
 <div class="block">Releases the underlying off-heap memory.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/AutoCloseable.html#close()" title="class or interface in java.lang" class="external-link">close</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/AutoCloseable.html" title="class or interface in java.lang" class="external-link">AutoCloseable</a></code></dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/AutoCloseable.html#close()" title="class or interface in java.lang" class="external-link">close</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/AutoCloseable.html" title="class or interface in java.lang" class="external-link">AutoCloseable</a></code></dd>
 <dt>Specified by:</dt>
 <dd><code><a href="OffHeapLongIntMap.html#close()">close</a></code>&nbsp;in interface&nbsp;<code><a href="OffHeapLongIntMap.html" title="interface in express.mvp.roray.ffm.ds.map">OffHeapLongIntMap</a></code></dd>
 </dl>
@@ -586,18 +570,14 @@ if (found) {
 <h3>probeForPut</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">protected final</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">probeForPut</span><wbr><span class="parameters">(long&nbsp;key)</span></div>
-<div class="block">Returns a packed long where the sign bit indicates whether the key already
-exists.
+<div class="block">Returns a packed long where the sign bit indicates whether the key already exists.
 
-<p>
-If found, <code>result &lt; 0</code> and <code>(int) result</code> is the existing index.
+<p>If found, <code>result &lt; 0</code> and <code>(int) result</code> is the existing index.
 
-<p>
-If not found, <code>result &gt;= 0</code> and <code>(int) result</code> is an insertion
-slot.</div>
+<p>If not found, <code>result &gt;= 0</code> and <code>(int) result</code> is an insertion slot.</div>
 <dl class="notes">
 <dt>Throws:</dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/IllegalStateException.html" title="class or interface in java.lang" class="external-link">IllegalStateException</a></code> - if the table is full</dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/IllegalStateException.html" title="class or interface in java.lang" class="external-link">IllegalStateException</a></code> - if the table is full</dd>
 </dl>
 </div>
 </section>

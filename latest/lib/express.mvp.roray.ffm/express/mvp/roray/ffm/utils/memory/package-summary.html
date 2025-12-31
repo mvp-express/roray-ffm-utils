@@ -76,9 +76,8 @@ loadScripts(document, 'script');</script>
 <section class="package-description" id="package-description">
 <div class="block">Binary, zero-copy codecs built on the Java Foreign Function &amp; Memory API.
 
-<p>This package provides sequential readers and writers over
-<a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/foreign/MemorySegment.html" title="class or interface in java.lang.foreign" class="external-link"><code>MemorySegment</code></a> for high-throughput encoding/decoding without
-intermediate heap copies.
+<p>This package provides sequential readers and writers over <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/MemorySegment.html" title="class or interface in java.lang.foreign" class="external-link"><code>MemorySegment</code></a> for high-throughput encoding/decoding without intermediate heap
+copies.
 
 <h2 id="core-utilities-heading">Core Utilities</h2>
 
@@ -98,8 +97,8 @@ intermediate heap copies.
 <ul>
   <li><a href="FlyweightAccessor.html" title="interface in express.mvp.roray.ffm.utils.memory"><code>FlyweightAccessor</code></a> - Contract for reusable
       flyweights that wrap a segment and expose structured field access
-  <li><a href="Utf8View.html" title="class in express.mvp.roray.ffm.utils.memory"><code>Utf8View</code></a> - Zero-allocation flyweight view over
-      a UTF-8 slice of a <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/foreign/MemorySegment.html" title="class or interface in java.lang.foreign" class="external-link"><code>MemorySegment</code></a>
+  <li><a href="Utf8View.html" title="class in express.mvp.roray.ffm.utils.memory"><code>Utf8View</code></a> - Zero-allocation flyweight view over a
+      UTF-8 slice of a <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/MemorySegment.html" title="class or interface in java.lang.foreign" class="external-link"><code>MemorySegment</code></a>
   <li><a href="BitSetView.html" title="class in express.mvp.roray.ffm.utils.memory"><code>BitSetView</code></a> - Zero-allocation BitSet-like view
       for bit operations over a segment slice
 </ul>
@@ -108,9 +107,9 @@ intermediate heap copies.
 
 <ul>
   <li><a href="Layouts.html" title="class in express.mvp.roray.ffm.utils.memory"><code>Layouts</code></a> - Predefined unaligned, endian-aware
-      <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/foreign/ValueLayout.html" title="class or interface in java.lang.foreign" class="external-link"><code>ValueLayout</code></a> constants for packed IO
-  <li><a href="SegmentUtils.html" title="class in express.mvp.roray.ffm.utils.memory"><code>SegmentUtils</code></a> - Stateless utilities for
-      operating on <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/foreign/MemorySegment.html" title="class or interface in java.lang.foreign" class="external-link"><code>MemorySegment</code></a>s (e.g., CRC32)
+      <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/ValueLayout.html" title="class or interface in java.lang.foreign" class="external-link"><code>ValueLayout</code></a> constants for packed IO
+  <li><a href="SegmentUtils.html" title="class in express.mvp.roray.ffm.utils.memory"><code>SegmentUtils</code></a> - Stateless utilities for operating
+      on <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/MemorySegment.html" title="class or interface in java.lang.foreign" class="external-link"><code>MemorySegment</code></a>s (e.g., CRC32)
   <li><a href="VarFieldWriter.html" title="class in express.mvp.roray.ffm.utils.memory"><code>VarFieldWriter</code></a> - Builder for messages with
       variable-length fields addressed by offset/length headers
 </ul>
@@ -129,12 +128,11 @@ intermediate heap copies.
 <ul>
   <li>Endianness suffixes: <code>BE</code> for big-endian (network byte order) and <code>LE</code> for
       little-endian.
-  <li>Variable-length integers: <code>VarInt</code> (32-bit) and <code>VarLong</code> (64-bit) use a
-      7-bit continuation encoding.
+  <li>Variable-length integers: <code>VarInt</code> (32-bit) and <code>VarLong</code> (64-bit) use a 7-bit
+      continuation encoding.
   <li>Strings and byte arrays are typically length-prefixed with a <code>VarInt</code>. For
-      allocation-free string decoding, populate a <a href="Utf8View.html" title="class in express.mvp.roray.ffm.utils.memory"><code>Utf8View</code></a>
-      instead of creating a <a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link"><code>String</code></a>.
-  <li>Some APIs can return a slice view (<a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/foreign/MemorySegment.html" title="class or interface in java.lang.foreign" class="external-link"><code>MemorySegment</code></a>) to avoid
+      allocation-free string decoding, populate a <a href="Utf8View.html" title="class in express.mvp.roray.ffm.utils.memory"><code>Utf8View</code></a> instead of creating a <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link"><code>String</code></a>.
+  <li>Some APIs can return a slice view (<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/MemorySegment.html" title="class or interface in java.lang.foreign" class="external-link"><code>MemorySegment</code></a>) to avoid
       copying data to the heap.
 </ul></div>
 <dl class="notes">
@@ -193,13 +191,11 @@ pool when used in a try-with-resources block.</div>
 </div>
 <div class="col-first even-row-color class-summary class-summary-tab2"><a href="SegmentBinaryWriter.html" title="class in express.mvp.roray.ffm.utils.memory">SegmentBinaryWriter</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab2">
-<div class="block">A high-performance, zero-copy BinaryWriter implementation using
-MemorySegment.</div>
+<div class="block">A high-performance, zero-copy BinaryWriter implementation using MemorySegment.</div>
 </div>
 <div class="col-first odd-row-color class-summary class-summary-tab2"><a href="SegmentUtils.html" title="class in express.mvp.roray.ffm.utils.memory">SegmentUtils</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab2">
-<div class="block">A collection of stateless, high-performance utility methods for operating on
-<a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/foreign/MemorySegment.html" title="class or interface in java.lang.foreign" class="external-link"><code>MemorySegment</code></a>s.</div>
+<div class="block">A collection of stateless, high-performance utility methods for operating on <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/MemorySegment.html" title="class or interface in java.lang.foreign" class="external-link"><code>MemorySegment</code></a>s.</div>
 </div>
 <div class="col-first even-row-color class-summary class-summary-tab2"><a href="Utf8View.html" title="class in express.mvp.roray.ffm.utils.memory">Utf8View</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab2">

@@ -91,36 +91,26 @@ loadScripts(document, 'script');</script>
 <div class="type-signature"><span class="modifiers">public interface </span><span class="element-name type-name-label">BufferRef</span></div>
 <div class="block">A reference-counted handle to a shared off-heap memory segment.
 
-<p>
-This is a general-purpose building block for off-heap pooling. It wraps a
-<a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/foreign/MemorySegment.html" title="class or interface in java.lang.foreign" class="external-link"><code>MemorySegment</code></a> with explicit ownership semantics via reference counting,
-designed for efficient
+<p>This is a general-purpose building block for off-heap pooling. It wraps a <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/MemorySegment.html" title="class or interface in java.lang.foreign" class="external-link"><code>MemorySegment</code></a> with explicit ownership semantics via reference counting, designed for efficient
 reuse.
 
 <h2 id="reference-counting-heading">Reference Counting</h2>
 
 <ul>
-<li><b>Acquire:</b> When obtained from a pool, refCount starts at 1
-<li><b>Retain:</b> Call <a href="#retain()"><code>retain()</code></a> to increment count when sharing
-<li><b>Release:</b> Call <a href="#release()"><code>release()</code></a> when done; auto-returns to pool
-at 0
+  <li><b>Acquire:</b> When obtained from a pool, refCount starts at 1
+  <li><b>Retain:</b> Call <a href="#retain()"><code>retain()</code></a> to increment count when sharing
+  <li><b>Release:</b> Call <a href="#release()"><code>release()</code></a> when done; auto-returns to pool at 0
 </ul>
 
 <h2 id="soa-structure-of-arrays--heading">SoA (Structure of Arrays)</h2>
 
-<p>
-<a href="#poolIndex()"><code>poolIndex()</code></a> supports SoA patterns where metadata (timestamps, flags,
-tokens, etc.) is
-stored in separate primitive arrays indexed by pool index, avoiding
-additional object overhead.
+<p><a href="#poolIndex()"><code>poolIndex()</code></a> supports SoA patterns where metadata (timestamps, flags, tokens, etc.) is
+stored in separate primitive arrays indexed by pool index, avoiding additional object overhead.
 
 <h2 id="thread-safety-heading">Thread Safety</h2>
 
-<p>
-Reference counting operations (<a href="#retain()"><code>retain()</code></a>, <a href="#release()"><code>release()</code></a>) are
-thread-safe using
-lock-free CAS operations. The underlying segment access is not synchronized;
-callers must ensure
+<p>Reference counting operations (<a href="#retain()"><code>retain()</code></a>, <a href="#release()"><code>release()</code></a>) are thread-safe using
+lock-free CAS operations. The underlying segment access is not synchronized; callers must ensure
 proper happens-before relationships.</div>
 <dl class="notes">
 <dt>See Also:</dt>
@@ -176,7 +166,7 @@ proper happens-before relationships.</div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Increments the reference count.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/foreign/MemorySegment.html" title="class or interface in java.lang.foreign" class="external-link">MemorySegment</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/MemorySegment.html" title="class or interface in java.lang.foreign" class="external-link">MemorySegment</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#segment()" class="member-name-link">segment</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns the underlying FFM MemorySegment.</div>
@@ -199,15 +189,12 @@ proper happens-before relationships.</div>
 <section class="detail" id="segment()">
 <h3>segment</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/lang/foreign/MemorySegment.html" title="class or interface in java.lang.foreign" class="external-link">MemorySegment</a></span>&nbsp;<span class="element-name">segment</span>()</div>
+<div class="member-signature"><span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/foreign/MemorySegment.html" title="class or interface in java.lang.foreign" class="external-link">MemorySegment</a></span>&nbsp;<span class="element-name">segment</span>()</div>
 <div class="block">Returns the underlying FFM MemorySegment.
 
-<p>
-<b>Warning:</b> Accessing this segment after <a href="#release()"><code>release()</code></a> has reduced
-the refCount to
-0 is undefined behavior. The segment may be reused by another thread or the
-underlying memory
-may be invalidated.</div>
+<p><b>Warning:</b> Accessing this segment after <a href="#release()"><code>release()</code></a> has reduced the refCount
+to 0 is undefined behavior. The segment may be reused by another thread or the underlying
+memory may be invalidated.</div>
 </div>
 </section>
 </li>
@@ -218,8 +205,7 @@ may be invalidated.</div>
 <div class="member-signature"><span class="return-type">long</span>&nbsp;<span class="element-name">address</span>()</div>
 <div class="block">Returns the raw native address of the segment.
 
-<p>
-This is cached to avoid repeated FFM overhead on hot paths.</div>
+<p>This is cached to avoid repeated FFM overhead on hot paths.</div>
 </div>
 </section>
 </li>

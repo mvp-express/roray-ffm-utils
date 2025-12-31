@@ -1,26 +1,26 @@
 package express.mvp.roray.ffm.utils.memory;
 
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import java.lang.foreign.MemorySegment;
 
 /**
- * A high-performance, zero-copy BinaryReader implementation using MemorySegment.
- * This class is stateful and not thread-safe. A single instance should be used by a single
- * thread at a time. It can be reused by calling the wrap() method.
+ * A high-performance, zero-copy BinaryReader implementation using MemorySegment. This class is
+ * stateful and not thread-safe. A single instance should be used by a single thread at a time. It
+ * can be reused by calling the wrap() method.
  */
+@SuppressFBWarnings(
+        value = "EI_EXPOSE_REP2",
+        justification = "Reader wraps external MemorySegment instances by design.")
 public final class SegmentBinaryReader implements BinaryReader {
 
     private MemorySegment segment;
     private long position;
 
-    /**
-     * Creates a reader that is not yet backed by a segment. Call wrap() before use.
-     */
-    public SegmentBinaryReader() {
-    }
+    /** Creates a reader that is not yet backed by a segment. Call wrap() before use. */
+    public SegmentBinaryReader() {}
 
     /**
-     * Wraps a MemorySegment, preparing the reader for use and resetting its
-     * position. This allows a
+     * Wraps a MemorySegment, preparing the reader for use and resetting its position. This allows a
      * single reader instance to be reused for multiple segments.
      *
      * @param segment The segment to read from.
@@ -154,13 +154,11 @@ public final class SegmentBinaryReader implements BinaryReader {
     }
 
     /**
-     * Decodes a 64-bit integer using the Unsigned LEB128 (Little Endian Base 128)
-     * format.
+     * Decodes a 64-bit integer using the Unsigned LEB128 (Little Endian Base 128) format.
      *
      * @return the decoded long value.
      * @throws IllegalStateException if the variable-length value exceeds 10 bytes.
-     * @see <a href="https://en.wikipedia.org/wiki/LEB128#Unsigned_LEB128">Unsigned
-     *      LEB128</a>
+     * @see <a href="https://en.wikipedia.org/wiki/LEB128#Unsigned_LEB128">Unsigned LEB128</a>
      */
     @Override
     public long readVarLong() {
@@ -179,12 +177,11 @@ public final class SegmentBinaryReader implements BinaryReader {
     }
 
     /**
-     * Reads a VarInt-prefixed UTF-8 string into the provided Utf8View without
-     * allocating any objects on the heap.
+     * Reads a VarInt-prefixed UTF-8 string into the provided Utf8View without allocating any
+     * objects on the heap.
      *
-     * @param viewToPopulate A reusable view object that will be configured to point
-     *                       to the string
-     *                       data within the reader's segment.
+     * @param viewToPopulate A reusable view object that will be configured to point to the string
+     *     data within the reader's segment.
      */
     public void readString(Utf8View viewToPopulate) {
         if (viewToPopulate == null) {
@@ -213,8 +210,8 @@ public final class SegmentBinaryReader implements BinaryReader {
      * Reads a nullable, presence-bit prefixed UTF-8 string.
      *
      * @param viewToPopulate A reusable view object.
-     * @return true if the string was present (and the view was populated),
-     *         false if the string was null.
+     * @return true if the string was present (and the view was populated), false if the string was
+     *     null.
      */
     public boolean readNullableString(Utf8View viewToPopulate) {
         if (viewToPopulate == null) {
@@ -228,18 +225,15 @@ public final class SegmentBinaryReader implements BinaryReader {
     }
 
     /**
-     * Reads a fixed-length prefixed UTF-8 string into the provided Utf8View without
-     * allocating any objects on the heap. This method is the counterpart to {@link
+     * Reads a fixed-length prefixed UTF-8 string into the provided Utf8View without allocating any
+     * objects on the heap. This method is the counterpart to {@link
      * SegmentBinaryWriter#writeStringFixedLength(String)}.
      *
-     * <p>
-     * <b>Wire format:</b> 4-byte big-endian length prefix followed by UTF-8 encoded
-     * bytes.
+     * <p><b>Wire format:</b> 4-byte big-endian length prefix followed by UTF-8 encoded bytes.
      *
-     * @param viewToPopulate A reusable view object that will be configured to point
-     *                       to the string data within the reader's segment.
-     * @throws IllegalArgumentException  if viewToPopulate is null or length is
-     *                                   negative
+     * @param viewToPopulate A reusable view object that will be configured to point to the string
+     *     data within the reader's segment.
+     * @throws IllegalArgumentException if viewToPopulate is null or length is negative
      * @throws IndexOutOfBoundsException if string length exceeds remaining bytes
      * @see SegmentBinaryWriter#writeStringFixedLength(String)
      */
@@ -267,12 +261,11 @@ public final class SegmentBinaryReader implements BinaryReader {
     }
 
     /**
-     * Reads a nullable, presence-bit prefixed UTF-8 string with fixed-length
-     * encoding.
+     * Reads a nullable, presence-bit prefixed UTF-8 string with fixed-length encoding.
      *
      * @param viewToPopulate A reusable view object.
-     * @return true if the string was present (and the view was populated), false if
-     *         the string was null.
+     * @return true if the string was present (and the view was populated), false if the string was
+     *     null.
      * @see #readStringFixedLength(Utf8View)
      */
     public boolean readNullableStringFixedLength(Utf8View viewToPopulate) {
@@ -343,6 +336,9 @@ public final class SegmentBinaryReader implements BinaryReader {
     }
 
     @Override
+    @SuppressFBWarnings(
+            value = "PZLA_PREFER_ZERO_LENGTH_ARRAYS",
+            justification = "Null indicates an absent optional payload.")
     public byte[] readNullableBytes() {
         return readBoolean() ? readBytes() : null;
     }
@@ -429,10 +425,11 @@ public final class SegmentBinaryReader implements BinaryReader {
                     throw new IllegalArgumentException(
                             "Malformed UTF-8: invalid continuation byte");
                 }
-                int codePoint = ((b1 & 0x07) << 18)
-                        | ((b2 & 0x3F) << 12)
-                        | ((b3 & 0x3F) << 6)
-                        | (b4 & 0x3F);
+                int codePoint =
+                        ((b1 & 0x07) << 18)
+                                | ((b2 & 0x3F) << 12)
+                                | ((b3 & 0x3F) << 6)
+                                | (b4 & 0x3F);
                 if (codePoint < 0x10000 || codePoint > 0x10FFFF) {
                     throw new IllegalArgumentException("Malformed UTF-8: code point out of range");
                 }

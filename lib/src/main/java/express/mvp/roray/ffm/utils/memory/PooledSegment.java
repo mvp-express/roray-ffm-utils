@@ -1,7 +1,7 @@
 package express.mvp.roray.ffm.utils.memory;
 
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import java.lang.foreign.MemorySegment;
-
 
 /**
  * An AutoCloseable wrapper for a MemorySegment that automatically releases the segment back to its
@@ -35,12 +35,18 @@ public final class PooledSegment implements AutoCloseable {
     private final MemorySegment segment;
     private final MemorySegmentPool pool;
 
+    @SuppressFBWarnings(
+            value = "EI_EXPOSE_REP2",
+            justification = "Stores pooled segment reference by design.")
     public PooledSegment(MemorySegment segment, MemorySegmentPool pool) {
         this.segment = segment;
         this.pool = pool;
     }
 
     /** Gets the underlying MemorySegment. */
+    @SuppressFBWarnings(
+            value = "EI_EXPOSE_REP",
+            justification = "Exposes pooled MemorySegment for zero-copy access.")
     public MemorySegment segment() {
         return this.segment;
     }

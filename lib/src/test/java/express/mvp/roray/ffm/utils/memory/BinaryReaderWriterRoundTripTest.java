@@ -91,14 +91,17 @@ class BinaryReaderWriterRoundTripTest {
 
     @Test
     void testFloatRoundTrip() {
-        writer.writeFloatLE(3.14159f);
-        writer.writeFloatLE(-2.71828f);
+        float pi = (float) Math.PI;
+        float e = (float) Math.E;
+
+        writer.writeFloatLE(pi);
+        writer.writeFloatLE(-e);
         writer.writeFloatLE(0.0f);
         writer.writeFloatLE(Float.MAX_VALUE);
         writer.writeFloatLE(Float.MIN_VALUE);
 
-        assertEquals(3.14159f, reader.readFloatLE(), 0.00001f);
-        assertEquals(-2.71828f, reader.readFloatLE(), 0.00001f);
+        assertEquals(pi, reader.readFloatLE(), 0.00001f);
+        assertEquals(-e, reader.readFloatLE(), 0.00001f);
         assertEquals(0.0f, reader.readFloatLE());
         assertEquals(Float.MAX_VALUE, reader.readFloatLE());
         assertEquals(Float.MIN_VALUE, reader.readFloatLE());
@@ -106,14 +109,17 @@ class BinaryReaderWriterRoundTripTest {
 
     @Test
     void testDoubleRoundTrip() {
-        writer.writeDoubleLE(3.141592653589793);
-        writer.writeDoubleLE(-2.718281828459045);
+        double pi = Math.PI;
+        double e = Math.E;
+
+        writer.writeDoubleLE(pi);
+        writer.writeDoubleLE(-e);
         writer.writeDoubleLE(0.0);
         writer.writeDoubleLE(Double.MAX_VALUE);
         writer.writeDoubleLE(Double.MIN_VALUE);
 
-        assertEquals(3.141592653589793, reader.readDoubleLE(), 0.000000000001);
-        assertEquals(-2.718281828459045, reader.readDoubleLE(), 0.000000000001);
+        assertEquals(pi, reader.readDoubleLE(), 0.000000000001);
+        assertEquals(-e, reader.readDoubleLE(), 0.000000000001);
         assertEquals(0.0, reader.readDoubleLE());
         assertEquals(Double.MAX_VALUE, reader.readDoubleLE());
         assertEquals(Double.MIN_VALUE, reader.readDoubleLE());
@@ -170,13 +176,16 @@ class BinaryReaderWriterRoundTripTest {
 
     @Test
     void testMixedTypesRoundTrip() {
+        float pi = (float) Math.PI;
+        double e = Math.E;
+
         // Write mixed types
         writer.writeByte((byte) 42);
         writer.writeShortLE((short) 12345);
         writer.writeIntLE(987654321);
         writer.writeLongLE(123456789012345L);
-        writer.writeFloatLE(3.14f);
-        writer.writeDoubleLE(2.718);
+        writer.writeFloatLE(pi);
+        writer.writeDoubleLE(e);
         writer.writeBoolean(true);
 
         // Read back in same order
@@ -184,8 +193,8 @@ class BinaryReaderWriterRoundTripTest {
         assertEquals(12345, reader.readShortLE());
         assertEquals(987654321, reader.readIntLE());
         assertEquals(123456789012345L, reader.readLongLE());
-        assertEquals(3.14f, reader.readFloatLE(), 0.001f);
-        assertEquals(2.718, reader.readDoubleLE(), 0.0001);
+        assertEquals(pi, reader.readFloatLE(), 0.001f);
+        assertEquals(e, reader.readDoubleLE(), 0.0001);
         assertTrue(reader.readBoolean());
     }
 

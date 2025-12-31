@@ -1,5 +1,6 @@
 package express.mvp.roray.ffm.ds.map;
 
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemorySegment;
 import java.lang.foreign.ValueLayout;
@@ -20,6 +21,9 @@ abstract class AbstractOffHeapLongKeyOpenAddressingTable implements AutoCloseabl
     protected int size;
     protected volatile boolean closed;
 
+    @SuppressFBWarnings(
+            value = "CT_CONSTRUCTOR_THROW",
+            justification = "Capacity validation is required for safe usage.")
     protected AbstractOffHeapLongKeyOpenAddressingTable(int capacity) {
         if (Integer.bitCount(capacity) != 1) {
             throw new IllegalArgumentException("Capacity must be a power of 2");
@@ -34,6 +38,9 @@ abstract class AbstractOffHeapLongKeyOpenAddressingTable implements AutoCloseabl
         this.closed = false;
     }
 
+    @SuppressFBWarnings(
+            value = "CT_CONSTRUCTOR_THROW",
+            justification = "Capacity and arena validation are required for safe usage.")
     protected AbstractOffHeapLongKeyOpenAddressingTable(int capacity, Arena arena) {
         if (Integer.bitCount(capacity) != 1) {
             throw new IllegalArgumentException("Capacity must be a power of 2");
@@ -77,15 +84,11 @@ abstract class AbstractOffHeapLongKeyOpenAddressingTable implements AutoCloseabl
     }
 
     /**
-     * Returns a packed long where the sign bit indicates whether the key already
-     * exists.
+     * Returns a packed long where the sign bit indicates whether the key already exists.
      *
-     * <p>
-     * If found, {@code result < 0} and {@code (int) result} is the existing index.
+     * <p>If found, {@code result < 0} and {@code (int) result} is the existing index.
      *
-     * <p>
-     * If not found, {@code result >= 0} and {@code (int) result} is an insertion
-     * slot.
+     * <p>If not found, {@code result >= 0} and {@code (int) result} is an insertion slot.
      *
      * @throws IllegalStateException if the table is full
      */

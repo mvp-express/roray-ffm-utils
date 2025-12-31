@@ -1,5 +1,6 @@
 package express.mvp.roray.ffm.utils.memory;
 
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import java.lang.foreign.MemorySegment;
 import java.lang.foreign.ValueLayout;
 
@@ -26,6 +27,9 @@ public final class BitSetView {
      * @param offset The offset within the segment where the bit array starts.
      * @param size The size of the bit array in bytes.
      */
+    @SuppressFBWarnings(
+            value = "EI_EXPOSE_REP2",
+            justification = "Flyweight view stores external MemorySegment by design.")
     public void wrap(MemorySegment segment, long offset, long size) {
         this.segment = segment;
         this.offset = offset;
@@ -37,6 +41,9 @@ public final class BitSetView {
      *
      * @return The MemorySegment, or null if not wrapped.
      */
+    @SuppressFBWarnings(
+            value = "EI_EXPOSE_REP",
+            justification = "Flyweight view exposes backing segment by design.")
     public MemorySegment segment() {
         return segment;
     }

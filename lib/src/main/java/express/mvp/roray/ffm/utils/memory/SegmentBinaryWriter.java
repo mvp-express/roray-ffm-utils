@@ -1,25 +1,25 @@
 package express.mvp.roray.ffm.utils.memory;
 
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import java.lang.foreign.MemorySegment;
 
 /**
- * A high-performance, zero-copy BinaryWriter implementation using
- * MemorySegment. This class is
- * stateful and not thread-safe. A single instance should be used by a single
- * thread at a time.
- * It can be reused by calling the wrap() method.
+ * A high-performance, zero-copy BinaryWriter implementation using MemorySegment. This class is
+ * stateful and not thread-safe. A single instance should be used by a single thread at a time. It
+ * can be reused by calling the wrap() method.
  */
+@SuppressFBWarnings(
+        value = "EI_EXPOSE_REP2",
+        justification = "Writer wraps external MemorySegment instances by design.")
 public final class SegmentBinaryWriter implements BinaryWriter {
 
     private MemorySegment segment;
     private long position;
 
-    public SegmentBinaryWriter() {
-    }
+    public SegmentBinaryWriter() {}
 
     /**
-     * Wraps a MemorySegment, preparing the writer for use and resetting its
-     * position.
+     * Wraps a MemorySegment, preparing the writer for use and resetting its position.
      *
      * @param segment The segment to write to.
      * @return This writer instance for chaining.
@@ -141,18 +141,14 @@ public final class SegmentBinaryWriter implements BinaryWriter {
     /**
      * Writes a variable-length integer using an optimized batch-write strategy.
      *
-     * <p>
-     * This method pre-computes all VarInt bytes and writes them in a single memory
-     * operation using a 64-bit write, avoiding the per-byte overhead of the
-     * standard
-     * {@link #writeVarInt} method.
+     * <p>This method pre-computes all VarInt bytes and writes them in a single memory operation
+     * using a 64-bit write, avoiding the per-byte overhead of the standard {@link #writeVarInt}
+     * method.
      *
-     * <p>
-     * <b>Performance:</b> Approximately 5-10% faster than {@link #writeVarInt} for
-     * typical values by reducing memory operation count from 1-5 to exactly 1.
+     * <p><b>Performance:</b> Approximately 5-10% faster than {@link #writeVarInt} for typical
+     * values by reducing memory operation count from 1-5 to exactly 1.
      *
-     * <p>
-     * <b>Wire format:</b> Identical to {@link #writeVarInt} - fully compatible.
+     * <p><b>Wire format:</b> Identical to {@link #writeVarInt} - fully compatible.
      *
      * @param value The integer value to encode as VarInt.
      * @return This writer instance, for chaining.
@@ -193,10 +189,8 @@ public final class SegmentBinaryWriter implements BinaryWriter {
     /**
      * Writes a variable-length long using an optimized batch-write strategy.
      *
-     * <p>
-     * This method pre-computes all VarLong bytes and writes them in batched memory
-     * operations, avoiding the per-byte overhead of the standard
-     * {@link #writeVarLong} method.
+     * <p>This method pre-computes all VarLong bytes and writes them in batched memory operations,
+     * avoiding the per-byte overhead of the standard {@link #writeVarLong} method.
      *
      * @param value The long value to encode as VarLong.
      * @return This writer instance, for chaining.
@@ -257,50 +251,38 @@ public final class SegmentBinaryWriter implements BinaryWriter {
     }
 
     /**
-     * Encodes and writes a String with zero heap allocations by using a provided
-     * off-heap scratch
+     * Encodes and writes a String with zero heap allocations by using a provided off-heap scratch
      * buffer for the UTF-8 encoding process.
      *
-     * <p>
-     * This method uses a <b>two-pass encoding strategy</b>:
+     * <p>This method uses a <b>two-pass encoding strategy</b>:
      *
      * <ol>
-     * <li>First pass: Encode UTF-8 bytes into the scratch buffer to determine exact
-     * byte length
-     * <li>Second pass: Write VarInt length prefix, then copy encoded bytes to
-     * target segment
+     *   <li>First pass: Encode UTF-8 bytes into the scratch buffer to determine exact byte length
+     *   <li>Second pass: Write VarInt length prefix, then copy encoded bytes to target segment
      * </ol>
      *
-     * <p>
-     * <b>Wire format:</b> VarInt length prefix (1-5 bytes) followed by UTF-8
-     * encoded bytes.
+     * <p><b>Wire format:</b> VarInt length prefix (1-5 bytes) followed by UTF-8 encoded bytes.
      *
-     * <p>
-     * <b>Trade-offs:</b>
+     * <p><b>Trade-offs:</b>
      *
      * <ul>
-     * <li>Pro: Compact wire format (VarInt uses 1 byte for strings &lt; 128 bytes)
-     * <li>Pro: Compatible with standard wire protocols
-     * <li>Con: Requires scratch buffer allocation/management
-     * <li>Con: Two memory operations (encode + copy)
+     *   <li>Pro: Compact wire format (VarInt uses 1 byte for strings &lt; 128 bytes)
+     *   <li>Pro: Compatible with standard wire protocols
+     *   <li>Con: Requires scratch buffer allocation/management
+     *   <li>Con: Two memory operations (encode + copy)
      * </ul>
      *
-     * <p>
-     * <b>Alternative:</b> For maximum encode performance when a fixed-size length
-     * prefix is
-     * acceptable, use {@link #writeStringFixedLength(String)} which encodes
-     * directly to the target
+     * <p><b>Alternative:</b> For maximum encode performance when a fixed-size length prefix is
+     * acceptable, use {@link #writeStringFixedLength(String)} which encodes directly to the target
      * buffer in a single pass (approximately 15-25% faster for typical strings).
      *
-     * @param value         The String to write. Must not be null.
-     * @param scratchBuffer An off-heap MemorySegment used for temporary encoding.
-     *                      Its size must be
-     *                      sufficient to hold the string's UTF-8 bytes (worst case:
-     *                      3 bytes per char for BMP, 4
-     *                      bytes for supplementary characters).
+     * @param value The String to write. Must not be null.
+     * @param scratchBuffer An off-heap MemorySegment used for temporary encoding. Its size must be
+     *     sufficient to hold the string's UTF-8 bytes (worst case: 3 bytes per char for BMP, 4
+     *     bytes for supplementary characters).
      * @return This writer instance, for chaining.
-     * @throws IllegalArgumentException if value or scratchBuffer is null, or if
-     *                                  scratch buffer is too small
+     * @throws IllegalArgumentException if value or scratchBuffer is null, or if scratch buffer is
+     *     too small
      * @see #writeStringFixedLength(String)
      */
     public BinaryWriter writeString(String value, MemorySegment scratchBuffer) {
@@ -312,50 +294,41 @@ public final class SegmentBinaryWriter implements BinaryWriter {
     }
 
     /**
-     * Writes a String using single-pass UTF-8 encoding directly to the target
-     * buffer with a fixed 4-byte big-endian length prefix.
-     * This method achieves maximum encoding performance by
-     * eliminating the scratch buffer and intermediate copy required by
-     * {@link #writeString}.
+     * Writes a String using single-pass UTF-8 encoding directly to the target buffer with a fixed
+     * 4-byte big-endian length prefix. This method achieves maximum encoding performance by
+     * eliminating the scratch buffer and intermediate copy required by {@link #writeString}.
      *
-     * <p>
-     * <b>Wire format:</b> Fixed 4-byte big-endian length prefix followed by UTF-8
-     * encoded bytes.
+     * <p><b>Wire format:</b> Fixed 4-byte big-endian length prefix followed by UTF-8 encoded bytes.
      *
-     * <p>
-     * <b>Algorithm:</b>
+     * <p><b>Algorithm:</b>
      *
      * <ol>
-     * <li>Reserve 4 bytes for length prefix at current position
-     * <li>Encode UTF-8 bytes directly to target segment with bounds checking
-     * <li>Write actual byte length back to reserved prefix position
+     *   <li>Reserve 4 bytes for length prefix at current position
+     *   <li>Encode UTF-8 bytes directly to target segment with bounds checking
+     *   <li>Write actual byte length back to reserved prefix position
      * </ol>
      *
-     * <p>
-     * <b>Trade-offs compared to {@link #writeString}:</b>
+     * <p><b>Trade-offs compared to {@link #writeString}:</b>
      *
      * <ul>
-     * <li>Pro: ~15-25% faster encoding (single pass, no scratch buffer, no copy)
-     * <li>Pro: No scratch buffer required
-     * <li>Con: Fixed 4-byte overhead even for small strings (vs 1 byte for VarInt)
-     * <li>Con: Maximum string size limited to ~2GB (Integer.MAX_VALUE bytes)
+     *   <li>Pro: ~15-25% faster encoding (single pass, no scratch buffer, no copy)
+     *   <li>Pro: No scratch buffer required
+     *   <li>Con: Fixed 4-byte overhead even for small strings (vs 1 byte for VarInt)
+     *   <li>Con: Maximum string size limited to ~2GB (Integer.MAX_VALUE bytes)
      * </ul>
      *
-     * <p>
-     * <b>Use cases:</b>
+     * <p><b>Use cases:</b>
      *
      * <ul>
-     * <li>High-frequency encoding in hot paths where performance is critical
-     * <li>Internal/binary protocols where wire format overhead is acceptable
-     * <li>Scenarios where scratch buffer management is undesirable
+     *   <li>High-frequency encoding in hot paths where performance is critical
+     *   <li>Internal/binary protocols where wire format overhead is acceptable
+     *   <li>Scenarios where scratch buffer management is undesirable
      * </ul>
      *
      * @param value The String to write. Must not be null.
      * @return This writer instance, for chaining.
-     * @throws IllegalArgumentException  if value is null or contains unpaired
-     *                                   surrogates
-     * @throws IndexOutOfBoundsException if the target segment lacks capacity for
-     *                                   the encoded string
+     * @throws IllegalArgumentException if value is null or contains unpaired surrogates
+     * @throws IndexOutOfBoundsException if the target segment lacks capacity for the encoded string
      * @see #writeString(String, MemorySegment)
      */
     public BinaryWriter writeStringFixedLength(String value) {
@@ -434,8 +407,7 @@ public final class SegmentBinaryWriter implements BinaryWriter {
     /**
      * Writes a nullable String using fixed-length encoding.
      *
-     * <p>
-     * Format: 1-byte presence flag, followed by fixed-length string data if present.
+     * <p>Format: 1-byte presence flag, followed by fixed-length string data if present.
      *
      * @param value The String to write, or null.
      * @return This writer instance, for chaining.

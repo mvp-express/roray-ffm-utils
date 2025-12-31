@@ -29,9 +29,7 @@ class SegmentUtilsTest {
             int checksum = SegmentUtils.calculateCrc32(segment);
 
             // Verify against reference implementation
-            CRC32 reference = new CRC32();
-            reference.update(segment.asByteBuffer());
-            assertEquals((int) reference.getValue(), checksum);
+            assertEquals(calculateCrc32Reference(segment), checksum);
         }
     }
 
@@ -87,7 +85,7 @@ class SegmentUtilsTest {
     }
 
     @Test
-    void calculateCrc32_ShouldWorkCorrectlyWithMultipleThreads() throws Exception {
+    void calculateCrc32_ShouldWorkCorrectlyWithMultipleThreads() throws InterruptedException {
         int threadCount = 8;
         int iterationsPerThread = 1000;
         ExecutorService executor = Executors.newFixedThreadPool(threadCount);
@@ -103,9 +101,7 @@ class SegmentUtilsTest {
                 segments[i] = arena.allocate(64);
                 segments[i].fill((byte) (i + 1));
                 // Compute expected checksum
-                CRC32 ref = new CRC32();
-                ref.update(segments[i].asByteBuffer());
-                expectedChecksums[i] = (int) ref.getValue();
+                expectedChecksums[i] = calculateCrc32Reference(segments[i]);
             }
 
             // Submit tasks
@@ -131,7 +127,13 @@ class SegmentUtilsTest {
 
             // Verify all threads completed successfully
             for (Future<Boolean> future : futures) {
-                assertTrue(future.get(10, TimeUnit.SECONDS), "Thread failed checksum verification");
+                try {
+                    assertTrue(
+                            future.get(10, TimeUnit.SECONDS),
+                            "Thread failed checksum verification");
+                } catch (Exception e) {
+                    fail("Thread failed checksum verification", e);
+                }
             }
         } finally {
             executor.shutdown();
@@ -161,5 +163,14 @@ class SegmentUtilsTest {
                     largeChecksum1,
                     "Different data should have different checksums");
         }
+    }
+
+    private static int calculateCrc32Reference(MemorySegment segment) {
+        CRC32 crc32 = new CRC32();
+        long size = segment.byteSize();
+        for (long i = 0; i < size; i++) {
+            crc32.update(segment.get(Layouts.BYTE, i));
+        }
+        return (int) crc32.getValue();
     }
 }

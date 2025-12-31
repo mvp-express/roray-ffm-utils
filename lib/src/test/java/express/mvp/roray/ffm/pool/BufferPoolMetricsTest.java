@@ -68,7 +68,8 @@ class BufferPoolMetricsTest {
 
     @Test
     void toString_containsAllFields() {
-        BufferPoolMetrics metrics = new BufferPoolMetrics(100, 80, 20, 5_000_000, 50_000_000, 5, 10);
+        BufferPoolMetrics metrics =
+                new BufferPoolMetrics(100, 80, 20, 5_000_000, 50_000_000, 5, 10);
         String str = metrics.toString();
 
         assertTrue(str.contains("total=100"));

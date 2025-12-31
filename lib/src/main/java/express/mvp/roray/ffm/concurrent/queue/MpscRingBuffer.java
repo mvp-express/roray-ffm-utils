@@ -7,31 +7,23 @@ import java.lang.invoke.MethodHandles;
 import java.lang.invoke.VarHandle;
 
 /**
- * A high-performance, lock-free, off-heap friendly Multi-Producer
- * Single-Consumer (MPSC) ring
+ * A high-performance, lock-free, off-heap friendly Multi-Producer Single-Consumer (MPSC) ring
  * buffer.
  *
- * <p>
- * <b>Design Principles:</b>
+ * <p><b>Design Principles:</b>
  *
  * <ul>
- * <li><b>FFM-First:</b> Uses {@link MemorySegment} and {@link VarHandle} for
- * safe, efficient
- * memory access.
- * <li><b>Zero-Allocation:</b> No objects allocated during
- * {@link #offer(Object)} or {@link
- * #poll()}.
- * <li><b>False Sharing Protection:</b> Critical fields (producer/consumer
- * indices) are padded to
- * separate cache lines.
- * <li><b>Mechanical Sympathy:</b> Optimized for modern CPU architectures with
- * relaxed consistency
- * models.
+ *   <li><b>FFM-First:</b> Uses {@link MemorySegment} and {@link VarHandle} for safe, efficient
+ *       memory access.
+ *   <li><b>Zero-Allocation:</b> No objects allocated during {@link #offer(Object)} or {@link
+ *       #poll()}.
+ *   <li><b>False Sharing Protection:</b> Critical fields (producer/consumer indices) are padded to
+ *       separate cache lines.
+ *   <li><b>Mechanical Sympathy:</b> Optimized for modern CPU architectures with relaxed consistency
+ *       models.
  * </ul>
  *
- * <p>
- * This implementation is inspired by JCTools' MpscArrayQueue but built natively
- * on Java 22+ FFM.
+ * <p>This implementation is inspired by JCTools' MpscArrayQueue but built natively on Java 22+ FFM.
  *
  * @param <E> the type of elements held in this buffer
  */
@@ -43,14 +35,10 @@ public final class MpscRingBuffer<E> implements AutoCloseable {
     private static final VarHandle ARRAY_HANDLE;
 
     static {
-        try {
-            PRODUCER_INDEX = ValueLayout.JAVA_LONG.varHandle();
-            PRODUCER_LIMIT = ValueLayout.JAVA_LONG.varHandle();
-            CONSUMER_INDEX = ValueLayout.JAVA_LONG.varHandle();
-            ARRAY_HANDLE = MethodHandles.arrayElementVarHandle(Object[].class);
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
+        PRODUCER_INDEX = ValueLayout.JAVA_LONG.varHandle();
+        PRODUCER_LIMIT = ValueLayout.JAVA_LONG.varHandle();
+        CONSUMER_INDEX = ValueLayout.JAVA_LONG.varHandle();
+        ARRAY_HANDLE = MethodHandles.arrayElementVarHandle(Object[].class);
     }
 
     // Offsets for cache line padding (assuming 64-byte cache lines)
@@ -100,8 +88,7 @@ public final class MpscRingBuffer<E> implements AutoCloseable {
     /**
      * Offers an element to the queue.
      *
-     * <p>
-     * This method is thread-safe for multiple producers.
+     * <p>This method is thread-safe for multiple producers.
      *
      * @param e the element to offer (must not be null)
      * @return true if successful, false if the queue is full
@@ -150,8 +137,7 @@ public final class MpscRingBuffer<E> implements AutoCloseable {
     /**
      * Polls an element from the queue.
      *
-     * <p>
-     * This method is NOT thread-safe and must be called by a single consumer.
+     * <p>This method is NOT thread-safe and must be called by a single consumer.
      *
      * @return the element, or null if empty
      */

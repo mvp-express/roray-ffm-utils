@@ -3,11 +3,9 @@ package express.mvp.roray.ffm.ds.map;
 import java.lang.foreign.ValueLayout;
 
 /**
- * A linear-probing, open-addressing hash map with off-heap keys and on-heap
- * values.
+ * A linear-probing, open-addressing hash map with off-heap keys and on-heap values.
  *
- * <p>
- * Not thread-safe. Designed for single-threaded hot paths.
+ * <p>Not thread-safe. Designed for single-threaded hot paths.
  */
 @Deprecated
 public class OffHeapLongObjectMapImpl<V> extends AbstractOffHeapLongKeyOpenAddressingTable

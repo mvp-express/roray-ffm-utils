@@ -25,7 +25,7 @@ class DowncallFactoryTest {
 
     @Test
     @DisplayName("downcall() should find and create handle for getpid")
-    void downcall_shouldFindGetpid() throws Throwable {
+    void downcall_shouldFindGetpid() {
         DowncallFactory factory = DowncallFactory.forNativeLinker();
 
         MethodHandle getpid =
@@ -33,19 +33,19 @@ class DowncallFactoryTest {
 
         assertNotNull(getpid);
 
-        int pid = (int) getpid.invokeExact();
+        int pid = assertDoesNotThrow(() -> (int) getpid.invokeExact());
         assertTrue(pid > 0, "PID should be positive");
     }
 
     @Test
     @DisplayName("downcall() should find and create handle for getuid")
-    void downcall_shouldFindGetuid() throws Throwable {
+    void downcall_shouldFindGetuid() {
         DowncallFactory factory = DowncallFactory.forNativeLinker();
 
         MethodHandle getuid =
                 factory.downcall("getuid", FunctionDescriptorBuilder.returnsInt().build());
 
-        int uid = (int) getuid.invokeExact();
+        int uid = assertDoesNotThrow(() -> (int) getuid.invokeExact());
         assertTrue(uid >= 0, "UID should be non-negative");
     }
 
@@ -65,7 +65,7 @@ class DowncallFactoryTest {
 
     @Test
     @DisplayName("downcall() with options should work")
-    void downcall_withOptions_shouldWork() throws Throwable {
+    void downcall_withOptions_shouldWork() {
         DowncallFactory factory = DowncallFactory.forNativeLinker();
 
         // Using critical option for a simple syscall
@@ -75,7 +75,7 @@ class DowncallFactoryTest {
                         FunctionDescriptorBuilder.returnsInt().build(),
                         Linker.Option.critical(false));
 
-        int pid = (int) getpid.invokeExact();
+        int pid = assertDoesNotThrow(() -> (int) getpid.invokeExact());
         assertTrue(pid > 0);
     }
 
@@ -140,7 +140,7 @@ class DowncallFactoryTest {
 
     @Test
     @DisplayName("multiple factories should work independently")
-    void multipleFactories_shouldWorkIndependently() throws Throwable {
+    void multipleFactories_shouldWorkIndependently() {
         DowncallFactory factory1 = DowncallFactory.forNativeLinker();
         DowncallFactory factory2 = DowncallFactory.forNativeLinker();
 
@@ -149,15 +149,15 @@ class DowncallFactoryTest {
         MethodHandle handle2 =
                 factory2.downcall("getpid", FunctionDescriptorBuilder.returnsInt().build());
 
-        int pid1 = (int) handle1.invokeExact();
-        int pid2 = (int) handle2.invokeExact();
+        int pid1 = assertDoesNotThrow(() -> (int) handle1.invokeExact());
+        int pid2 = assertDoesNotThrow(() -> (int) handle2.invokeExact());
 
         assertEquals(pid1, pid2, "Both should return same PID");
     }
 
     @Test
     @DisplayName("downcall with write() should work correctly")
-    void downcall_write_shouldWork() throws Throwable {
+    void downcall_write_shouldWork() {
         DowncallFactory factory = DowncallFactory.forNativeLinker();
 
         MethodHandle write =

@@ -70,7 +70,7 @@ class MpscRingBufferTest {
 
         for (int i = 0; i < producerCount; i++) {
             final int producerId = i;
-            producers.submit(
+            producers.execute(
                     () -> {
                         try {
                             startLatch.await();
@@ -100,16 +100,6 @@ class MpscRingBufferTest {
                 received.add(item);
                 count++;
             } else {
-                // If producers are done and queue is empty but we haven't got everything,
-                // something
-                // is wrong
-                if (doneLatch.getCount() == 0 && queue.isEmpty()) {
-                    // Give it a moment, maybe race condition in test logic?
-                    // But if queue is empty and producers done, we should have everything.
-                    // Wait, poll() returning null means empty OR race.
-                    // But if producers are done, no race on offer side.
-                    // Just spin.
-                }
                 Thread.onSpinWait();
             }
         }

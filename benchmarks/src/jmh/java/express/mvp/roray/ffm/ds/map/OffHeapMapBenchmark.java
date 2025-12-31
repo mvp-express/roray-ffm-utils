@@ -46,7 +46,7 @@ public class OffHeapMapBenchmark {
 
     @Benchmark
     public void testOffHeapGet(Blackhole bh) {
-        bh.consume(offHeapMap.get(key));
+        bh.consume(offHeapMap.getPacked(key));
     }
 
     @Benchmark

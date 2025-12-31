@@ -26,16 +26,18 @@ class UpcallFactoryTest {
 
     @Test
     @DisplayName("upcallStub with MethodHandle should create valid stub")
-    void upcallStub_withMethodHandle_shouldCreateStub() throws Throwable {
+    void upcallStub_withMethodHandle_shouldCreateStub() {
         UpcallFactory factory = UpcallFactory.create();
 
         // Create a simple method handle
         MethodHandle target =
-                MethodHandles.lookup()
-                        .findStatic(
-                                UpcallFactoryTest.class,
-                                "simpleCallback",
-                                MethodType.methodType(int.class, int.class));
+                assertDoesNotThrow(
+                        () ->
+                                MethodHandles.lookup()
+                                        .findStatic(
+                                                UpcallFactoryTest.class,
+                                                "simpleCallback",
+                                                MethodType.methodType(int.class, int.class)));
 
         try (Arena arena = Arena.ofConfined()) {
             MemorySegment stub =
@@ -77,14 +79,16 @@ class UpcallFactoryTest {
 
     @Test
     @DisplayName("upcallStub should throw for null arena")
-    void upcallStub_shouldThrowForNullArena() throws Throwable {
+    void upcallStub_shouldThrowForNullArena() {
         UpcallFactory factory = UpcallFactory.create();
         MethodHandle target =
-                MethodHandles.lookup()
-                        .findStatic(
-                                UpcallFactoryTest.class,
-                                "simpleCallback",
-                                MethodType.methodType(int.class, int.class));
+                assertDoesNotThrow(
+                        () ->
+                                MethodHandles.lookup()
+                                        .findStatic(
+                                                UpcallFactoryTest.class,
+                                                "simpleCallback",
+                                                MethodType.methodType(int.class, int.class)));
 
         assertThrows(
                 NullPointerException.class,
@@ -115,14 +119,16 @@ class UpcallFactoryTest {
 
     @Test
     @DisplayName("upcallStub should throw for null descriptor")
-    void upcallStub_shouldThrowForNullDescriptor() throws Throwable {
+    void upcallStub_shouldThrowForNullDescriptor() {
         UpcallFactory factory = UpcallFactory.create();
         MethodHandle target =
-                MethodHandles.lookup()
-                        .findStatic(
-                                UpcallFactoryTest.class,
-                                "simpleCallback",
-                                MethodType.methodType(int.class, int.class));
+                assertDoesNotThrow(
+                        () ->
+                                MethodHandles.lookup()
+                                        .findStatic(
+                                                UpcallFactoryTest.class,
+                                                "simpleCallback",
+                                                MethodType.methodType(int.class, int.class)));
 
         try (Arena arena = Arena.ofConfined()) {
             assertThrows(

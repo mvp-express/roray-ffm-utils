@@ -103,7 +103,7 @@ class MemorySegmentPoolExtendedTest {
         ExecutorService executor = Executors.newFixedThreadPool(numThreads);
 
         for (int i = 0; i < numThreads; i++) {
-            executor.submit(
+            executor.execute(
                     () -> {
                         List<MemorySegment> held = new ArrayList<>();
                         for (int j = 0; j < 3; j++) {
@@ -193,7 +193,7 @@ class MemorySegmentPoolExtendedTest {
         List<Exception> exceptions = new ArrayList<>();
 
         for (int i = 0; i < numThreads; i++) {
-            executor.submit(
+            executor.execute(
                     () -> {
                         try {
                             for (int j = 0; j < operationsPerThread; j++) {
@@ -268,7 +268,7 @@ class MemorySegmentPoolExtendedTest {
             List<Exception> exceptions = new ArrayList<>();
 
             for (int i = 0; i < numVirtualThreads; i++) {
-                executor.submit(
+                executor.execute(
                         () -> {
                             try {
                                 for (int j = 0; j < operationsPerThread; j++) {

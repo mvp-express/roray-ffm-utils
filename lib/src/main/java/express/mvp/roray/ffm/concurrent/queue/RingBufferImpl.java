@@ -1,5 +1,6 @@
 package express.mvp.roray.ffm.concurrent.queue;
 
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemorySegment;
 import java.lang.foreign.ValueLayout;
@@ -9,9 +10,11 @@ import java.lang.invoke.VarHandle;
 /**
  * An MPMC (Multi-Producer Multi-Consumer) lock-free ring buffer.
  *
- * <p>
- * Uses a sequence buffer to ensure consistency of slots.
+ * <p>Uses a sequence buffer to ensure consistency of slots.
  */
+@SuppressFBWarnings(
+        value = {"UUF_UNUSED_FIELD", "URF_UNREAD_FIELD"},
+        justification = "Padding and VarHandle-managed fields are accessed indirectly.")
 public class RingBufferImpl implements RingBuffer {
 
     private static final VarHandle HEAD_VH;
@@ -21,12 +24,14 @@ public class RingBufferImpl implements RingBuffer {
 
     static {
         try {
-            HEAD_VH = MethodHandles.lookup().findVarHandle(RingBufferImpl.class, "head", long.class);
-            TAIL_VH = MethodHandles.lookup().findVarHandle(RingBufferImpl.class, "tail", long.class);
+            HEAD_VH =
+                    MethodHandles.lookup().findVarHandle(RingBufferImpl.class, "head", long.class);
+            TAIL_VH =
+                    MethodHandles.lookup().findVarHandle(RingBufferImpl.class, "tail", long.class);
             SEQ_VH = ValueLayout.JAVA_LONG.arrayElementVarHandle();
             BUF_VH = ValueLayout.JAVA_INT.arrayElementVarHandle();
-        } catch (Exception e) {
-            throw new RuntimeException(e);
+        } catch (ReflectiveOperationException e) {
+            throw new ExceptionInInitializerError(e);
         }
     }
 
@@ -37,15 +42,19 @@ public class RingBufferImpl implements RingBuffer {
     private final int mask;
 
     // Padding fields for false-sharing prevention
-    @SuppressWarnings({ "unused", "checkstyle:MultipleVariableDeclarations" })
+    @SuppressWarnings({"unused", "checkstyle:MultipleVariableDeclarations"})
     private long p01, p02, p03, p04, p05, p06, p07;
+
     @SuppressWarnings("unused")
     private volatile long head;
-    @SuppressWarnings({ "unused", "checkstyle:MultipleVariableDeclarations" })
+
+    @SuppressWarnings({"unused", "checkstyle:MultipleVariableDeclarations"})
     private long p08, p09, p10, p11, p12, p13, p14;
+
     @SuppressWarnings("unused")
     private volatile long tail;
-    @SuppressWarnings({ "unused", "checkstyle:MultipleVariableDeclarations" })
+
+    @SuppressWarnings({"unused", "checkstyle:MultipleVariableDeclarations"})
     private long p15, p16, p17, p18, p19, p20, p21;
 
     /**
@@ -53,6 +62,9 @@ public class RingBufferImpl implements RingBuffer {
      *
      * @param capacity the capacity (must be a power of 2)
      */
+    @SuppressFBWarnings(
+            value = "CT_CONSTRUCTOR_THROW",
+            justification = "Capacity validation is required for safe usage.")
     public RingBufferImpl(int capacity) {
         if (Integer.bitCount(capacity) != 1) {
             throw new IllegalArgumentException("Capacity must be a power of 2");

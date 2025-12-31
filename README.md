@@ -13,7 +13,7 @@ dependencies {
 }
 ```
 
-**Requires Java 24+** with FFM enabled:
+**Requires Java 25+** with FFM enabled:
 
 ```bash
 java --enable-native-access=ALL-UNNAMED -jar your-app.jar

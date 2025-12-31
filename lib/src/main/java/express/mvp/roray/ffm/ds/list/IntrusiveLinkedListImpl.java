@@ -6,13 +6,10 @@ import java.lang.foreign.ValueLayout;
 /**
  * An intrusive linked list implementation using off-heap memory segments.
  *
- * <p>
- * This implementation uses the memory segment's own memory to store the next
- * pointer, avoiding
+ * <p>This implementation uses the memory segment's own memory to store the next pointer, avoiding
  * separate node allocations.
- * 
- * <p>
- * Not thread-safe. Designed for single-threaded hot paths.
+ *
+ * <p>Not thread-safe. Designed for single-threaded hot paths.
  */
 public class IntrusiveLinkedListImpl implements IntrusiveLinkedList {
 
@@ -81,6 +78,5 @@ public class IntrusiveLinkedListImpl implements IntrusiveLinkedList {
     }
 
     @Override
-    public void close() {
-    }
+    public void close() {}
 }

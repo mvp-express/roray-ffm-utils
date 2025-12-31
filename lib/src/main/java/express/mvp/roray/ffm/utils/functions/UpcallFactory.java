@@ -1,5 +1,6 @@
 package express.mvp.roray.ffm.utils.functions;
 
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import java.lang.foreign.Arena;
 import java.lang.foreign.FunctionDescriptor;
 import java.lang.foreign.Linker;
@@ -132,6 +133,9 @@ public final class UpcallFactory {
      * Find the single abstract method (SAM) of a functional interface and bind it to the given
      * callback instance.
      */
+    @SuppressFBWarnings(
+            value = "THROWS_METHOD_THROWS_RUNTIMEEXCEPTION",
+            justification = "Invalid interface definitions are treated as programmer errors.")
     private static <T> MethodHandle findSamMethod(
             MethodHandles.Lookup lookup, T callback, Class<T> functionalInterface) {
         if (!functionalInterface.isInterface()) {

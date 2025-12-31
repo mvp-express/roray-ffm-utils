@@ -1,5 +1,6 @@
 package express.mvp.roray.ffm.utils.memory;
 
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import java.lang.foreign.MemorySegment;
 import java.lang.foreign.ValueLayout;
 import java.nio.ByteBuffer;
@@ -9,12 +10,12 @@ import java.nio.charset.StandardCharsets;
  * A reusable, zero-allocation flyweight for viewing a UTF-8 encoded slice of a MemorySegment as a
  * String.
  *
- * <p>This object does NOT copy the string data. It holds a reference to the underlying segment.
- * The {@link #toString()} method is the only one that allocates a new String on the heap and
- * should only be used for debugging or moving data off the critical path.
+ * <p>This object does NOT copy the string data. It holds a reference to the underlying segment. The
+ * {@link #toString()} method is the only one that allocates a new String on the heap and should
+ * only be used for debugging or moving data off the critical path.
  */
 @SuppressWarnings("checkstyle:NeedBraces") // Single-line returns used for performance-critical code
-public final class Utf8View {
+public final class Utf8View implements Comparable<Utf8View> {
     private MemorySegment segment;
     private long offset;
     private int length; // length in bytes
@@ -23,6 +24,9 @@ public final class Utf8View {
      * Wraps the target segment slice at the specified offset & length. This makes the Utf8View
      * object point to the wrapped data in a flyweight read pattern.
      */
+    @SuppressFBWarnings(
+            value = "EI_EXPOSE_REP2",
+            justification = "Flyweight view stores external MemorySegment by design.")
     public void wrap(MemorySegment segment, long offset, int length) {
         this.segment = segment;
         this.offset = offset;
@@ -34,6 +38,9 @@ public final class Utf8View {
      *
      * @return The MemorySegment, or null if not wrapped.
      */
+    @SuppressFBWarnings(
+            value = "EI_EXPOSE_REP",
+            justification = "Flyweight view exposes backing segment by design.")
     public MemorySegment segment() {
         return segment;
     }
@@ -105,7 +112,7 @@ public final class Utf8View {
         if (length == 0) return other.isEmpty();
 
         // Edge case: other empty but we have data
-        if (other.isEmpty()) return length == 0;
+        if (other.isEmpty()) return false;
 
         // Quick length check: encode the string and compare byte lengths
         int expectedByteLength = calculateUtf8ByteLength(other);
@@ -219,7 +226,7 @@ public final class Utf8View {
      * @param other The Utf8View to compare against.
      * @return true if the content is identical, false otherwise.
      */
-    public boolean equals(Utf8View other) {
+    public boolean equalsView(Utf8View other) {
 
         // TODO: need to think if this can be optimized for ASCII only data for HFT flows.
         // need to consider SIMD/Vector API usage as well for even faster comparisons.
@@ -268,6 +275,7 @@ public final class Utf8View {
      * @return negative if this &lt; other, 0 if equal, positive if this &gt; other.
      * @throws IllegalArgumentException if other is null.
      */
+    @Override
     public int compareTo(Utf8View other) {
         if (other == null) {
             throw new IllegalArgumentException("Cannot compare to null");
@@ -294,6 +302,17 @@ public final class Utf8View {
         }
 
         return length - other.length;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (!(obj instanceof Utf8View other)) {
+            return false;
+        }
+        return equalsView(other);
     }
 
     /**

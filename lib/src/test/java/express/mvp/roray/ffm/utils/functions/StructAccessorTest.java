@@ -197,13 +197,13 @@ class StructAccessorTest {
             // Set values in each element
             for (int i = 0; i < 5; i++) {
                 MemorySegment element = iovecAccessor.elementAt(array, i);
-                iovecAccessor.setLong(element, "iov_len", i * 100);
+                iovecAccessor.setLong(element, "iov_len", i * 100L);
             }
 
             // Read back and verify
             for (int i = 0; i < 5; i++) {
                 MemorySegment element = iovecAccessor.elementAt(array, i);
-                assertEquals(i * 100, iovecAccessor.getLong(element, "iov_len"));
+                assertEquals(i * 100L, iovecAccessor.getLong(element, "iov_len"));
             }
         }
     }
@@ -277,8 +277,9 @@ class StructAccessorTest {
         try (Arena arena = Arena.ofConfined()) {
             MemorySegment seg = accessor.allocate(arena);
 
-            accessor.setFloat(seg, "value", 3.14159f);
-            assertEquals(3.14159f, accessor.getFloat(seg, "value"), 0.00001f);
+            float pi = (float) Math.PI;
+            accessor.setFloat(seg, "value", pi);
+            assertEquals(pi, accessor.getFloat(seg, "value"), 0.00001f);
         }
     }
 
@@ -293,8 +294,9 @@ class StructAccessorTest {
         try (Arena arena = Arena.ofConfined()) {
             MemorySegment seg = accessor.allocate(arena);
 
-            accessor.setDouble(seg, "value", 3.141592653589793);
-            assertEquals(3.141592653589793, accessor.getDouble(seg, "value"), 0.0);
+            double pi = Math.PI;
+            accessor.setDouble(seg, "value", pi);
+            assertEquals(pi, accessor.getDouble(seg, "value"), 0.0);
         }
     }
 }

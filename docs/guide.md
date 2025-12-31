@@ -1,10 +1,10 @@
 # Roray FFM Utils — Usage Guide
 
-This document explains how to use the public APIs in `roray-ffm`. It assumes familiarity with the Java Foreign Function & Memory API introduced in Java 14 and refined in Java 22+. All examples compile against JDK 24+ with the preview FFM API enabled.
+This document explains how to use the public APIs in `roray-ffm`. It assumes familiarity with the Java Foreign Function & Memory API introduced in Java 14 and refined in Java 22+. All examples compile against JDK 25+ with the preview FFM API enabled.
 
 ## Prerequisites
 
-- JDK 24 or newer (the project targets 24+ and configures the toolchain for JDK 25).
+- JDK 25 or newer (the project targets 25+ and configures the toolchain for JDK 25).
 - Preview features enabled when compiling or running (e.g. `--enable-preview`).
 - Gradle 9+ or equivalent build tooling.
 - Opt-in to the FFM API in runtime arguments when required (for long-running apps use `--enable-native-access=ALL-UNNAMED`).

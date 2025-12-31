@@ -1,26 +1,29 @@
 package express.mvp.roray.ffm.utils.memory;
 
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.ValueLayout;
 import java.nio.ByteBuffer;
 import java.util.zip.CRC32;
 
 /**
- * A collection of stateless, high-performance utility methods for operating on
- * {@link MemorySegment}s.
+ * A collection of stateless, high-performance utility methods for operating on {@link
+ * MemorySegment}s.
  */
 public final class SegmentUtils {
 
     private SegmentUtils() {}
 
     /**
-     * Thread-local pool of CRC32 instances to avoid allocation on every checksum calculation.
-     * Each thread gets its own CRC32 instance, eliminating contention and GC pressure.
+     * Thread-local pool of CRC32 instances to avoid allocation on every checksum calculation. Each
+     * thread gets its own CRC32 instance, eliminating contention and GC pressure.
      */
     private static final ThreadLocal<CRC32> CRC32_POOL = ThreadLocal.withInitial(CRC32::new);
 
     /**
-     * Calculates the CRC32 checksum for the data within the given memory segment. This method is
-     * zero-copy, uses a pooled CRC32 instance per thread, and does not allocate on the heap.
+     * Calculates the CRC32 checksum for the data within the given memory segment. This method uses
+     * a pooled CRC32 instance per thread and avoids heap allocation. It prefers a zero-copy
+     * ByteBuffer view when supported, and falls back to direct byte reads for shared segments that
+     * cannot expose a ByteBuffer.
      *
      * @param segment The segment of memory to checksum.
      * @return The 32-bit CRC32 checksum value.
@@ -30,11 +33,19 @@ public final class SegmentUtils {
         CRC32 crc32 = CRC32_POOL.get();
         crc32.reset();
 
-        // segment.asByteBuffer() creates a zero-copy view of the off-heap memory
-        ByteBuffer bufferView = segment.asByteBuffer();
+        try {
+            // segment.asByteBuffer() creates a zero-copy view of the off-heap memory
+            ByteBuffer bufferView = segment.asByteBuffer();
 
-        // update() processes all bytes in the buffer
-        crc32.update(bufferView);
+            // update() processes all bytes in the buffer
+            crc32.update(bufferView);
+        } catch (UnsupportedOperationException ex) {
+            // Some shared segments cannot expose a ByteBuffer view; fall back to direct reads.
+            long size = segment.byteSize();
+            for (long i = 0; i < size; i++) {
+                crc32.update(segment.get(ValueLayout.JAVA_BYTE, i));
+            }
+        }
 
         // getValue() returns a long, but CRC32 is a 32-bit value.
         return (int) crc32.getValue();

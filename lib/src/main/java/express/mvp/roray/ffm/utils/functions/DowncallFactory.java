@@ -34,8 +34,8 @@ public final class DowncallFactory {
     }
 
     /**
-     * Create a factory using the native linker and its default lookup.
-     * Suitable for standard C library functions.
+     * Create a factory using the native linker and its default lookup. Suitable for standard C
+     * library functions.
      */
     public static DowncallFactory forNativeLinker() {
         Linker nativeLinker = Linker.nativeLinker();
@@ -58,8 +58,8 @@ public final class DowncallFactory {
     }
 
     /**
-     * Creates a downcall handle. The returned {@link MethodHandle} should be stored in a
-     * {@code static final} field for optimal JIT performance.
+     * Creates a downcall handle. The returned {@link MethodHandle} should be stored in a {@code
+     * static final} field for optimal JIT performance.
      *
      * @param functionName Name of the native function
      * @param descriptor Function signature

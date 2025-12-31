@@ -164,7 +164,7 @@ class MemorySegmentPoolTest {
         List<Exception> exceptions = new ArrayList<>();
 
         for (int i = 0; i < numThreads; i++) {
-            executor.submit(
+            executor.execute(
                     () -> {
                         try {
                             for (int j = 0; j < operationsPerThread; j++) {

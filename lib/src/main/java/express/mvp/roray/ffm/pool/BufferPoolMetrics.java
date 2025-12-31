@@ -33,7 +33,8 @@ public record BufferPoolMetrics(
     @Override
     public String toString() {
         return String.format(
-                "BufferPoolMetrics[total=%d, success=%d, failed=%d, avgWait=%.3fms, maxWait=%.3fms, available=%d/%d, utilization=%.1f%%]",
+                "BufferPoolMetrics[total=%d, success=%d, failed=%d, avgWait=%.3fms, maxWait=%.3fms,"
+                        + " available=%d/%d, utilization=%.1f%%]",
                 totalAcquisitions,
                 successfulAcquisitions,
                 failedAcquisitions,

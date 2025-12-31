@@ -1,5 +1,6 @@
 package express.mvp.roray.ffm.utils.memory;
 
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import java.lang.foreign.MemorySegment;
 import java.lang.foreign.ValueLayout;
 
@@ -45,6 +46,9 @@ import java.lang.foreign.ValueLayout;
  *
  * <p><b>Zero-GC:</b> All operations avoid heap allocation.
  */
+@SuppressFBWarnings(
+        value = "EI_EXPOSE_REP2",
+        justification = "Writer wraps external MemorySegment instances by design.")
 public final class VarFieldWriter {
 
     private final MemorySegment segment;

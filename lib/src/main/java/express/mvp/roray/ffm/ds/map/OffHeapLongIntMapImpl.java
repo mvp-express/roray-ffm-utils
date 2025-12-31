@@ -5,11 +5,9 @@ import java.lang.foreign.MemorySegment;
 import java.lang.foreign.ValueLayout;
 
 /**
- * A linear-probing, open-addressing hash map with off-heap keys and off-heap
- * int values.
+ * A linear-probing, open-addressing hash map with off-heap keys and off-heap int values.
  *
- * <p>
- * Not thread-safe. Designed for single-threaded hot paths.
+ * <p>Not thread-safe. Designed for single-threaded hot paths.
  */
 public class OffHeapLongIntMapImpl extends AbstractOffHeapLongKeyOpenAddressingTable
         implements OffHeapLongIntMap {
@@ -21,10 +19,8 @@ public class OffHeapLongIntMapImpl extends AbstractOffHeapLongKeyOpenAddressingT
     /**
      * Creates a new off-heap long-to-int map with specified capacity.
      *
-     * <p>
-     * <b>Arena ownership:</b> This map owns its arena. Calling {@link #close()}
-     * closes the
-     * arena and releases all off-heap storage.
+     * <p><b>Arena ownership:</b> This map owns its arena. Calling {@link #close()} closes the arena
+     * and releases all off-heap storage.
      *
      * @param capacity the capacity (must be a power of 2)
      */
@@ -36,16 +32,12 @@ public class OffHeapLongIntMapImpl extends AbstractOffHeapLongKeyOpenAddressingT
     /**
      * Creates a new off-heap long-to-int map using a caller-provided {@link Arena}.
      *
-     * <p>
-     * <b>Arena ownership:</b> The map does <b>not</b> own the provided arena.
-     * Calling
-     * {@link #close()} will release this map instance, but will <b>not</b> close
-     * the arena.
-     * The caller remains responsible for closing the arena.
+     * <p><b>Arena ownership:</b> The map does <b>not</b> own the provided arena. Calling {@link
+     * #close()} will release this map instance, but will <b>not</b> close the arena. The caller
+     * remains responsible for closing the arena.
      *
      * @param capacity the capacity (must be a power of 2)
-     * @param arena    the arena to allocate the off-heap storage from
-     *                 (caller-owned)
+     * @param arena the arena to allocate the off-heap storage from (caller-owned)
      */
     public OffHeapLongIntMapImpl(int capacity, Arena arena) {
         super(capacity, arena);

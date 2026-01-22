@@ -15,7 +15,7 @@ This document explains how to use the public APIs in `roray-ffm`. It assumes fam
 
 ```kotlin
 dependencies {
-    implementation("express.mvp:roray-ffm:0.2.0")
+    implementation("express.mvp:roray-ffm:0.2.1")
 }
 ```
 
@@ -23,7 +23,7 @@ dependencies {
 
 ```groovy
 dependencies {
-    implementation 'express.mvp:roray-ffm:0.2.0'
+    implementation 'express.mvp:roray-ffm:0.2.1'
 }
 ```
 
@@ -33,7 +33,7 @@ dependencies {
 <dependency>
     <groupId>express.mvp</groupId>
     <artifactId>roray-ffm</artifactId>
-    <version>0.2.0</version>
+    <version>0.2.1</version>
 </dependency>
 ```
 

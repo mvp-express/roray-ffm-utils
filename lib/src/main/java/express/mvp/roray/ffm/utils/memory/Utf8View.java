@@ -21,7 +21,7 @@ public final class Utf8View implements Comparable<Utf8View> {
     private int length; // length in bytes
 
     /**
-     * Wraps the target segment slice at the specified offset & length. This makes the Utf8View
+     * Wraps the target segment slice at the specified offset &amp; length. This makes the Utf8View
      * object point to the wrapped data in a flyweight read pattern.
      */
     @SuppressFBWarnings(

@@ -1,6 +1,6 @@
 /**
  * Core utilities for building zero-copy, off-heap friendly components using the Java Foreign
- * Function & Memory (FFM) API.
+ * Function &amp; Memory (FFM) API.
  */
 module express.mvp.roray.ffm {
     requires static com.github.spotbugs.annotations;

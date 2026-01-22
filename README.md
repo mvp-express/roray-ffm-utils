@@ -9,7 +9,7 @@
 
 ```kotlin
 dependencies {
-    implementation("express.mvp:roray-ffm:0.2.0")
+    implementation("express.mvp:roray-ffm:0.2.1")
 }
 ```
 

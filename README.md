@@ -85,9 +85,9 @@ private static final DowncallFactory FACTORY = DowncallFactory.forNativeLinker()
 
 ## Documentation
 
-📚 **[User Guide](https://mvp.express/docs/roray-ffm/)** — Full documentation  
-🚀 **[Getting Started](https://mvp.express/docs/getting-started/)** — Ecosystem tutorial  
-📖 **[API Reference](https://mvp.express/docs/roray-ffm/api/)** — Javadoc
+📚 **[User Guide](https://mvp.express/docs/roray-ffm-utils/)** — Full documentation  
+🚀 **[Getting Started](https://mvp.express/docs/quick-start-guide/)** — Ecosystem tutorial  
+📖 **[API Reference](https://mvp.express/roray-ffm-utils/api/latest/)** — Javadoc
 
 ## For Contributors
 

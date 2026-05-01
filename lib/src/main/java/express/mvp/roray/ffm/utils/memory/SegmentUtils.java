@@ -10,6 +10,8 @@ import java.util.zip.CRC32;
  * MemorySegment}s.
  */
 public final class SegmentUtils {
+    private static final long FNV_OFFSET_BASIS = 0xcbf29ce484222325L;
+    private static final long FNV_PRIME = 0x100000001b3L;
 
     private SegmentUtils() {}
 
@@ -49,6 +51,96 @@ public final class SegmentUtils {
 
         // getValue() returns a long, but CRC32 is a 32-bit value.
         return (int) crc32.getValue();
+    }
+
+    /**
+     * Computes the 64-bit FNV-1a hash for a byte array.
+     *
+     * @param bytes bytes to hash
+     * @return 64-bit hash
+     */
+    public static long fnv1a64(byte[] bytes) {
+        long hash = FNV_OFFSET_BASIS;
+        for (byte value : bytes) {
+            hash ^= (value & 0xffL);
+            hash *= FNV_PRIME;
+        }
+        return hash;
+    }
+
+    /**
+     * Computes the 64-bit FNV-1a hash for the first {@code length} bytes of a segment.
+     *
+     * @param segment segment to hash
+     * @param length number of bytes to hash
+     * @return 64-bit hash
+     */
+    public static long fnv1a64(MemorySegment segment, int length) {
+        long hash = FNV_OFFSET_BASIS;
+        for (int i = 0; i < length; i++) {
+            byte value = segment.get(ValueLayout.JAVA_BYTE, (long) i);
+            hash ^= (value & 0xffL);
+            hash *= FNV_PRIME;
+        }
+        return hash;
+    }
+
+    /**
+     * Compares two byte arrays for content equality.
+     *
+     * @param left first byte array
+     * @param right second byte array
+     * @return true when the contents are identical
+     */
+    public static boolean contentEquals(byte[] left, byte[] right) {
+        if (left.length != right.length) {
+            return false;
+        }
+        for (int i = 0; i < left.length; i++) {
+            if (left[i] != right[i]) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    /**
+     * Compares a byte array with the first {@code length} bytes of a segment.
+     *
+     * @param left byte array
+     * @param right segment view
+     * @param length number of bytes to compare
+     * @return true when the contents are identical
+     */
+    public static boolean contentEquals(byte[] left, MemorySegment right, int length) {
+        if (left.length != length) {
+            return false;
+        }
+        for (int i = 0; i < length; i++) {
+            if (left[i] != right.get(ValueLayout.JAVA_BYTE, (long) i)) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    /**
+     * Compares the first {@code length} bytes of two segments.
+     *
+     * @param left first segment
+     * @param right second segment
+     * @param length number of bytes to compare
+     * @return true when the contents are identical
+     */
+    public static boolean contentEquals(MemorySegment left, MemorySegment right, int length) {
+        for (int i = 0; i < length; i++) {
+            byte leftValue = left.get(ValueLayout.JAVA_BYTE, (long) i);
+            byte rightValue = right.get(ValueLayout.JAVA_BYTE, (long) i);
+            if (leftValue != rightValue) {
+                return false;
+            }
+        }
+        return true;
     }
 
     // Commented out vectorizedZero implementation - Vector API not yet enabled

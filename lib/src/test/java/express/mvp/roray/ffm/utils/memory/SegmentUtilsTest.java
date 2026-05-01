@@ -4,6 +4,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemorySegment;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.CountDownLatch;
@@ -16,6 +17,36 @@ import org.junit.jupiter.api.Test;
 
 /** Tests for {@link SegmentUtils}, particularly the CRC32 pooling optimization. */
 class SegmentUtilsTest {
+
+    @Test
+    void fnv1a64_ShouldMatchAcrossBytesAndSegments() {
+        byte[] bytes = "alpha-key".getBytes(StandardCharsets.UTF_8);
+        try (Arena arena = Arena.ofConfined()) {
+            MemorySegment segment = arena.allocate(bytes.length);
+            MemorySegment.copy(MemorySegment.ofArray(bytes), 0, segment, 0, bytes.length);
+
+            assertEquals(SegmentUtils.fnv1a64(bytes), SegmentUtils.fnv1a64(segment, bytes.length));
+        }
+    }
+
+    @Test
+    void contentEquals_ShouldCompareBytesAndSegments() {
+        byte[] bytes = new byte[] {1, 2, 3, 4};
+        try (Arena arena = Arena.ofConfined()) {
+            MemorySegment left = arena.allocate(bytes.length);
+            MemorySegment right = arena.allocate(bytes.length);
+            MemorySegment.copy(MemorySegment.ofArray(bytes), 0, left, 0, bytes.length);
+            MemorySegment.copy(MemorySegment.ofArray(bytes), 0, right, 0, bytes.length);
+
+            assertTrue(SegmentUtils.contentEquals(bytes, bytes.clone()));
+            assertTrue(SegmentUtils.contentEquals(bytes, left, bytes.length));
+            assertTrue(SegmentUtils.contentEquals(left, right, bytes.length));
+
+            right.set(Layouts.BYTE, 2, (byte) 9);
+            assertFalse(SegmentUtils.contentEquals(left, right, bytes.length));
+            assertFalse(SegmentUtils.contentEquals(bytes, right, bytes.length));
+        }
+    }
 
     @Test
     void calculateCrc32_ShouldReturnCorrectChecksum() {

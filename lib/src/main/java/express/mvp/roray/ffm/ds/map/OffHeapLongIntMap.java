@@ -29,7 +29,8 @@ public interface OffHeapLongIntMap extends AutoCloseable {
     void put(long key, int value);
 
     /**
-     * Removes the key &amp; returns its value in the same packed format as {@link #getPacked(long)}.
+     * Removes the key &amp; returns its value in the same packed format as {@link
+     * #getPacked(long)}.
      *
      * @param key The key to remove.
      * @return A packed long where MSB indicates whether the key was present.

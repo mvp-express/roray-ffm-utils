@@ -22,6 +22,10 @@ repositories {
     mavenCentral()
 }
 
+base {
+    archivesName.set("roray-ffm")
+}
+
 // Apply a specific Java toolchain to ease working on different environments.
 java {
     toolchain {
@@ -109,10 +113,6 @@ testing {
 
 tasks.withType<Test> {
     useJUnitPlatform()
-}
-
-tasks.jar {
-    archiveBaseName.set("roray-ffm")
 }
 
 mavenPublishing {
